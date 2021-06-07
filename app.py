@@ -27,12 +27,13 @@ def add_recipe():
     if request.method == "POST":
         recipe = {
             "name": request.form.get("name"),
-            "main ingredient": request.form.get("main ingredient"),
+            "main ingredient": request.form.get("main-ingredient"),
             "nationality": request.form.get("nationality"),
-            "served with": request.form.get("served with"),
+            "served with": request.form.get("served-with"),
             "healthiness": request.form.get("healthiness"),
         }
-        mongo.db.tasks.insert_one(recipe)
+        print(request.form.to_dict())
+        mongo.db.recipes.insert_one(recipe)
         return render_template("recipes.html", message="recipe submitted!")
     return render_template("add_recipe.html")
 

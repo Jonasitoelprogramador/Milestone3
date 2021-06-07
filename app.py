@@ -22,6 +22,20 @@ def get_recipes():
     recipes = mongo.db.recipes.find()
     return render_template("recipes.html", recipes=recipes)
 
+@app.route("/add_recipe", methods=["GET", "POST"])
+def add_recipe():
+    if request.method == "POST":
+        recipe = {
+            "name": request.form.get("name"),
+            "main ingredient": request.form.get("main ingredient"),
+            "nationality": request.form.get("nationality"),
+            "served with": request.form.get("served with"),
+            "healthiness": request.form.get("healthiness"),
+        }
+        mongo.db.tasks.insert_one(recipe)
+        return render_template("recipes.html", message="recipe submitted!")
+    return render_template("add_recipe.html")
+
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),

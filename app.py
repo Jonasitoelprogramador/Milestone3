@@ -1,7 +1,7 @@
 import os
 from flask import (
     Flask, flash, render_template,
- redirect, request, session, url_for)
+    redirect, request, session, url_for)
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 if os.path.exists("env.py"):
@@ -27,10 +27,11 @@ def add_recipe():
     if request.method == "POST":
         recipe = {
             "name": request.form.get("name"),
-            "main ingredient": request.form.get("main-ingredient"),
             "nationality": request.form.get("nationality"),
-            "served with": request.form.get("served-with"),
-            "healthiness": request.form.get("healthiness"),
+            "ingredients": request.form.get("ingredients"),
+            "method": request.form.get("method"),
+            "description": request.form.get("description"),
+            "cook-time": request.form.get("cook-time"),
         }
         print(request.form.to_dict())
         mongo.db.recipes.insert_one(recipe)

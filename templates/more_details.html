@@ -1,7 +1,22 @@
-<link href="static/css/styles.css" rel="stylesheet" />
+
 {% extends "index.html" %}
  {% block content %}
- {{recipe}}
+ <h2>{{recipe.name}}</h2>
+ <p>Nationality: {{recipe.nationality}}</p>
+ <p>Cook time: {{recipe.cook_time}} hours</p>
+ <h3>Ingredients:</h3>
+ <ul>
+     {% for ingredient in recipe.ingredients %}
+     <li>{{ingredient}}</li>
+    {% endfor %}     
+</ul>
+<h3>Method:</h3>
+ <ol>
+     {% for step in recipe.method %}
+     <li>{{step}}</li>
+     {% endfor %}     
+</ol>
+ <p>Description: {{recipe.description}}</p>
 {% endblock %}
 
 

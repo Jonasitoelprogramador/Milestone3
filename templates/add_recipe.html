@@ -8,19 +8,21 @@
     <input type="text" class="form-control" id="exampleFormControlInput1" name="name" placeholder="Sheppard's Bush">
   </div>
   <div class="form-group">
-    <label for="exampleFormControlInput2">Main Ingredient</label>
-    <input type="text" class="form-control" id="exampleFormControlInput2" name="main-ingredient" placeholder="Pig">
+    <label for="exampleFormControlInput2">Nationality</label>
+    <input type="text" class="form-control" id="exampleFormControlInput2" name="nationality" placeholder="Pig">
   </div>
   <div class="form-group">
-    <label for="exampleFormControlSelect3">Nationality</label>
-    <input type="text" class="form-control" id="exampleFormControlInput3" name="nationality" placeholder="Kosovan">
+    <label for="exampleFormControlSelect3">Ingredients</label>
+    <input type="text" class="form-control" id="exampleFormControlInput3" name="ingredients[]" placeholder="Kosovan">
   </div>
   <div class="form-group">
-    <label for="exampleFormControlSelect5">Served with</label>
-    <input type="text" class="form-control" id="exampleFormControlInput5" name="served-with" placeholder="triple-cooked egg white">
+    <label for="exampleFormControlSelect5">Method</label>
+    <input type="text" class="form-control" id="exampleFormControlInput5" name="method" placeholder="triple-cooked egg white">
   </div>
-  <label for="exampleFormControlSelect6">Healthiness</label>
-    <input type="number" class="form-control" id="exampleFormControlInput6" name="healthiness" placeholder="6">
+  <label for="exampleFormControlSelect6">Description</label>
+    <input type="text" class="form-control" id="exampleFormControlInput6" name="description" placeholder="Delicious smokey flavour coupled with...">
+  <label for="exampleFormControlSelect6">Cook Time</label>
+    <input type="number" class="form-control" id="exampleFormControlInput7" name="cook-time" placeholder="6">
     <input class="btn btn-primary" type="submit" value="Add Recipe">
 </form>
  {% endblock %}

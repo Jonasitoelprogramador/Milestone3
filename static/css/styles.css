@@ -3411,6 +3411,11 @@ textarea.form-control-lg {
   border-radius: 0.2rem;
 }
 
+.ingredients-method-buttons {
+    height: 100px;
+    width: 200px; 
+}
+
 .fade {
   transition: opacity 0.15s linear;
 }

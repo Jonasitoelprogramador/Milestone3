@@ -2,20 +2,29 @@
  {% block content %}
  <h3>Add Recipe</h3>
  <!--Taken from: https://getbootstrap.com/docs/4.4/components/forms/-->
- <form method="POST" action="{{ url_for('add_recipe') }}">
-  <div class="form-group">
-    <label for="exampleFormControlInput1">Name</label>
-    <input type="text" class="form-control" id="exampleFormControlInput1" name="name" placeholder="Sheppard's Bush">
+ <form method="POST" action="{{ url_for('add_recipe') }}" class="container-fluid">
+   <div class="form-group row">
+        <div class="col-md-12">
+            <label for="exampleFormControlInput1">Name</label>
+            <input type="text" class="form-control" id="exampleFormControlInput1" name="name" placeholder="Sheppard's Bush">
+        </div>
   </div>
-  <div class="form-group">
-    <label for="exampleFormControlInput2">Nationality</label>
-    <input type="text" class="form-control" id="exampleFormControlInput2" name="nationality" placeholder="Pig">
+  <div class="form-group row">
+    <div class="col-md-12">
+        <label for="exampleFormControlInput2">Nationality</label>
+        <input type="text" class="form-control" id="exampleFormControlInput2" name="nationality" placeholder="Pig">
+    </div>
   </div>
-  <div class="form-group ingredients">
-    <label for="exampleFormControlSelect3">Ingredients</label>
-    <input type="text" class="form-control" id="exampleFormControlInput3" name="ingredients" placeholder="Kosovan">
-    <input type="button" class="btn btn-primary" value="Next Ingredient" id="next-ingredient">
-    <input type="button" class="btn btn-primary" value="Done" id="done">
+  <div class="form-group ingredients row">
+      <div class="col-md-6">
+        <label for="exampleFormControlSelect3">Ingredients</label>
+        <input type="text" class="form-control" id="exampleFormControlInput3" name="ingredients" placeholder="Kosovan">
+      </div>
+      <div class="col-md-6" id="top-level-secondary-ingredient-buttons"> 
+        <input type="button" class="btn btn-primary" value="Next Ingredient" id="next-ingredient">
+        <input type="button" class="btn btn-primary" value="Done" id="done">
+        <input type="button" class="btn btn-primary" value="Back" id="undo-input">
+      </div>
   </div>
   <div class="form-group">
     <label for="exampleFormControlSelect5">Method</label>

@@ -1,9 +1,12 @@
+var count = 2;
+
 function event_listener_next_input() {
     var next_ingredient = document.getElementsByClassName("next-ingredient");
     console.log(next_ingredient.length);
     var the_next_ingredient = next_ingredient[next_ingredient.length - 1];
     console.log(the_next_ingredient);
-    the_next_ingredient.addEventListener("click", next_input);}
+    the_next_ingredient.addEventListener("click", next_input);
+}
 
 
 function event_listener_edit() {
@@ -40,13 +43,14 @@ event_listener_done();
 
 function next_input() {
     row = document.getElementsByClassName("ingredients")[0].lastElementChild;
-    row.children[0].children[1].readOnly = true;
+    row.children[0].children[2].readOnly = true;
     var inpt = document.createElement("div");
     inpt.className = "row";
     inpt.setAttribute = ("type", "text");
     inpt.innerHTML = 
     `<div class="col-md-6">
             <div></div>
+            <span style="margin-right: 8px;">${count}.</span>
             <input type="text" class="form-control" id="exampleFormControlInput3" name="ingredients" placeholder="Kosovan">
     </div>
     <div class="col-md-6"> 
@@ -61,16 +65,17 @@ function next_input() {
     event_listener_edit();
     event_listener_done();
     event_listener_delete();
+    return count = count + 1;
 }
 
 function edit_input() {
-    this.parentElement.previousElementSibling.children[1].readOnly = false;
+    this.parentElement.previousElementSibling.children[2].readOnly = false;
 }
 
 
 function input_done() {
     console.log(this);
-    this.parentElement.previousElementSibling.children[1].readOnly = true;
+    this.parentElement.previousElementSibling.children[2].readOnly = true;
 }
 
 

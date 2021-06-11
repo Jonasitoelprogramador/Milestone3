@@ -1,40 +1,56 @@
-function event_listener() {
+function event_listener_next_input() {
     var next_ingredient = document.getElementsByClassName("next-ingredient");
     console.log(next_ingredient.length);
-    the_next_ingredient = next_ingredient[next_ingredient.length - 1];
+    var the_next_ingredient = next_ingredient[next_ingredient.length - 1];
     console.log(the_next_ingredient);
     the_next_ingredient.addEventListener("click", next_input);}
 
 
-event_listener()
+function event_listener_edit() {
+    var edit = document.getElementsByClassName("edit");
+    console.log(edit);
+    var the_edit = edit[edit.length - 1];
+    console.log(the_edit);
+    the_edit.addEventListener("click", edit_input);
+}
+
+
+event_listener_edit()
+event_listener_next_input()
 
 
 function next_input() {
-    console.log("hi")
     row = document.getElementsByClassName("ingredients")[0].lastElementChild;
-    row.children[0].children[0].readOnly = true;
+    row.children[0].children[1].readOnly = true;
     var inpt = document.createElement("div");
     inpt.className = "row";
     inpt.setAttribute = ("type", "text");
     inpt.innerHTML = 
     `<div class="col-md-6">
+            <div></div>
             <input type="text" class="form-control" id="exampleFormControlInput3" name="ingredients" placeholder="Kosovan">
     </div>
     <div class="col-md-6"> 
             <input type="button" class="btn btn-primary next-ingredient" value="Next Ingredient">
             <input type="button" class="btn btn-primary" value="Done" id="done">
-            <input type="button" class="btn btn-primary" value="Back" id="undo-input">
+            <input type="button" class="btn btn-primary edit" value="Edit">
     </div>`;
     var element = document.getElementsByClassName("ingredients")[0];
     console.log(element);
     element.appendChild(inpt);
-    event_listener()
+    event_listener_next_input()
+    event_listener_edit()
 }
 
-var next_ingredient = document.getElementById("done");
-next_ingredient.addEventListener("click", input_done);
+function edit_input() {
+    this.parentElement.previousElementSibling.children[1].readOnly = false;
+}
 
-function input_done() {
+
+/*var next_ingredient = document.getElementById("edit");
+next_ingredient.addEventListener("click", edit);
+
+function edit() {
     document.getElementsByClassName("ingredients")[0].lastElementChild.readOnly = true;
 }
 
@@ -43,4 +59,4 @@ next_ingredient.addEventListener("click", undo_input);
 
 function undo_input() {
     document.getElementsByClassName("ingredients")[0].lastElementChild.readOnly = false;
-}
+}*/

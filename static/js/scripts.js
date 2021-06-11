@@ -23,9 +23,20 @@ function event_listener_done() {
     the_done.addEventListener("click", input_done);
 }
 
+
+function event_listener_delete() {
+    var dlt = document.getElementsByClassName("delete");
+    console.log(dlt.length);
+    var the_dlt = dlt[dlt.length - 1];
+    console.log(the_dlt);
+    the_dlt.addEventListener("click", delete_input);
+}
+
+
 event_listener_edit()
 event_listener_next_input()
 event_listener_done()
+delete_input()
 
 
 function next_input() {
@@ -40,9 +51,9 @@ function next_input() {
             <input type="text" class="form-control" id="exampleFormControlInput3" name="ingredients" placeholder="Kosovan">
     </div>
     <div class="col-md-6"> 
-            <input type="button" class="btn btn-primary next-ingredient" value="Next Ingredient">
             <input type="button" class="btn btn-primary done" value="Done">
             <input type="button" class="btn btn-primary edit" value="Edit">
+            <input type="button" class="btn btn-primary delete" value="Delete">
     </div>`;
     var element = document.getElementsByClassName("ingredients")[0];
     console.log(element);
@@ -50,6 +61,7 @@ function next_input() {
     event_listener_next_input();
     event_listener_edit();
     event_listener_done();
+    delete_input();
 }
 
 function edit_input() {
@@ -59,6 +71,11 @@ function edit_input() {
 
 function input_done() {
     this.parentElement.previousElementSibling.children[1].readOnly = true;
+}
+
+
+function delete_input() {
+   console.log("howdy P")
 }
 
 

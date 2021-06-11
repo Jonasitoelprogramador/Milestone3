@@ -15,8 +15,17 @@ function event_listener_edit() {
 }
 
 
+function event_listener_done() {
+    var done = document.getElementsByClassName("done");
+    console.log(done);
+    var the_done = done[done.length - 1];
+    console.log(the_done);
+    the_done.addEventListener("click", input_done);
+}
+
 event_listener_edit()
 event_listener_next_input()
+event_listener_done()
 
 
 function next_input() {
@@ -32,18 +41,24 @@ function next_input() {
     </div>
     <div class="col-md-6"> 
             <input type="button" class="btn btn-primary next-ingredient" value="Next Ingredient">
-            <input type="button" class="btn btn-primary" value="Done" id="done">
+            <input type="button" class="btn btn-primary done" value="Done">
             <input type="button" class="btn btn-primary edit" value="Edit">
     </div>`;
     var element = document.getElementsByClassName("ingredients")[0];
     console.log(element);
     element.appendChild(inpt);
-    event_listener_next_input()
-    event_listener_edit()
+    event_listener_next_input();
+    event_listener_edit();
+    event_listener_done();
 }
 
 function edit_input() {
     this.parentElement.previousElementSibling.children[1].readOnly = false;
+}
+
+
+function input_done() {
+    this.parentElement.previousElementSibling.children[1].readOnly = true;
 }
 
 

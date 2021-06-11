@@ -33,10 +33,9 @@ function event_listener_delete() {
 }
 
 
-event_listener_edit()
-event_listener_next_input()
-event_listener_done()
-delete_input()
+event_listener_edit();
+event_listener_next_input();
+event_listener_done();
 
 
 function next_input() {
@@ -61,7 +60,7 @@ function next_input() {
     event_listener_next_input();
     event_listener_edit();
     event_listener_done();
-    delete_input();
+    event_listener_delete();
 }
 
 function edit_input() {
@@ -70,25 +69,11 @@ function edit_input() {
 
 
 function input_done() {
+    console.log(this);
     this.parentElement.previousElementSibling.children[1].readOnly = true;
 }
 
 
 function delete_input() {
-   console.log("howdy P")
+   this.parentElement.parentElement.remove();
 }
-
-
-/*var next_ingredient = document.getElementById("edit");
-next_ingredient.addEventListener("click", edit);
-
-function edit() {
-    document.getElementsByClassName("ingredients")[0].lastElementChild.readOnly = true;
-}
-
-var next_ingredient = document.getElementById("undo-input");
-next_ingredient.addEventListener("click", undo_input);
-
-function undo_input() {
-    document.getElementsByClassName("ingredients")[0].lastElementChild.readOnly = false;
-}*/

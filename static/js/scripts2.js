@@ -8,10 +8,14 @@ function event_listener_next_input(input1, input2) {
 event_listener_next_input("next-ingredient", next_input);
 event_listener_next_input("edit", edit_input);
 event_listener_next_input("done", input_done);
+event_listener_next_input("next-step", next_input);
+event_listener_next_input("edit-method", edit_input);
+event_listener_next_input("done-method", input_done);
 
 
 function next_input() {
-    console.log("hello")
+    if (this.className="btn btn-primary next-step"){
+    console.log("dfgfdfgd")};
     ingredients = document.getElementsByClassName("ingredients")[0].children;
     number = ingredients.length;
     row = document.getElementsByClassName("ingredients")[0].lastElementChild;
@@ -57,5 +61,5 @@ function delete_input() {
    for (var i = 0; i < lgth; i++) {
     span = rows[i].children[0].children[1]
     span.innerHTML = i+1+".";
-} 
+    span.setAttribute = ("style","display: block;");} 
 }

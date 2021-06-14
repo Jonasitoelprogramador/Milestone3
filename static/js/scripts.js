@@ -1,47 +1,22 @@
-var count = 2;
-
-function event_listener_next_input() {
-    var next_ingredient = document.getElementsByClassName("next-ingredient");
-    console.log(next_ingredient.length);
-    var the_next_ingredient = next_ingredient[next_ingredient.length - 1];
-    console.log(the_next_ingredient);
-    the_next_ingredient.addEventListener("click", next_input);
+function event_listener_next_input(input1, input2) {
+    var vor1 = document.getElementsByClassName(input1);
+    var vor2 = vor1[vor1.length - 1];
+    vor2.addEventListener("click", input2);
 }
 
 
-function event_listener_edit() {
-    var edit = document.getElementsByClassName("edit");
-    console.log(edit);
-    var the_edit = edit[edit.length - 1];
-    console.log(the_edit);
-    the_edit.addEventListener("click", edit_input);
-}
-
-
-function event_listener_done() {
-    var done = document.getElementsByClassName("done");
-    console.log(done);
-    var the_done = done[done.length - 1];
-    console.log(the_done);
-    the_done.addEventListener("click", input_done);
-}
-
-
-function event_listener_delete() {
-    var dlt = document.getElementsByClassName("delete");
-    console.log(dlt.length);
-    var the_dlt = dlt[dlt.length - 1];
-    console.log(the_dlt);
-    the_dlt.addEventListener("click", delete_input);
-}
-
-
-event_listener_edit();
-event_listener_next_input();
-event_listener_done();
+event_listener_next_input("next-ingredient", next_input);
+event_listener_next_input("edit", edit_input);
+event_listener_next_input("done", input_done);
+event_listener_next_input("next-step", next_input);
+event_listener_next_input("edit-method", edit_input);
+event_listener_next_input("done-method", input_done);
 
 
 function next_input() {
+    console.log("hello")
+    ingredients = document.getElementsByClassName("ingredients")[0].children;
+    number = ingredients.length;
     row = document.getElementsByClassName("ingredients")[0].lastElementChild;
     row.children[0].children[2].readOnly = true;
     var inpt = document.createElement("div");
@@ -50,7 +25,7 @@ function next_input() {
     inpt.innerHTML = 
     `<div class="col-md-6">
             <div></div>
-            <span style="margin-right: 8px;">${count}.</span>
+            <span style="margin-right: 8px;">${number + 1}.</span>
             <input type="text" class="form-control" id="exampleFormControlInput3" name="ingredients" placeholder="Kosovan">
     </div>
     <div class="col-md-6"> 
@@ -61,11 +36,10 @@ function next_input() {
     var element = document.getElementsByClassName("ingredients")[0];
     console.log(element);
     element.appendChild(inpt);
-    event_listener_next_input();
-    event_listener_edit();
-    event_listener_done();
-    event_listener_delete();
-    return count = count + 1;
+    event_listener_next_input("next-ingredient", next_input);
+    event_listener_next_input("edit", edit_input);
+    event_listener_next_input("done", input_done);
+    event_listener_next_input("delete", delete_input);
 }
 
 function edit_input() {
@@ -81,4 +55,10 @@ function input_done() {
 
 function delete_input() {
    this.parentElement.parentElement.remove();
+   var rows = document.getElementsByClassName("ingredients")[0].children;
+   var lgth = rows.length;
+   for (var i = 0; i < lgth; i++) {
+    span = rows[i].children[0].children[1]
+    span.innerHTML = i+1+".";
+    span.setAttribute = ("style","display: block;");} 
 }

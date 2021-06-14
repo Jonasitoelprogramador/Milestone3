@@ -22,7 +22,7 @@
             <span style="margin-right: 8px;">1.</span>
             <input type="text" class="form-control" id="exampleFormControlInput3" name="ingredients" placeholder="Kosovan">
         </div>
-        <div class="col-md-6" id="top-level-secondary-ingredient-buttons"> 
+        <div class="col-md-6" class="top-level-secondary-ingredient-buttons"> 
             <input type="button" class="btn btn-primary done" value="Done">
             <input type="button" class="btn btn-primary edit" value="Edit">
         </div>
@@ -32,11 +32,25 @@
       <div class="col-md-6">
             <input type="button" class="btn btn-primary next-ingredient" value="Next Input">
       </div>
-  </div>  
-  <div class="form-group">
-    <label for="exampleFormControlSelect5">Method</label>
-    <input type="text" class="form-control" id="exampleFormControlInput5" name="method" placeholder="triple-cooked egg white">
   </div>
+  <div class="form-group steps">
+    <div class="row">  
+        <div class="col-md-6">
+            <label for="exampleFormControlSelect3" style="display: block;">Method</label>
+            <span style="margin-right: 8px;">1.</span>
+            <input type="text" class="form-control" id="exampleFormControlInput4" name="steps" placeholder="Put the stuffing in the turkey...">
+        </div>
+        <div class="col-md-6" class="top-level-secondary-ingredient-buttons"> 
+            <input type="button" class="btn btn-primary done-method" value="Done">
+            <input type="button" class="btn btn-primary edit-method" value="Edit">
+        </div>
+    </div>
+  </div>
+  <div class="row">
+      <div class="col-md-6">
+            <input type="button" class="btn btn-primary next-step" value="Next Input">
+      </div>
+  </div>    
   <label for="exampleFormControlSelect6">Description</label>
     <input type="text" class="form-control" id="exampleFormControlInput6" name="description" placeholder="Delicious smokey flavour coupled with...">
   <label for="exampleFormControlSelect6">Cook Time</label>

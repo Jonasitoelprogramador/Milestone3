@@ -14,12 +14,12 @@ event_listener_next_input("done-method", input_done);
 
 
 function next_input() {
-    if (this.className="btn btn-primary next-step"){
-    console.log("dfgfdfgd")};
-    ingredients = document.getElementsByClassName("ingredients")[0].children;
-    number = ingredients.length;
-    row = document.getElementsByClassName("ingredients")[0].lastElementChild;
-    row.children[0].children[2].readOnly = true;
+    if (this.className="btn btn-primary next-step") {
+    var x = document.getElementsByClassName("steps")[0].children[0]}
+    else {var x = document.getElementsByClassName("ingredients")[0].children[0]};
+    console.log(x);
+    number = x.length;
+    x.children[0].children[2].readOnly = true;
     var inpt = document.createElement("div");
     inpt.className = "row";
     inpt.setAttribute = ("type", "text");
@@ -30,17 +30,24 @@ function next_input() {
             <input type="text" class="form-control" id="exampleFormControlInput3" name="ingredients" placeholder="Kosovan">
     </div>
     <div class="col-md-6"> 
-            <input type="button" class="btn btn-primary done" value="Done">
-            <input type="button" class="btn btn-primary edit" value="Edit">
-            <input type="button" class="btn btn-primary delete" value="Delete">
+            <input type="button" class="${x.parentElement.children[0].children[1].children[0].className}" value="Done">
+            <input type="button" class="${x.parentElement.children[0].children[1].children[1].className}" value="Edit">
+            <input type="button" class="btn btn-primary dlt" value="Delete">
     </div>`;
-    var element = document.getElementsByClassName("ingredients")[0];
+    console.log(x.parentElement.children[0].children[1].children[1]);
+    var element = x.parentElement;
     console.log(element);
     element.appendChild(inpt);
+    /*event_listener_next_input("delete", delete_input);*/
+    if (this.className="btn btn-primary next-step") {
+    event_listener_next_input("next-step", next_input);
+    event_listener_next_input("edit-method", edit_input);
+    event_listener_next_input("done-method", input_done);}
+    else {
+    console.log("yea poo")
     event_listener_next_input("next-ingredient", next_input);
     event_listener_next_input("edit", edit_input);
-    event_listener_next_input("done", input_done);
-    event_listener_next_input("delete", delete_input);
+    event_listener_next_input("done", input_done);}
 }
 
 function edit_input() {

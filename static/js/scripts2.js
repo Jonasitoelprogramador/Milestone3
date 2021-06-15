@@ -17,23 +17,25 @@ function next_input() {
     if (this.className=="btn btn-primary next-step")
     {console.log("step"); 
     var x = document.getElementsByClassName("steps")[0].children[0];
-    var d = "btn btn-primary dlt-method"}
+    var d = "btn btn-primary dlt-method";
+    }
     else {
     var x = document.getElementsByClassName("ingredients")[0].children[0];
     console.log("ingredient");
     var d = "btn btn-primary dlt"};
-    console.log(x);
     var number = x.parentElement.children.length;
-    console.log(number);
-    x.children[0].children[2].readOnly = true;
-    console.log(x.children[0].children[2]);
+    x.parentElement.children[number - 1].children[0].children[2].readOnly = true;
+    if (x == document.getElementsByClassName("steps")[0].children[0]) {
+        var template_literal = `Step ${number + 1}:`
+    }
+    else {var template_literal = `${number + 1}.`}
     var inpt = document.createElement("div");
     inpt.className = "row";
     inpt.setAttribute = ("type", "text");
     inpt.innerHTML = 
     `<div class="col-md-6">
             <div></div>
-            <span style="margin-right: 8px;">${number + 1}.</span>
+            <span style="margin-right: 8px;">${template_literal}</span>
             <input type="text" class="form-control" id="exampleFormControlInput3" name="ingredients" placeholder="Kosovan">
     </div>
     <div class="col-md-6"> 

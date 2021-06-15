@@ -45,6 +45,12 @@ def more_details(recipe_id):
     return render_template("more_details.html", recipe=recipe)
 
 
+@app.route("/edit_recipe/<recipe_id>/", methods=["GET", "POST"])
+def edit_task(recipe_id):
+    recipe = mongo.db.recipes.find_one({"_id: ObjectId(recipe_id)"})
+    return render_template("edit_recipe.html", recipe=recipe)
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),

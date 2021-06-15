@@ -17,6 +17,7 @@
      {% endfor %}     
 </ol>
  <p>Description: {{recipe.description}}</p>
+ <a href="{{  url_for('edit_recipe', recipe_id=recipe._id) }}" class="btn btn-primary" type="button" style="margin-left: 20px;">edit</a> 
 {% endblock %}
 
 

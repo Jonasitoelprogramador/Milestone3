@@ -14,12 +14,19 @@ event_listener_next_input("done-method", input_done);
 
 
 function next_input() {
-    if (this.className="btn btn-primary next-step") {
-    var x = document.getElementsByClassName("steps")[0].children[0]}
-    else {var x = document.getElementsByClassName("ingredients")[0].children[0]};
+    if (this.className=="btn btn-primary next-step")
+    {console.log("step"); 
+    var x = document.getElementsByClassName("steps")[0].children[0];
+    var d = "btn btn-primary dlt-method"}
+    else {
+    var x = document.getElementsByClassName("ingredients")[0].children[0];
+    console.log("ingredient");
+    var d = "btn btn-primary dlt"};
     console.log(x);
-    number = x.length;
+    var number = x.parentElement.children.length;
+    console.log(number);
     x.children[0].children[2].readOnly = true;
+    console.log(x.children[0].children[2]);
     var inpt = document.createElement("div");
     inpt.className = "row";
     inpt.setAttribute = ("type", "text");
@@ -32,22 +39,23 @@ function next_input() {
     <div class="col-md-6"> 
             <input type="button" class="${x.parentElement.children[0].children[1].children[0].className}" value="Done">
             <input type="button" class="${x.parentElement.children[0].children[1].children[1].className}" value="Edit">
-            <input type="button" class="btn btn-primary dlt" value="Delete">
+            <input type="button" class="${d}" value="Delete">
     </div>`;
     console.log(x.parentElement.children[0].children[1].children[1]);
     var element = x.parentElement;
     console.log(element);
     element.appendChild(inpt);
-    /*event_listener_next_input("delete", delete_input);*/
-    if (this.className="btn btn-primary next-step") {
+    if (this.className=="btn btn-primary next-step") {
     event_listener_next_input("next-step", next_input);
     event_listener_next_input("edit-method", edit_input);
-    event_listener_next_input("done-method", input_done);}
+    event_listener_next_input("done-method", input_done);
+    event_listener_next_input("dlt-method", delete_input);}
     else {
     console.log("yea poo")
     event_listener_next_input("next-ingredient", next_input);
     event_listener_next_input("edit", edit_input);
-    event_listener_next_input("done", input_done);}
+    event_listener_next_input("done", input_done);
+    event_listener_next_input("dlt", delete_input);}
 }
 
 function edit_input() {
@@ -63,10 +71,19 @@ function input_done() {
 
 function delete_input() {
    this.parentElement.parentElement.remove();
-   var rows = document.getElementsByClassName("ingredients")[0].children;
+   if (this.className=="btn btn-primary dlt-method")
+        {console.log("method"); 
+        var z = document.getElementsByClassName("steps")[0].children;
+    }
+    else {
+        var z = document.getElementsByClassName("ingredients")[0].children;
+        console.log("ingredients");
+    };
+   var rows = z;
    var lgth = rows.length;
+   console.log(lgth);
    for (var i = 0; i < lgth; i++) {
-    span = rows[i].children[0].children[1]
-    span.innerHTML = i+1+".";
-    span.setAttribute = ("style","display: block;");} 
+        span = rows[i].children[0].children[1]
+        span.innerHTML = i+1+".";
+        span.setAttribute = ("style","display: block;");} 
 }

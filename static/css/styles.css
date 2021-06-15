@@ -10849,5 +10849,13 @@ textarea.form-control-lg {
 }
 
 .top-level-secondary-ingredient-buttons {
-    padding-top: 24px;
+    padding-top: 24px !important;
+}
+
+.next-step {
+    margin-top: 24px !important;
+}
+
+.next-ingredient {
+    margin-top: 24px !important;
 }

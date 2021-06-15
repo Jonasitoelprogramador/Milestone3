@@ -36,7 +36,7 @@ function next_input() {
     `<div class="col-md-6">
             <div></div>
             <span style="margin-right: 8px;">${template_literal}</span>
-            <input type="text" class="form-control" id="exampleFormControlInput3" name="ingredients" placeholder="Kosovan">
+            <input type="text" class="form-control" name="ingredients" placeholder="Kosovan">
     </div>
     <div class="col-md-6"> 
             <input type="button" class="${x.parentElement.children[0].children[1].children[0].className}" value="Done">

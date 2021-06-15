@@ -28,8 +28,8 @@ def add_recipe():
         recipe = {
             "name": request.form.get("name"),
             "nationality": request.form.get("nationality"),
-            "ingredients": request.form.get("ingredients"),
-            "method": request.form.get("method"),
+            "ingredients": request.form.getlist("ingredients"),
+            "method": request.form.getlist("method"),
             "description": request.form.get("description"),
             "cook-time": request.form.get("cook-time"),
         }

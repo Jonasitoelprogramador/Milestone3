@@ -1,6 +1,14 @@
+if (document.getElementById("edit h3 title")){
+    console.log("sweet stuff dude");
+}
+else{
+
+
 function event_listener_next_input(input1, input2) {
     var vor1 = document.getElementsByClassName(input1);
+    console.log(vor1);
     var vor2 = vor1[vor1.length - 1];
+    console.log(vor2);
     vor2.addEventListener("click", input2);
 }
 
@@ -11,7 +19,7 @@ event_listener_next_input("done", input_done);
 event_listener_next_input("next-step", next_input);
 event_listener_next_input("edit-method", edit_input);
 event_listener_next_input("done-method", input_done);
-
+}
 
 function next_input() {
     if (this.className=="btn btn-primary next-step")

@@ -3,62 +3,67 @@
  <h3 id="edit h3 title" style="display: inline;">Edit</h3> <h3 style="display: inline;">{{recipe.name}}</h3>
  <!--Taken from: https://getbootstrap.com/docs/4.4/components/forms/-->
  <form method="POST" action="{{ url_for('edit_recipe', recipe_id=recipe._id) }}" class="container-fluid">
-   <div class="form-group row">
+    <div class="form-group row">
         <div class="col-md-12">
             <label for="exampleFormControlInput1">Name</label>
             <input type="text" class="form-control" id="exampleFormControlInput1" name="name" placeholder="Sheppard's Bush" value={{recipe.name}}>
         </div>
-  </div>
-  <div class="form-group row">
-    <div class="col-md-12">
-        <label for="exampleFormControlInput2">Nationality</label>
-        <input type="text" class="form-control" id="exampleFormControlInput2" name="nationality" placeholder="Pig" value={{recipe.nationality}}>
     </div>
-  </div>
-  <div class="form-group ingredients">
-    <div class="row">  
+    <div class="form-group row">
+        <div class="col-md-12">
+            <label for="exampleFormControlInput2">Nationality</label>
+            <input type="text" class="form-control" id="exampleFormControlInput2" name="nationality" placeholder="Pig" value={{recipe.nationality}}>
+        </div>
+    </div>
+    <div class="form-group ingredients">
+        <div class="row">  
+            <div class="col-md-6">
+                <label for="exampleFormControlSelect3" style="display: block;">Ingredients</label>
+                <span style="margin-right: 8px;">1.</span>
+                <input type="text" class="form-control" name="ingredients" placeholder="Kosovan" value={{recipe.ingredients[0]}}>
+            </div>
+            <div class="col-md-6 top-level-secondary-ingredient-buttons"> 
+                <input type="button" class="btn btn-primary done" value="Done">
+                <input type="button" class="btn btn-primary edit" value="Edit">
+            </div>
+        </div>
+        {% for i in (range(recipe.ingredients|count))[:-1] %}
+            {% with number=i+2, ingredient=recipe.ingredients[i+1] %}
+                {% include 'row.html' %}
+            {% endwith %}
+        {% endfor %}
+    </div>
+    <div class="row">
         <div class="col-md-6">
-            <label for="exampleFormControlSelect3" style="display: block;">Ingredients</label>
-            <span style="margin-right: 8px;">1.</span>
-            <input type="text" class="form-control" name="ingredients" placeholder="Kosovan" value={{recipe.ingredients[0]}}>
-        </div>
-        <div class="col-md-6 top-level-secondary-ingredient-buttons"> 
-            <input type="button" class="btn btn-primary done" value="Done">
-            <input type="button" class="btn btn-primary edit" value="Edit">
+            <input type="button" class="btn btn-primary next-ingredient" value="Next Ingredient">
         </div>
     </div>
-    {% for i in (range(recipe.ingredients|count))[:-1] %}
-        {% with number=i+2, ingredient=recipe.ingredients[i+1] %}
+    <div class="form-group steps">
+        <div class="row">  
+            <div class="col-md-6">
+                <label for="exampleFormControlSelect3" style="display: block;">Method</label>
+                <span style="margin-right: 8px;">Step 1:</span>
+                <input type="text" class="form-control" name="method" placeholder="Put the stuffing in the turkey...">
+            </div>
+            <div class="col-md-6 top-level-secondary-ingredient-buttons"> 
+                <input type="button" class="btn btn-primary done-method" value="Done">
+                <input type="button" class="btn btn-primary edit-method" value="Edit">
+            </div>
+        </div>  
+        {% for i in (range(recipe.method|count))[:-1] %}
+        {% with number=i+2, step=recipe.method[i+1] %}
             {% include 'row.html' %}
         {% endwith %}
-    {% endfor %}
-  </div>
-  <div class="row">
-      <div class="col-md-6">
-            <input type="button" class="btn btn-primary next-ingredient" value="Next Ingredient">
-      </div>
-  </div>
-  <div class="form-group steps">
-    <div class="row">  
-        <div class="col-md-6">
-            <label for="exampleFormControlSelect3" style="display: block;">Method</label>
-            <span style="margin-right: 8px;">Step 1:</span>
-            <input type="text" class="form-control" name="method" placeholder="Put the stuffing in the turkey...">
-        </div>
-        <div class="col-md-6 top-level-secondary-ingredient-buttons"> 
-            <input type="button" class="btn btn-primary done-method" value="Done">
-            <input type="button" class="btn btn-primary edit-method" value="Edit">
-        </div>
+        {% endfor %}
     </div>
-  </div>
-  <div class="row">
-      <div class="col-md-6">
-            <input type="button" class="btn btn-primary next-step" value="Next Step">
-      </div>
-  </div>    
-  <label for="exampleFormControlSelect6">Description</label>
+    <div class="row">
+        <div class="col-md-6">
+                <input type="button" class="btn btn-primary next-step" value="Next Step">
+        </div>
+    </div>    
+    <label for="exampleFormControlSelect6">Description</label>
     <input type="text" class="form-control" id="exampleFormControlInput6" name="description" placeholder="Delicious smokey flavour coupled with...">
-  <label for="exampleFormControlSelect6">Cook Time</label>
+    <label for="exampleFormControlSelect6">Cook Time</label>
     <input type="number" class="form-control" id="exampleFormControlInput7" name="cook-time" placeholder="6">
     <input class="btn btn-primary" type="submit" value="Edit Recipe">
 </form>

@@ -12,6 +12,8 @@ if (document.getElementById("edit h3 title")){
     ingredient_done = document.getElementsByClassName("done");
     ingredient_edit = document.getElementsByClassName("edit");
     ingredient_delete = document.getElementsByClassName("dlt");
+    next_ingredient = document.getElementsByClassName("next-ingredient")[0];
+    next_ingredient.addEventListener("click", next_input);
     for (var k = 0; k < ingredient_done.length; k++) {
     ingredient_done[k].addEventListener("click", input_done);
     ingredient_edit[k].addEventListener("click", edit_input)}
@@ -94,7 +96,7 @@ function delete_input() {
     }
     else {
         var z = document.getElementsByClassName("ingredients")[0].children;
-        console.log("ingredients");
+        console.log(z);
     };
    var rows = z;
    var lgth = rows.length;

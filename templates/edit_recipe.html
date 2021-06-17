@@ -28,7 +28,9 @@
             </div>
         </div>
         {% for i in (range(recipe.ingredients|count))[:-1] %}
-            {% with number=i+2, ingredient=recipe.ingredients[i+1], punct=".", done_method_ingredient="done", edit_method_ingredient="edit", delete_method_ingredient="dlt" %}
+            {% with number=i+2, ingredient=recipe.ingredients[i+1], punct=".",
+            done_method_ingredient="done", edit_method_ingredient="edit", delete_method_ingredient="dlt",
+            ingredients_or_method="ingredients" %}
                 {% include 'row.html' %}
             {% endwith %}
         {% endfor %}
@@ -52,7 +54,8 @@
         </div>  
         {% for i in (range(recipe.method|count))[:-1] %}
             {% with number=i+2, ingredient=recipe.method[i+1], step="Step ", punct=":", 
-            done_method_ingredient="done-method", edit_method_ingredient="edit-method", delete_method_ingredient="dlt-method" %}
+            done_method_ingredient="done-method", edit_method_ingredient="edit-method", delete_method_ingredient="dlt-method",
+            ingredients_or_method="method" %}
                 {% include 'row.html' %}
             {% endwith %}
         {% endfor %}

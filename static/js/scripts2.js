@@ -44,11 +44,13 @@ function next_input() {
     {console.log("step"); 
     var x = document.getElementsByClassName("steps")[0].children[0];
     var d = "btn btn-primary dlt-method";
+    var nme = "method"
     }
     else {
     var x = document.getElementsByClassName("ingredients")[0].children[0];
     console.log("ingredient");
-    var d = "btn btn-primary dlt"};
+    var d = "btn btn-primary dlt"
+    var nme = "ingredients"};
     var number = x.parentElement.children.length;
     x.parentElement.children[number - 1].children[0].children[2].readOnly = true;
     if (x == document.getElementsByClassName("steps")[0].children[0]) {
@@ -62,7 +64,7 @@ function next_input() {
     `<div class="col-md-6">
             <div></div>
             <span style="margin-right: 8px;">${template_literal}</span>
-            <input type="text" class="form-control" name="ingredients" placeholder="Kosovan">
+            <input type="text" class="form-control" name=${nme} placeholder="Kosovan">
     </div>
     <div class="col-md-6"> 
             <input type="button" class="${x.parentElement.children[0].children[1].children[0].className}" value="Done">

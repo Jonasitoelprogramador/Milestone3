@@ -7,8 +7,7 @@ function event_listener_next_input(input1, input2) {
 }
 
 
-if (document.getElementById("edit h3 title")){
-    console.log("logag");
+if (document.getElementById("edit h3 title")) {
     ingredient_done = document.getElementsByClassName("done");
     ingredient_edit = document.getElementsByClassName("edit");
     ingredient_delete = document.getElementsByClassName("dlt");
@@ -16,10 +15,20 @@ if (document.getElementById("edit h3 title")){
     next_ingredient.addEventListener("click", next_input);
     for (var k = 0; k < ingredient_done.length; k++) {
     ingredient_done[k].addEventListener("click", input_done);
-    ingredient_edit[k].addEventListener("click", edit_input)}
+    ingredient_edit[k].addEventListener("click", edit_input);}
     for (var g = 0; g < ingredient_delete.length; g++) {
     ingredient_delete[g].addEventListener("click", delete_input);}
-}
+    ingredient_done = document.getElementsByClassName("done-method");
+    ingredient_edit = document.getElementsByClassName("edit-method");
+    ingredient_delete = document.getElementsByClassName("dlt-method");
+    next_ingredient = document.getElementsByClassName("next-step")[0];
+    next_ingredient.addEventListener("click", next_input);
+    for (var h = 0; h < ingredient_done.length; h++) {
+    ingredient_done[h].addEventListener("click", input_done);
+    ingredient_edit[h].addEventListener("click", edit_input)}
+    for (var j = 0; j < ingredient_delete.length; j++) {
+    ingredient_delete[j].addEventListener("click", delete_input);
+    }}
 else {
 event_listener_next_input("next-ingredient", next_input);
 event_listener_next_input("edit", edit_input);
@@ -102,7 +111,13 @@ function delete_input() {
    var lgth = rows.length;
    console.log(lgth);
    for (var i = 0; i < lgth; i++) {
+        if (this.className=="btn btn-primary dlt-method") {
+            var inner = "Step "+(i+1)+":"
+        }
+        else {
+            var inner = i+1+"."
+        }
         span = rows[i].children[0].children[1]
-        span.innerHTML = i+1+".";
+        span.innerHTML = inner;
         span.setAttribute = ("style","display: block;");} 
 }

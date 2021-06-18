@@ -21,6 +21,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
                         <li class="nav-item"><a class="nav-link active" aria-current="page" href="{{ url_for('add_recipe') }}">Add Recipe</a></li>
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="{{ url_for('register') }}">Register</a></li>
                         <li class="nav-item"><a class="nav-link" href="#!">About</a></li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Shop</a>
@@ -50,6 +51,19 @@
             </div>
         </header>
         <!-- Section-->
+        <section>
+        <!-- flash messages - THIS IS TAKEN FROM CODE INSTITUE VIDEO on creating auser for your website -->
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="row flashes">
+                        <h4>{{ message }}</h4>
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+    </section>
+
     {% block content %}
     {% endblock %}
         </section>

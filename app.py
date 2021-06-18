@@ -47,6 +47,11 @@ def register():
     return render_template("register.html")
 
 
+@app.route("/login", methods=["GET", "POST"])
+def login():
+    return render_template("login.html")
+
+
 @app.route("/search", methods=["GET", "POST"])
 def search():
     query = request.form.get("query")

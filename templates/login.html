@@ -12,7 +12,7 @@
                     <h5 class="card-title">Special title treatment</h5>
             </div>
     </div>
-    <form method="POST" action="{{ url_for('login') }}"> 
+    <form method="POST" action="{{ url_for('register') }}"> 
         <div class="row">
             <label for="username">Username</label>
             <input type="text" id="username" name="username" class="validate" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}%" required>
@@ -22,11 +22,11 @@
             <input type="text" id="password" name="password" class="validate" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}%" required>
         </div>
         <div class="row">
-            <input type="submit" class="btn btn-primary" value="Register">
+            <input type="submit" class="btn btn-primary" value="Login">
         </div>
     </form> 
 </div>
 <div class="row">
-    <a href="{{ url_for('login') }}">Already registered?</a>
+    <p>Don't have an account?  Get one <a href="{{ url_for('register') }}">here</a>.</p>
 </div>
  {% endblock %}

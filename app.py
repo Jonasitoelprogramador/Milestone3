@@ -22,6 +22,13 @@ def get_recipes():
     recipes = mongo.db.recipes.find()
     return render_template("recipes.html", recipes=recipes)
 
+
+@app.route("/search", methods=["GET", "POST"])
+def search():
+    query = request.form.get("query")
+    recipes = list(mongo.db.recipes.find({"$text": {"$search": query}}))
+
+
 @app.route("/add_recipe", methods=["GET", "POST"])
 def add_recipe():
     if request.method == "POST":
@@ -61,6 +68,13 @@ def edit_recipe(recipe_id):
         return render_template("recipes.html", message="recipe updated!")
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
     return render_template("edit_recipe.html", recipe=recipe)
+
+
+@app.route("/delete_recipe/<recipe_id>/")
+def delete_recipe(recipe_id):
+    mongo.db.recipes.remove({"_id": ObjectId(recipe_id)})
+    return render_template("recipes.html", message="recipe deleted!")
+
 
 
 if __name__ == "__main__":

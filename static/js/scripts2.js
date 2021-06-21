@@ -29,7 +29,7 @@ if (document.getElementById("edit h3 title")) {
     for (var j = 0; j < ingredient_delete.length; j++) {
     ingredient_delete[j].addEventListener("click", delete_input);
     }}
-else if (document.getElementById("edit h3 title")) {
+else if (document.getElementById("add h3 title")) {
 event_listener_next_input("next-ingredient", next_input);
 event_listener_next_input("edit", edit_input);
 event_listener_next_input("done", input_done);

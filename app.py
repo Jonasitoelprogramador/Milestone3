@@ -32,9 +32,12 @@ def profile(username):
     # grab the session user's username from db
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
+    recipes = mongo.db.recipes.find()
+
 
     if session["user"]:
-        return render_template("profile.html", username=username)
+        return render_template(
+            "profile.html", username=username, recipes=recipes)
     
     return redirect(url_for("login"))
 
@@ -121,6 +124,7 @@ def add_recipe():
             "method": request.form.getlist("method"),
             "description": request.form.get("description"),
             "cook-time": request.form.get("cook-time"),
+            "user": session['user'],
         }
         print(request.form.to_dict())
         mongo.db.recipes.insert_one(recipe)

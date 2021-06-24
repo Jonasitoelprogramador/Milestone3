@@ -139,6 +139,26 @@ def more_details(recipe_id):
     return render_template("more_details.html", recipe=recipe)
 
 
+@app.route("/like_recipe/<recipe_id>/", methods=["GET", "POST"])
+def like_recipe(recipe_id):
+    if request.method == "POST":
+        mongo.db.collection.update({'_id': ObjectId(recipe_id)}, 
+        {'$set':{'liked_by': session['user']}})
+        recipe = {
+            "name": hi,
+            "nationality": hi,
+            "ingredients": hi,
+            "method": hi,
+            "description": hi,
+            "cook-time": hi,
+            "user": session['user'],
+        }
+        print(request.form.to_dict())
+        mongo.db.recipes.insert_one(recipe)
+        return render_template("recipes.html", message="recipe liked!")
+    return render_template("recipes.html")
+
+
 # This has been inspired by code in CS's project "task manager"
 @app.route("/edit_recipe/<recipe_id>/", methods=["GET", "POST"])
 def edit_recipe(recipe_id):
@@ -163,7 +183,6 @@ def edit_recipe(recipe_id):
 def delete_recipe(recipe_id):
     mongo.db.recipes.remove({"_id": ObjectId(recipe_id)})
     return render_template("recipes.html", message="recipe deleted!")
-
 
 
 if __name__ == "__main__":

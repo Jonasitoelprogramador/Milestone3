@@ -142,20 +142,14 @@ def more_details(recipe_id):
 @app.route("/like_recipe/<recipe_id>/", methods=["GET", "POST"])
 def like_recipe(recipe_id):
     if request.method == "POST":
-        mongo.db.collection.update({'_id': ObjectId(recipe_id)}, 
-        {'$set':{'liked_by': session['user']}})
-        recipe = {
-            "name": hi,
-            "nationality": hi,
-            "ingredients": hi,
-            "method": hi,
-            "description": hi,
-            "cook-time": hi,
-            "user": session['user'],
-        }
-        print(request.form.to_dict())
-        mongo.db.recipes.insert_one(recipe)
-        return render_template("recipes.html", message="recipe liked!")
+        if mongo.db.recipes.find_one({ '_id': ObjectId(recipe_id)})['liked_by']:
+            mongo.db.recipes.update({'_id': ObjectId(recipe_id)}, { '$push':
+            {'liked_by': session['user']}})
+            return render_template("recipes.html", message="recipe liked!")
+        else: 
+            mongo.db.recipes.update({'_id': ObjectId(recipe_id)}, { '$set':
+            {'liked_by': session['user']}})
+            return render_template("recipes.html", message="recipe liked!")
     return render_template("recipes.html")
 
 

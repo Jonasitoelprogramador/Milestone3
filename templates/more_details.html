@@ -21,7 +21,7 @@
  <a href="{{  url_for('edit_recipe', recipe_id=recipe._id) }}" class="btn btn-primary" type="button" style="margin-left: 20px;">Edit</a>
  <a href="{{  url_for('delete_recipe', recipe_id=recipe._id) }}" class="btn btn-primary" type="button" style="margin-left: 20px;">Delete</a>
  <form method="POST" action="{{ url_for('like_recipe', recipe_id=recipe._id) }}">
-    <input class="btn btn-primary" type="button" style="margin-left: 20px;" value="like">
+    <input class="btn btn-primary" type="submit" style="margin-left: 20px;" value="Like">
  </form>
  {% endif %}
  <!--<p>This recipe has been liked by</p>{{liked_by}}-->

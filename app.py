@@ -142,12 +142,13 @@ def more_details(recipe_id):
 @app.route("/like_recipe/<recipe_id>/", methods=["GET", "POST"])
 def like_recipe(recipe_id):
     if request.method == "POST":
-        if mongo.db.recipes.find_one({ '_id': ObjectId(recipe_id)})['liked_by']:
-            mongo.db.recipes.update({'_id': ObjectId(recipe_id)}, { '$push':
+        try: 
+            mongo.db.recipes.find_one({'_id': ObjectId(recipe_id)})['liked_by']
+            mongo.db.recipes.update({'_id': ObjectId(recipe_id)}, {'$push':
             {'liked_by': session['user']}})
             return render_template("recipes.html", message="recipe liked!")
-        else: 
-            mongo.db.recipes.update({'_id': ObjectId(recipe_id)}, { '$set':
+        except: 
+            mongo.db.recipes.update({'_id': ObjectId(recipe_id)}, {'$set':
             {'liked_by': session['user']}})
             return render_template("recipes.html", message="recipe liked!")
     return render_template("recipes.html")
@@ -157,17 +158,16 @@ def like_recipe(recipe_id):
 @app.route("/edit_recipe/<recipe_id>/", methods=["GET", "POST"])
 def edit_recipe(recipe_id):
     if request.method == "POST":
-        submit = {
-            "name": request.form.get("name"),
-            "nationality": request.form.get("nationality"),
-            "ingredients": request.form.getlist("ingredients"),
-            "method": request.form.getlist("method"),
-            "description": request.form.get("description"),
-            "cook-time": request.form.get("cook-time"),
-        }
-        print(request.form.to_dict())
-        mongo.db.recipes.update({"_id": ObjectId(recipe_id)}, submit)
-        return render_template("recipes.html", message="recipe updated!")
+            submit = {
+                "name": request.form.get("name"),
+                "nationality": request.form.get("nationality"),
+                "ingredients": request.form.getlist("ingredients"),
+                "method": request.form.getlist("method"),
+                "description": request.form.get("description"),
+                "cook-time": request.form.get("cook-time"),
+            }
+            mongo.db.recipes.update({"_id": ObjectId(recipe_id)}, submit)
+            return render_template("recipes.html", message="recipe updated!")
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
     return render_template("edit_recipe.html", recipe=recipe)
 

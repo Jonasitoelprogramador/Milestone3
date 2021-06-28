@@ -123,7 +123,7 @@ def add_recipe():
             "ingredients": request.form.getlist("ingredients"),
             "method": request.form.getlist("method"),
             "description": request.form.get("description"),
-            "cook-time": request.form.get("cook-time"),
+            "time": request.form.get("time"),
             "user": session['user'],
         }
         print(request.form.to_dict())
@@ -143,14 +143,16 @@ def more_details(recipe_id):
 def like_recipe(recipe_id):
     if request.method == "POST":
         try: 
-            mongo.db.recipes.find_one({'_id': ObjectId(recipe_id)})['liked_by']
+            recipe = mongo.db.recipes.find_one({'_id': ObjectId(recipe_id)})
+            recipe['liked_by']
             mongo.db.recipes.update({'_id': ObjectId(recipe_id)}, {'$push':
             {'liked_by': session['user']}})
-            return render_template("recipes.html", message="recipe liked!")
+            return render_template("more_details.html", recipe=recipe)
         except: 
+            recipe = mongo.db.recipes.find_one({'_id': ObjectId(recipe_id)})
             mongo.db.recipes.update({'_id': ObjectId(recipe_id)}, {'$set':
             {'liked_by': session['user']}})
-            return render_template("recipes.html", message="recipe liked!")
+            return render_template("more_details.html", recipe=recipe)
     return render_template("recipes.html")
 
 
@@ -164,7 +166,7 @@ def edit_recipe(recipe_id):
                 "ingredients": request.form.getlist("ingredients"),
                 "method": request.form.getlist("method"),
                 "description": request.form.get("description"),
-                "cook-time": request.form.get("cook-time"),
+                "time": request.form.get("time"),
             }
             mongo.db.recipes.update({"_id": ObjectId(recipe_id)}, submit)
             return render_template("recipes.html", message="recipe updated!")

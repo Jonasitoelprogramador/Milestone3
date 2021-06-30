@@ -7,7 +7,7 @@
  <h3>Ingredients:</h3>
  <ul>
      {% for ingredient in recipe.ingredients %}
-     <li>{{ingredient}}</li>
+        <li>{{ingredient}}</li>
     {% endfor %}     
 </ul>
 <h3>Method:</h3>
@@ -24,10 +24,12 @@
     <input class="btn btn-primary" type="submit" style="margin-left: 20px;" value="Like">
  </form>
  {% endif %}
- <p>This recipe has been liked by</p>
- <p>{% for liked in recipe.liked_by|unique %}
-        <p>{{liked}}</p>
-    {% endfor %}</p>
+ <span>Liked by:</span>
+ <ul>
+    {% for liked in recipe.liked_by|unique %}
+        <li>{{liked}}</li>
+    {% endfor %}
+</ul>
 {% endblock %}
 
 

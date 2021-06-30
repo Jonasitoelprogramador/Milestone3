@@ -142,13 +142,12 @@ def more_details(recipe_id):
 
 @app.route("/like_recipe/<recipe_id>/", methods=["GET", "POST"])
 def like_recipe(recipe_id):
-    recipe = mongo.db.recipes.find_one({'_id': ObjectId(recipe_id)})
-    recipe['liked_by']
-    mongo.db.recipes.update({'_id': ObjectId(recipe_id)}, {'$push':
-    {'liked_by': session['user']}})
+    mongo.db.recipes.update({'_id': ObjectId(recipe_id)}, {
+        '$push': {'liked_by': session['user']}})
+    mongo.db.recipes.update({'_id': ObjectId(recipe_id)}, {
+        '$pull': {'liked_by': "be the first to like this!"}})
     new_recipe = mongo.db.recipes.find_one({'_id': ObjectId(recipe_id)})
     return render_template("more_details.html", recipe=new_recipe)
-
 
 
 # This has been inspired by code in CS's project "task manager"

@@ -125,6 +125,7 @@ def add_recipe():
             "description": request.form.get("description"),
             "time": request.form.get("time"),
             "user": session['user'],
+            "liked_by": request.form.getlist("liked_by"),
         }
         print(request.form.to_dict())
         mongo.db.recipes.insert_one(recipe)
@@ -141,19 +142,13 @@ def more_details(recipe_id):
 
 @app.route("/like_recipe/<recipe_id>/", methods=["GET", "POST"])
 def like_recipe(recipe_id):
-    if request.method == "POST":
-        try: 
-            recipe = mongo.db.recipes.find_one({'_id': ObjectId(recipe_id)})
-            recipe['liked_by']
-            mongo.db.recipes.update({'_id': ObjectId(recipe_id)}, {'$push':
-            {'liked_by': session['user']}})
-            return render_template("more_details.html", recipe=recipe)
-        except: 
-            recipe = mongo.db.recipes.find_one({'_id': ObjectId(recipe_id)})
-            mongo.db.recipes.update({'_id': ObjectId(recipe_id)}, {'$set':
-            {'liked_by': session['user']}})
-            return render_template("more_details.html", recipe=recipe)
-    return render_template("recipes.html")
+    recipe = mongo.db.recipes.find_one({'_id': ObjectId(recipe_id)})
+    recipe['liked_by']
+    mongo.db.recipes.update({'_id': ObjectId(recipe_id)}, {'$push':
+    {'liked_by': session['user']}})
+    new_recipe = mongo.db.recipes.find_one({'_id': ObjectId(recipe_id)})
+    return render_template("more_details.html", recipe=new_recipe)
+
 
 
 # This has been inspired by code in CS's project "task manager"

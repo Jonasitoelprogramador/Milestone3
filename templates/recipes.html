@@ -6,15 +6,13 @@
     {% for recipe in recipes %}
     <div class="col mb-5">
                         <div class="card h-100">
-                            <!-- Product image-->
-                            <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
                             <!-- Product details-->
                             <div class="card-body p-4">
                                 <div class="text-center">
                                     <!-- Product name-->
                                     <h5 class="fw-bolder">{{recipe.name}}<br></h5>
     <p><br>{{recipe.description}}<br></p>
-    
+    <p><br>Added by: {{recipe.user}}<br></p>
                                 </div>
                             </div>
                             <!-- Product actions-->

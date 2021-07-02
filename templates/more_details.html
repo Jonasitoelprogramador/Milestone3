@@ -1,35 +1,51 @@
 
 {% extends "index.html" %}
  {% block content %}
- <h2>{{recipe.name}}</h2>
- <p>Nationality: {{recipe.nationality}}</p>
- <p>Cook time: {{recipe.time}} hours</p>
- <h3>Ingredients:</h3>
- <ul>
-     {% for ingredient in recipe.ingredients %}
-        <li>{{ingredient}}</li>
-    {% endfor %}     
-</ul>
-<h3>Method:</h3>
- <ol>
-     {% for step in recipe.method %}
-     <li>{{step}}</li>
-     {% endfor %}     
-</ol>
- <p>Description: {{recipe.description}}</p>
- {% if session.user %}
- <a href="{{  url_for('edit_recipe', recipe_id=recipe._id) }}" class="btn btn-primary" type="button" style="margin-left: 20px;">Edit</a>
- <a href="{{  url_for('delete_recipe', recipe_id=recipe._id) }}" class="btn btn-primary" type="button" style="margin-left: 20px;">Delete</a>
- <form method="POST" action="{{ url_for('like_recipe', recipe_id=recipe._id) }}">
-    <input class="btn btn-primary" type="submit" style="margin-left: 20px;" value="Like">
- </form>
- {% endif %}
- <span>Liked by:</span>
- <ul class="no-margin">
-    {% for liked in recipe.liked_by|unique %}
-        <li>{{liked}}</li>
-    {% endfor %}
-</ul>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 text-center">
+        <div class="card mx-auto ingredients-card" style="width: 18rem;">
+            <div class="card-body">
+                <h2>{{recipe.name}}</h2>
+                <p>Nationality: {{recipe.nationality}}</p>
+                <p>Cook time: {{recipe.time}} hours</p>
+                <h3>Ingredients:</h3>
+                <ul>
+                    {% for ingredient in recipe.ingredients %}
+                       <li>{{ingredient}}</li>
+                   {% endfor %}     
+               </ul>
+               <p>Description: {{recipe.description}}</p>
+            </div>
+          </div>
+      </div>
+      <div class="col-md-6 text-center">
+        <div class="card mx-auto text-center ingredients-card" style="width: 18rem;">
+            <div class="card-body">
+                <h3>Method:</h3>
+                <ol>
+                    {% for step in recipe.method %}
+                    <li>{{step}}</li>
+                    {% endfor %}     
+               </ol>
+                {% if session.user %}
+                <a href="{{  url_for('edit_recipe', recipe_id=recipe._id) }}" class="btn btn-primary" type="button" style="margin-left: 20px;">Edit</a>
+                <a href="{{  url_for('delete_recipe', recipe_id=recipe._id) }}" class="btn btn-primary" type="button" style="margin-left: 20px;">Delete</a>
+                <form method="POST" action="{{ url_for('like_recipe', recipe_id=recipe._id) }}">
+                   <input class="btn btn-primary" type="submit" style="margin-left: 20px;" value="Like">
+                </form>
+                {% endif %}
+                <span>Liked by:</span>
+                <ul class="no-margin">
+                   {% for liked in recipe.liked_by|unique %}
+                       <li>{{liked}}</li>
+                   {% endfor %}
+               </ul>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
 {% endblock %}
 
 

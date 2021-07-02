@@ -2,22 +2,22 @@
  {% block content %}
     <section class="py-5">
             <div class="container px-4 px-lg-5 mt-5">
-                <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+                <div class="row gx-4 gx-lg-5 row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
     {% for recipe in recipes %}
     <div class="col mb-5">
-                        <div class="card h-100">
+                        <div class="card h-100  indigo-dark-background">
                             <!-- Product details-->
                             <div class="card-body p-4">
                                 <div class="text-center">
                                     <!-- Product name-->
-                                    <h5 class="fw-bolder">{{recipe.name}}<br></h5>
-    <p><br>{{recipe.description}}<br></p>
-    <p><br>Added by: {{recipe.user}}<br></p>
+                                    <h5 class="fw-bolder white-text">{{recipe.name}}<br></h5>
+    <p class="white-text"><br>{{recipe.description}}<br></p>
+    <p class="white-text"><br>Added by: {{recipe.user}}<br></p>
                                 </div>
                             </div>
                             <!-- Product actions-->
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="{{ url_for('more_details', recipe_id=recipe._id)}}">More details</a></div>
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent white-text">
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto white-text white-border" href="{{ url_for('more_details', recipe_id=recipe._id)}}">More details</a></div>
                             </div>
                         </div>
                     </div>

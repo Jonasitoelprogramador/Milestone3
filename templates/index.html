@@ -16,40 +16,39 @@
     </head>
     <body>
         <!-- Navigation-->
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <nav class="navbar navbar-expand-lg navbar-light green-dark-background">
             <div class="container px-4 px-lg-5">
-                <a class="navbar-brand" href="{{ url_for('get_recipes') }}">Home</a>
+                <a class="navbar-brand indigo-dark-text" href="{{ url_for('get_recipes') }}">Home</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
                         {% if session.user %}
-                            <li class="nav-item"><a class="nav-link active" aria-current="page" href="{{ url_for('logout') }}">Logout</a></li>
-                            <li class="nav-item"><a class="nav-link active" aria-current="page" href="{{ url_for('profile', username=session['user']) }}">User Page</a></li>
-                            <li class="nav-item"><a class="nav-link active" aria-current="page" href="{{ url_for('add_recipe') }}">Add Recipe</a></li>
+                            <li class="nav-item"><a class="nav-link active indigo-dark-text" aria-current="page" href="{{ url_for('logout') }}">Logout</a></li>
+                            <li class="nav-item"><a class="nav-link active indigo-dark-text" aria-current="page" href="{{ url_for('profile', username=session['user']) }}">User Page</a></li>
+                            <li class="nav-item"><a class="nav-link active indigo-dark-text" aria-current="page" href="{{ url_for('add_recipe') }}">Add Recipe</a></li>
                         {% else %}
-                            <li class="nav-item"><a class="nav-link active" aria-current="page" href="{{ url_for('register') }}">Register</a></li>
-                            <li class="nav-item"><a class="nav-link active" aria-current="page" href="{{ url_for('login') }}">Login</a></li>
+                            <li class="nav-item"><a class="nav-link active indigo-dark-text" aria-current="page" href="{{ url_for('register') }}">Register</a></li>
+                            <li class="nav-item"><a class="nav-link active indigo-dark-text" aria-current="page" href="{{ url_for('login') }}">Login</a></li>
                         {% endif %}
                     </ul>
                     <form action="{{ url_for('search') }}" method="POST">
-                        <input type="text" name="query" id="query" minlength="3" class="validate" required>
-                        <label for="query">Search</label>
-                        <button type="submit">
+                        <input id="search-input" type="text" name="query" id="query" minlength="3" class="validate" required>
+                        <input id="search" type="submit" class="indigo-dark-background btn btn-primary" value="search">
                     </form>
                 </div>
             </div>
         </nav>
         <!-- Header-->
-        <header class="bg-blue py-5">
+        <header class="py-5 indigo-dark-background">
             <div class="container px-4 px-lg-5 my-5">
-                <div class="text-center text-white">
-                    <h1 class="display-4 fw-bolder">Recipes for one and all!</h1>
-                    <p class="lead fw-normal text-white-50 mb-0">Welcome to your new home of recipes!</p>
+                <div class="text-center">
+                    <h1 class="display-4 fw-bolder green-dark-text">Recipes for one and all!</h1>
+                    <p class="lead mb-0 green-dark-text">Welcome to your new home of recipes!</p>
                 </div>
             </div>
         </header>
         <!-- Section-->
-        <section>
+        <section class="green-dark-background">
         <!-- flash messages - THIS IS TAKEN FROM CODE INSTITUE VIDEO on creating auser for your website -->
         {% with messages = get_flashed_messages() %}
             {% if messages %}
@@ -60,27 +59,26 @@
                 {% endfor %}
             {% endif %}
         {% endwith %}
-    </section>
 
-    {% block content %}
-    {% endblock %}
+        {% block content %}
+        {% endblock %}
         </section>
         <!-- Footer-->
-        <footer>
-            <div class="container">
+        <footer class="indigo-dark-background">
+            <div class="container" id="footer-padding">
                 <div class="row">
-                    <p class="col-sm-12 col-md-6 col-lg-4 text-center margin-auto margin-bottom"><em><strong>Contact</strong></em><br> If you would like to contact Jonasitoelprogramador to give feedback or for any other reason, please contact him <a href="mailto:Jonasitoelprogramdor@journeyman.com" target="_blank" rel="noopener noreferrer" class="here-style" aria-label="opens email platform with email addressed to Jonasitoelprogramdor@journeyman.com">here</a>.</p>
-                    <p class="col-sm-12 col-md-6 col-lg-4 text-center margin-auto margin-bottom"><em><strong>Copyright &copy; RecipesWithFriends</strong></em></p>
+                    <p class="col-sm-12 col-md-6 col-lg-4 text-center margin-auto margin-bottom green-dark-text"><em><strong>Contact</strong></em><br>If you would like to contact Jonasitoelprogramador to give feedback or for any other reason, please contact him <a href="mailto:Jonasitoelprogramdor@journeyman.com" target="_blank" rel="noopener noreferrer" class="here-style" aria-label="opens email platform with email addressed to Jonasitoelprogramdor@journeyman.com">here</a>.</p>
                     <ul class="media-links no-padding col-sm-12 col-md-6 col-lg-4 text-center margin-bottom margin-top media-links">
-                        <li class="inline-block"><a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-square" aria-label="opens new tab to facebook"></i></a>
+                        <li class="inline-block"><a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-square green-dark-text" aria-label="opens new tab to facebook"></i></a>
                         </li>
-                        <li class="inline-block"><a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram" aria-label="opens new tab to instagram"></i></a>
+                        <li class="inline-block"><a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram green-dark-text" aria-label="opens new tab to instagram"></i></a>
                         </li>
-                        <li class="inline-block"><a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter-square" aria-label="opens new tab to twitter"></i></a>
+                        <li class="inline-block"><a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter-square green-dark-text" aria-label="opens new tab to twitter"></i></a>
                         </li>
-                        <li class="inline-block"><a href="https://www.youtube.com" target="_blank"><i class="fab fa-youtube-square" aria-label="opens new tab to youtube"></i></a>
+                        <li class="inline-block"><a href="https://www.youtube.com" target="_blank"><i class="fab fa-youtube-square green-dark-text" aria-label="opens new tab to youtube"></i></a>
                         </li>
                     </ul>
+                    <p class="col-sm-12 col-md-12 col-lg-4 text-center margin-auto margin-bottom green-dark-text"><em><strong>Copyright &copy; RecipesWithFriends</strong></em><br>If you would like more information regarding Jonasito's copyright policy please contact him directly.</p>
                 </div>
             </div>
         </footer>

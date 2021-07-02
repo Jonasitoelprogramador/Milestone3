@@ -10885,3 +10885,40 @@ textarea.form-control-lg {
 .margin-top {
     margin-top: 30px;
 }
+
+.indigo-dark-background {
+  background-color: #093045;
+}
+
+.green-dark-text {
+  color: #92A660 !important;
+}
+
+.green-dark-background {
+  background-color: #92A660;
+}
+
+.indigo-dark-text {
+  color: #093045 !important;
+}
+
+#search {
+  background-color: #093045;
+  border-color: #093045;
+}
+
+#footer-padding {
+  padding-top: 30px;
+}
+
+.white-text {
+  color: white;
+}
+
+.white-border {
+  border-color: white;
+}
+
+.no-margin {
+  margin: 0;
+}

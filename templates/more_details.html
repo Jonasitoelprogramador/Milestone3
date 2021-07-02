@@ -25,7 +25,7 @@
  </form>
  {% endif %}
  <span>Liked by:</span>
- <ul>
+ <ul class="no-margin">
     {% for liked in recipe.liked_by|unique %}
         <li>{{liked}}</li>
     {% endfor %}

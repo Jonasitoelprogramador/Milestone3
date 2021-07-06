@@ -1173,11 +1173,6 @@ progress {
     width: 91.6666666667%;
   }
 
-  .col-md-12 {
-    flex: 0 0 auto;
-    width: 100%;
-  }
-
   .offset-md-0 {
     margin-left: 0;
   }
@@ -10940,7 +10935,7 @@ textarea.form-control-lg {
 }
 
 .white-text {
-  color: white;
+  color: #FFFFF0;
 }
 
 .white-border {
@@ -10976,10 +10971,23 @@ textarea.form-control-lg {
   padding-bottom: 50px;
 }
 
+
 @media (max-width: 1399px) {
   .col-md-6 {
-    width: 50%;
+    width: 32%;
   }
 }
+
+@media (max-width: 991px) {
+  .col-md-6 {
+    width: 45%;
+  }
+}
+
+
+
+
+
+
 
 

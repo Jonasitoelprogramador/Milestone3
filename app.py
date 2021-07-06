@@ -24,7 +24,7 @@ mongo = PyMongo(app)
 @app.route("/get_recipes")
 def get_recipes():
     recipes = mongo.db.recipes.find()
-    return render_template("recipes.html", recipes=recipes)
+    return render_template("recipes.html", recipes=recipes, title="Recipes for one and all!", subtitle="Welcome to your new home of recipes!")
 
 
 # This has been taken from CI's example project "task manager"
@@ -38,7 +38,7 @@ def profile(username):
 
     if session["user"]:
         return render_template(
-            "profile.html", username=username, recipes=recipes)
+            "profile.html", username=username, recipes=recipes, title=username+"'s recipes")
     
     return redirect(url_for("login"))
 
@@ -75,7 +75,7 @@ def register():
         flash("Registration Successful!")
         return redirect(url_for("profile", username=session["user"]))
 
-    return render_template("register.html")
+    return render_template("register.html", title="Get started!")
 
 
 # This has been taken from CI's example project "task manager"
@@ -103,7 +103,7 @@ def login():
             flash("Incorrect Username and/or Password")
             return redirect(url_for("login"))
 
-    return render_template("login.html")
+    return render_template("login.html", title="Welcome back you cheeky monkey")
 
 
 # This has been inspired by code in CS's project "task manager"
@@ -111,7 +111,7 @@ def login():
 def search():
     query = request.form.get("query")
     recipes = list(mongo.db.recipes.find({"$text": {"$search": query}}))
-    return render_template("recipes.html", recipes=recipes)
+    return render_template("recipes.html", recipes=recipes, title="voilà")
 
 
 # This has been inspired by code in CS's project "task manager"
@@ -130,15 +130,17 @@ def add_recipe():
         }
         print(request.form.to_dict())
         mongo.db.recipes.insert_one(recipe)
-        return render_template("recipes.html", message="recipe submitted!")
-    return render_template("add_recipe.html")
+        return render_template("recipes.html", message="recipe submitted!", title="Thanks!")
+    return render_template("add_recipe.html", title="What is the last recipe you really enjoyed?")
 
 
 # This has been inspired by code in CS's project "task manager"
 @app.route("/more_details/<recipe_id>/", methods=["GET"])
 def more_details(recipe_id):
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
-    return render_template("more_details.html", recipe=recipe)
+    recipe_name = recipe["name"]
+    recipe_description = recipe['description']
+    return render_template("more_details.html", recipe=recipe, title=recipe_name, subtitle=recipe_description)
 
 
 @app.route("/like_recipe/<recipe_id>/", methods=["GET", "POST"])
@@ -148,7 +150,7 @@ def like_recipe(recipe_id):
     mongo.db.recipes.update({'_id': ObjectId(recipe_id)}, {
         '$pull': {'liked_by': "be the first to like this!"}})
     new_recipe = mongo.db.recipes.find_one({'_id': ObjectId(recipe_id)})
-    return render_template("more_details.html", recipe=new_recipe)
+    return render_template("more_details.html", recipe=new_recipe, title=recipe_name, subtitle=recipe_description)
 
 
 # This has been inspired by code in CS's project "task manager"
@@ -164,16 +166,17 @@ def edit_recipe(recipe_id):
                 "time": request.form.get("time"),
             }
             mongo.db.recipes.update({"_id": ObjectId(recipe_id)}, submit)
-            return render_template("recipes.html", message="recipe updated!")
+            return render_template(
+                "recipes.html", message="recipe updated!", recipes=recipes, title="Recipes for one and all!", subtitle="Welcome to your new home of recipes!")
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
-    return render_template("edit_recipe.html", recipe=recipe)
+    return render_template("edit_recipe.html", recipe=recipe, title="What do you need to change?")
 
 
 # This has been inspired by code in CS's project "task manager"
 @app.route("/delete_recipe/<recipe_id>/")
 def delete_recipe(recipe_id):
     mongo.db.recipes.remove({"_id": ObjectId(recipe_id)})
-    return render_template("recipes.html", message="recipe deleted!")
+    return render_template("recipes.html", message="recipe deleted!", recipes=recipes, title="Recipes for one and all!", subtitle="Welcome to your new home of recipes!")
 
 
 if __name__ == "__main__":

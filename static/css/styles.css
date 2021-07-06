@@ -4276,8 +4276,8 @@ textarea.form-control-lg {
   word-wrap: break-word;
   background-color: #fff;
   background-clip: border-box;
-  border: 10px solid #093045;
-  border-right: 5px solid #093045 !important;
+  border: 10px solid #fff;
+  border-right: 5px solid #fff !important;
   border-radius: 0.25rem;
 }
 
@@ -4289,8 +4289,8 @@ textarea.form-control-lg {
   word-wrap: break-word;
   background-color: #fff;
   background-clip: border-box;
-  border: 10px solid #093045;
-  border-left: 5px solid #093045 !important;
+  border: 10px solid #fff;
+  border-left: 5px solid #fff !important;
   border-radius: 0.25rem;
 }
 

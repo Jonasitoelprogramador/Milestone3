@@ -1,11 +1,11 @@
 
 {% extends "index.html" %}
  {% block content %}
-  <div class="container">
+<div class="container section-padding">
     <div class="row">
-      <div class="col-md-6 text-center">
-        <div class="card mx-auto ingredients-card" style="width: 18rem;">
-            <div class="card-body">
+      <div class="col-md-6 text-center padding-right-zero">
+        <div class="card1 margin-right-zero ingredients-card height-100">
+            <div class="card-body height-100 green-dark-background">
                 <h2>{{recipe.name}}</h2>
                 <p>Nationality: {{recipe.nationality}}</p>
                 <p>Cook time: {{recipe.time}} hours</p>
@@ -17,11 +17,11 @@
                </ul>
                <p>Description: {{recipe.description}}</p>
             </div>
-          </div>
+        </div>
       </div>
-      <div class="col-md-6 text-center">
-        <div class="card mx-auto text-center ingredients-card" style="width: 18rem;">
-            <div class="card-body">
+      <div class="col-md-6 text-center padding-left-zero">
+        <div class="card2 margin-left-zero text-center ingredients-card height-100">
+            <div class="card-body height-100 green-dark-background">
                 <h3>Method:</h3>
                 <ol>
                     {% for step in recipe.method %}

@@ -641,6 +641,7 @@ progress {
   margin-top: calc(var(--bs-gutter-y) * -1);
   margin-right: calc(var(--bs-gutter-x) / -2);
   margin-left: calc(var(--bs-gutter-x) / -2);
+  justify-content: center;
 }
 .row > * {
   flex-shrink: 0;
@@ -1144,7 +1145,7 @@ progress {
 
   .col-md-6 {
     flex: 0 0 auto;
-    width: 50%;
+    width: 30%;
   }
 
   .col-md-7 {
@@ -4268,9 +4269,36 @@ textarea.form-control-lg {
   word-wrap: break-word;
   background-color: #fff;
   background-clip: border-box;
-  border: 1px solid rgba(0, 0, 0, 0.125);
+  border: 10px solid #093045;
   border-radius: 0.25rem;
 }
+
+.card1 {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 10px solid #093045;
+  border-right: 5px solid #093045 !important;
+  border-radius: 0.25rem;
+}
+
+.card2 {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 10px solid #093045;
+  border-left: 5px solid #093045 !important;
+  border-radius: 0.25rem;
+}
+
 .card > hr {
   margin-right: 0;
   margin-left: 0;
@@ -10923,6 +10951,35 @@ textarea.form-control-lg {
   margin: 0;
 }
 
-.ingredients-card {
-  
+.margin-right-zero {
+  margin-right: 0px !important;
 }
+
+.margin-left-zero {
+  margin-left: 0px !important;
+}
+
+.padding-right-zero {
+  padding-right: 0px;
+}
+
+.padding-left-zero {
+  padding-left: 0px;
+}
+
+.height-100 {
+  height: 100%;
+}
+
+.section-padding {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+@media (max-width: 1399px) {
+  .col-md-6 {
+    width: 50%;
+  }
+}
+
+

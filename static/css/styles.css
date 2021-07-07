@@ -2945,8 +2945,7 @@ textarea.form-control-lg {
 
 .btn-primary {
   color: #fff;
-  background-color: #0d6efd;
-  border-color: #0d6efd;
+  
 }
 .btn-primary:hover {
   color: #fff;
@@ -10925,10 +10924,6 @@ textarea.form-control-lg {
   color: #093045 !important;
 }
 
-.my-buttons {
-  border-color: #093045;
-}
-
 #footer-padding {
   padding-top: 30px;
 }
@@ -11003,9 +10998,10 @@ textarea.form-control-lg {
   margin-bottom: 10px;
 }
 
-.form {
+.form-card {
   width: 60%;
   margin: auto;
+  text-align: center
 }
 
 .padding-top-bottom-50 {
@@ -11013,7 +11009,26 @@ textarea.form-control-lg {
   padding-bottom: 50px;
 }
 
+.register-form {
+  width: 50%;
+}
 
+.form-card {
+  width: 40%;
+}
 
+.form-call-action {
+  margin-top: 20px;
+}
 
+.dark-green-border {
+  border-color: #92A660;
+}
 
+.dark-indigo-border {
+  border-color: #093045;
+}
+
+.form-call-action a {
+  width: 75%;
+}

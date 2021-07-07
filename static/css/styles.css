@@ -11003,7 +11003,15 @@ textarea.form-control-lg {
   margin-bottom: 10px;
 }
 
+.form {
+  width: 60%;
+  margin: auto;
+}
 
+.padding-top-bottom-50 {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
 
 
 

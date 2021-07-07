@@ -1,30 +1,24 @@
 {% extends "index.html" %}
  {% block content %}
  <!--Inspired by bootstrap cards: https://getbootstrap.com/docs/4.0/components/card/-->
-<div class="container">
-    <div class="row">
-            <div class="card text-center">
-                <div class="card-header">
-                    Featured
+<div class="container padding-top-bottom-50">
+    <div class="card form">
+        <div class="card-body">
+            <form method="POST" action="{{ url_for('register') }}"> 
+                <div class="row">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" class="validate" minlength="5" maxlength="15" required>
                 </div>
-            </div>
-            <div class="card-body">
-                    <h5 class="card-title">Special title treatment</h5>
-            </div>
-    </div>
-    <form method="POST" action="{{ url_for('register') }}"> 
-        <div class="row">
-            <label for="username">Username</label>
-            <input type="text" id="username" name="username" class="validate" minlength="5" maxlength="15" required>
+                <div class="row">
+                    <label for="password">Password</label>
+                    <input type="text" id="password" name="password" class="validate" minlength="5" maxlength="15" required>
+                </div>
+                <div class="row">
+                    <input type="submit" class="btn btn-primary" value="Register">
+                </div>
+            </form>
         </div>
-        <div class="row">
-            <label for="password">Password</label>
-            <input type="text" id="password" name="password" class="validate" minlength="5" maxlength="15" required>
-        </div>
-        <div class="row">
-            <input type="submit" class="btn btn-primary" value="Register">
-        </div>
-    </form> 
+    </div> 
 </div>
 <div class="row">
     <a href="{{ url_for('login') }}">Already registered?</a>

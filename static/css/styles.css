@@ -11032,3 +11032,18 @@ textarea.form-control-lg {
 .form-call-action a {
   width: 75%;
 }
+
+.add-edit-card {
+  width: 60%;
+  margin: auto;
+}
+
+#name-label {
+  margin-right: 35px;
+  margin-bottom: 25px;
+} 
+
+.name-nationality {
+  width: 80%;
+  margin: auto;
+}

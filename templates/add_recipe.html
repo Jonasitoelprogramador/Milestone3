@@ -1,62 +1,69 @@
 {% extends "index.html" %}
  {% block content %}
- <h3 id="add h3 title" style="display: inline;">Add</h3>
  <!--Basic structure taken from: https://getbootstrap.com/docs/4.4/components/forms/-->
- <form method="POST" action="{{ url_for('add_recipe') }}" class="container-fluid">
-   <div class="form-group row">
-        <div class="col-md-12">
-            <label for="exampleFormControlInput1">Name</label>
-            <input type="text" class="form-control" id="exampleFormControlInput1" name="name" placeholder="Sheppard's Bush">
+ <div class="container">
+        <div class="card add-edit-card">
+            <div class="card-body indigo-dark-background">
+                <form method="POST" action="{{ url_for('add_recipe') }}" class="container-fluid">
+                <div class="name-nationality">   
+                    <div class="form-group row">
+                            <div class="col-md-12">
+                                <label for="exampleFormControlInput1" class="white-text" id="name-label">Name</label>
+                                <input type="text" class="form-control" id="exampleFormControlInput1" name="name" placeholder="Sheppard's Bush">
+                            </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-md-12">
+                            <label for="exampleFormControlInput2" class="white-text">Nationality</label>
+                            <input type="text" class="form-control" id="exampleFormControlInput2" name="nationality" placeholder="Pig">
+                        </div>
+                    </div>
+                </div> 
+                <div class="form-group ingredients">
+                    <div class="row">  
+                        <div class="col-md-6">
+                            <label for="exampleFormControlSelect3" style="display: block;" class="white-text">Ingredients</label>
+                            <span style="margin-right: 8px;" class="white-text">1.</span>
+                            <input type="text" class="form-control white-text" name="ingredients" placeholder="Kosovan">
+                        </div>
+                        <div class="col-md-6 top-level-secondary-ingredient-buttons"> 
+                            <input type="button" class="btn btn-primary done green-dark-background" value="Done">
+                            <input type="button" class="btn btn-primary edit green-dark-background" value="Edit">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                            <input type="button" class="btn btn-primary next-ingredient green-dark-background" value="Next Ingredient">
+                    </div>
+                </div>
+                <div class="form-group steps">
+                    <div class="row">  
+                        <div class="col-md-6">
+                            <label for="exampleFormControlSelect3" style="display: block;" class="white-text">Method</label>
+                            <span style="margin-right: 8px;" class="white-text">Step 1:</span>
+                            <input type="text" class="form-control" name="method" placeholder="Put the stuffing in the turkey...">
+                        </div>
+                        <div class="col-md-6 top-level-secondary-ingredient-buttons"> 
+                            <input type="button" class="btn btn-primary done-method green-dark-background" value="Done">
+                            <input type="button" class="btn btn-primary edit-method green-dark-background" value="Edit">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                            <input type="button" class="btn btn-primary next-step green-dark-background" value="Next Step">
+                    </div>
+                </div>    
+                <label for="exampleFormControlSelect6" class="white-text">Description</label>
+                    <textarea type="text" class="form-control" id="exampleFormControlInput6" name="description" placeholder="Delicious smokey flavour coupled with..." rows="6" cols="40"></textarea>
+                <label for="exampleFormControlSelect6" class="white-text">Cook Time</label>
+                    <input type="number" class="form-control" id="exampleFormControlInput7" name="time" placeholder="6">
+                    <input type="text" class="form-control" name="liked_by" value="be the first to like this!" hidden>
+                    <input class="btn btn-primary green-dark-background" type="submit" value="Add Recipe">
+                </form>
+            </div>
         </div>
-  </div>
-  <div class="form-group row">
-    <div class="col-md-12">
-        <label for="exampleFormControlInput2">Nationality</label>
-        <input type="text" class="form-control" id="exampleFormControlInput2" name="nationality" placeholder="Pig">
-    </div>
-  </div>
-  <div class="form-group ingredients">
-    <div class="row">  
-        <div class="col-md-6">
-            <label for="exampleFormControlSelect3" style="display: block;">Ingredients</label>
-            <span style="margin-right: 8px;">1.</span>
-            <input type="text" class="form-control" name="ingredients" placeholder="Kosovan">
-        </div>
-        <div class="col-md-6 top-level-secondary-ingredient-buttons"> 
-            <input type="button" class="btn btn-primary done" value="Done">
-            <input type="button" class="btn btn-primary edit" value="Edit">
-        </div>
-    </div>
-  </div>
-  <div class="row">
-      <div class="col-md-6">
-            <input type="button" class="btn btn-primary next-ingredient" value="Next Ingredient">
-      </div>
-  </div>
-  <div class="form-group steps">
-    <div class="row">  
-        <div class="col-md-6">
-            <label for="exampleFormControlSelect3" style="display: block;">Method</label>
-            <span style="margin-right: 8px;">Step 1:</span>
-            <input type="text" class="form-control" name="method" placeholder="Put the stuffing in the turkey...">
-        </div>
-        <div class="col-md-6 top-level-secondary-ingredient-buttons"> 
-            <input type="button" class="btn btn-primary done-method" value="Done">
-            <input type="button" class="btn btn-primary edit-method" value="Edit">
-        </div>
-    </div>
-  </div>
-  <div class="row">
-      <div class="col-md-6">
-            <input type="button" class="btn btn-primary next-step" value="Next Step">
-      </div>
-  </div>    
-  <label for="exampleFormControlSelect6">Description</label>
-    <input type="text" class="form-control" id="exampleFormControlInput6" name="description" placeholder="Delicious smokey flavour coupled with...">
-  <label for="exampleFormControlSelect6">Cook Time</label>
-    <input type="number" class="form-control" id="exampleFormControlInput7" name="time" placeholder="6">
-    <input type="text" class="form-control" name="liked_by" value="be the first to like this!" hidden>
-    <input class="btn btn-primary" type="submit" value="Add Recipe">
-</form>
+</div>
  {% endblock %}
  

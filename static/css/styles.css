@@ -4276,8 +4276,8 @@ textarea.form-control-lg {
   word-wrap: break-word;
   background-color: #fff;
   background-clip: border-box;
-  border: 10px solid #fff;
-  border-right: 5px solid #fff !important;
+  border: 4px solid #fff;
+  border-right: 2px solid #fff !important;
   border-radius: 0.25rem;
 }
 
@@ -4289,8 +4289,8 @@ textarea.form-control-lg {
   word-wrap: break-word;
   background-color: #fff;
   background-clip: border-box;
-  border: 10px solid #fff;
-  border-left: 5px solid #fff !important;
+  border: 4px solid #fff;
+  border-left: 2px solid #fff !important;
   border-radius: 0.25rem;
 }
 
@@ -10925,8 +10925,7 @@ textarea.form-control-lg {
   color: #093045 !important;
 }
 
-#search {
-  background-color: #093045;
+.my-buttons {
   border-color: #093045;
 }
 
@@ -10939,11 +10938,15 @@ textarea.form-control-lg {
 }
 
 .white-border {
-  border-color: white;
+  border-color: #fff;
 }
 
 .no-margin {
-  margin: 0;
+  margin: 0 !important;
+}
+
+.no-padding {
+  padding: 0;
 }
 
 .margin-right-zero {
@@ -10984,6 +10987,21 @@ textarea.form-control-lg {
   }
 }
 
+.no-list-style {
+  list-style: none;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.margin-top-15 {
+  margin-top: 15px;
+}
+
+.margin-bottom-10 {
+  margin-bottom: 10px;
+}
 
 
 

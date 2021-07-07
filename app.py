@@ -145,6 +145,9 @@ def more_details(recipe_id):
 
 @app.route("/like_recipe/<recipe_id>/", methods=["GET", "POST"])
 def like_recipe(recipe_id):
+    recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
+    recipe_name = recipe["name"]
+    recipe_description = recipe["description"]
     mongo.db.recipes.update({'_id': ObjectId(recipe_id)}, {
         '$push': {'liked_by': session['user']}})
     mongo.db.recipes.update({'_id': ObjectId(recipe_id)}, {

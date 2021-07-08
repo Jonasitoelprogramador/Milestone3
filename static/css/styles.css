@@ -10879,7 +10879,9 @@ textarea.form-control-lg {
 }
 
 .next-ingredient {
-    margin-top: 24px !important;
+    margin-top: 15px !important;
+    width: 150px;
+    display: block;
 }
 
 .margin-bottom {

@@ -10875,13 +10875,11 @@ textarea.form-control-lg {
 }
 
 .next-step {
-    margin-top: 24px !important;
+    width: 150px;
 }
 
 .next-ingredient {
-    margin-top: 15px !important;
     width: 150px;
-    display: block;
 }
 
 .margin-bottom {
@@ -11000,6 +10998,12 @@ textarea.form-control-lg {
   margin-bottom: 10px;
 }
 
+.padding-top-bottom-50 {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+
 .form-card {
   width: 60%;
   margin: auto;
@@ -11036,7 +11040,7 @@ textarea.form-control-lg {
 }
 
 .add-edit-card {
-  width: 60%;
+  width: 50%;
   margin: auto;
 }
 
@@ -11052,4 +11056,13 @@ textarea.form-control-lg {
 .ingredients-input {
   width: 80%;
   margin: auto;
+}
+
+.main-button-add-edit-recipe {
+  display: block;
+  margin-top: 15px !important;
+}
+
+.white-background {
+  background-color: #fff;
 }

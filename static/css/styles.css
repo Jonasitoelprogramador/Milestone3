@@ -11040,10 +11040,14 @@ textarea.form-control-lg {
 
 #name-label {
   margin-right: 35px;
-  margin-bottom: 25px;
-} 
+}
 
 .name-nationality {
+  width: 80%;
+  margin: auto;
+}
+
+.ingredients-input {
   width: 80%;
   margin: auto;
 }

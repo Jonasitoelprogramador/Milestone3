@@ -4,54 +4,54 @@
  <div class="container">
         <div class="card add-edit-card">
             <div class="card-body indigo-dark-background">
-                <form method="POST" action="{{ url_for('add_recipe') }}" class="container-fluid">
+                <form method="POST" action="{{ url_for('add_recipe') }}">
                 <div class="name-nationality">   
-                    <div class="form-group row">
-                            <div class="col-md-12">
+                    <div class="form-group">
+                            <div>
                                 <label for="exampleFormControlInput1" class="white-text" id="name-label">Name</label>
                                 <input type="text" class="form-control" id="exampleFormControlInput1" name="name" placeholder="Sheppard's Bush">
                             </div>
                     </div>
-                    <div class="form-group row">
-                        <div class="col-md-12">
+                    <div class="form-group">
+                        <div>
                             <label for="exampleFormControlInput2" class="white-text">Nationality</label>
                             <input type="text" class="form-control" id="exampleFormControlInput2" name="nationality" placeholder="Pig">
                         </div>
                     </div>
                 </div> 
-                <div class="form-group ingredients">
-                    <div class="row">  
-                        <div class="col-md-6">
+                <div class="form-group ingredients mx-auto ingredients-input">
+                        <div class="mx-auto">  
                             <label for="exampleFormControlSelect3" style="display: block;" class="white-text">Ingredients</label>
-                            <span style="margin-right: 8px;" class="white-text">1.</span>
-                            <input type="text" class="form-control white-text" name="ingredients" placeholder="Kosovan">
                         </div>
-                        <div class="col-md-6 top-level-secondary-ingredient-buttons"> 
+                        <span class="mx-auto" style="width: 50%;">
+                            <span style="margin-right: 8px;" class="white-text">1.</span>
+                            <input type="text" class="form-control white-text" name="ingredients" placeholder="Kosovan" style="width: 54%;">
+                        </span>
+                        <span class="top-level-secondary-ingredient-buttons" style="width: 50%;"> 
                             <input type="button" class="btn btn-primary done green-dark-background" value="Done">
                             <input type="button" class="btn btn-primary edit green-dark-background" value="Edit">
-                        </div>
-                    </div>
+                        </span>
                 </div>
-                <div class="row">
-                    <div class="col-md-6">
+                <div>
+                    <div>
                             <input type="button" class="btn btn-primary next-ingredient green-dark-background" value="Next Ingredient">
                     </div>
                 </div>
                 <div class="form-group steps">
-                    <div class="row">  
-                        <div class="col-md-6">
+                    <div>  
+                        <div>
                             <label for="exampleFormControlSelect3" style="display: block;" class="white-text">Method</label>
                             <span style="margin-right: 8px;" class="white-text">Step 1:</span>
                             <input type="text" class="form-control" name="method" placeholder="Put the stuffing in the turkey...">
                         </div>
-                        <div class="col-md-6 top-level-secondary-ingredient-buttons"> 
+                        <div class="top-level-secondary-ingredient-buttons"> 
                             <input type="button" class="btn btn-primary done-method green-dark-background" value="Done">
                             <input type="button" class="btn btn-primary edit-method green-dark-background" value="Edit">
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-md-6">
+                <div>
+                    <div>
                             <input type="button" class="btn btn-primary next-step green-dark-background" value="Next Step">
                     </div>
                 </div>    

@@ -60,12 +60,9 @@ function next_input() {
         var template_literal = `${number + 1}.`
     }
     var inpt = document.createElement("div");
-    inpt.className = "row";
     inpt.setAttribute = ("type", "text");
     inpt.innerHTML = 
-    `<div class="mx-auto">  
-        <label for="exampleFormControlSelect3" style="display: block;">${template_literal}</label>
-    </div>
+    `<span>${template_literal}</span>
     <span class="mx-auto" style="width: 50%;">
         <div></div>
         <div></div>

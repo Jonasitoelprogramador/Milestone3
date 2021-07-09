@@ -22,9 +22,9 @@
                 <span style="margin-right: 8px;">1.</span>
                 <input type="text" class="form-control" name="ingredients" placeholder="Kosovan" value="{{recipe.ingredients[0]}}">
             </div>
-            <div class="col-md-6 top-level-secondary-ingredient-buttons"> 
-                <input type="button" class="btn btn-primary done" value="Done">
-                <input type="button" class="btn btn-primary edit" value="Edit">
+            <div class="col-md-6 top-level-secondary-ingredient-buttons">
+                <i type="button" class="btn btn-primary edit green-dark-background far fa-edit"></i>
+                <i type="button" class="fas fa-check btn btn-primary done green-dark-background"></i>
             </div>
         </div>
         {% for i in (range(recipe.ingredients|count))[:-1] %}

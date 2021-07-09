@@ -21,21 +21,19 @@
                 </div> 
                 <div class="form-group ingredients mx-auto ingredients-input">
                         <div class="mx-auto">  
-                            <label for="exampleFormControlSelect3" style="display: block;"">Ingredients</label>
+                            <label for="exampleFormControlSelect3" style="display: block;">Ingredients</label>
                         </div>
                         <span class="mx-auto" style="width: 50%;">
                             <span style="margin-right: 8px;">1.</span>
-                            <input type="text" class="form-control" name="ingredients" placeholder="Kosovan" style="width: 54%;">
+                            <input type="text" class="form-control" name="ingredients" placeholder="Kosovan" style="width: 68%;">
                         </span>
                         <span class="top-level-secondary-ingredient-buttons" style="width: 50%;"> 
-                            <input type="button" class="btn btn-primary done green-dark-background" value="Done">
+                            <i type="button" class="btn btn-primary done green-dark-background far fa-edit"></i>
                             <input type="button" class="btn btn-primary edit green-dark-background" value="Edit">
                         </span>
                 </div>
-                <div>
-                    <div>
-                            <input type="button" class="mx-auto btn btn-primary next-ingredient green-dark-background main-button-add-edit-recipe" value="Next Ingredient">
-                    </div>
+                <div class="ingredients-input">
+                        <input type="button" class="mx-auto btn btn-primary next-ingredient green-dark-background main-button-add-edit-recipe" value="Next Ingredient">
                 </div>
                 <div class="form-group steps mx-auto ingredients-input">
                     <div class="mx-auto">  
@@ -43,32 +41,30 @@
                     </div>
                     <span class="mx-auto" style="width: 50%;">
                         <span style="margin-right: 8px;">1.</span>
-                        <input type="text" class="form-control" name="method" placeholder="Put the chicken in the stuffing..." style="width: 54%;">
+                        <input type="text" class="form-control" name="method" placeholder="Put the chicken in the stuffing..." style="width: 68%;">
                     </span>
                     <span class="top-level-secondary-ingredient-buttons" style="width: 50%;"> 
                         <input type="button" class="btn btn-primary done-method green-dark-background" value="Done">
                         <input type="button" class="btn btn-primary edit-method green-dark-background" value="Edit">
                     </span>
                 </div>
-                <div>
-                    <div>
+                <div class="ingredients-input">
                         <input type="button" class="mx-auto btn btn-primary next-step green-dark-background main-button-add-edit-recipe" value="Next Ingredient">
-                    </div>
                 </div>
-                <div>
-                    <div style="width: 80%;" class="mx-auto">
-                        <label for="exampleFormControlSxelect6">Description</label>
-                        <textarea type="text" class="form-control" id="exampleFormControlInput6" name="description" placeholder="Delicious smokey flavour coupled with..." rows="6" cols="40"></textarea>
-                    </div>
-                    <div style="width: 80%;" class="mx-auto">
-                        <label for="exampleFormControlSelect6">Cook Time (in hours)</label>
-                        <input type="number" class="form-control" id="exampleFormControlInput7" name="time" placeholder="6">
-                    </div>
-                    <input type="text" class="form-control" name="liked_by" value="be the first to like this!" hidden>
-                    <div style="width: 80%;" class="mx-auto">
-                        <input class="btn btn-primary green-dark-background mx-auto main-button-add-edit-recipe" type="submit" value="Add Recipe">
-                    </div>
+                
+                <div style="width: 80%;" class="mx-auto">
+                    <label for="exampleFormControlSxelect6">Description</label>
+                    <textarea type="text" class="form-control" id="exampleFormControlInput6" name="description" placeholder="Delicious smokey flavour coupled with..." rows="6" cols="40"></textarea>
                 </div>
+                <div style="width: 80%;" class="mx-auto">
+                    <label for="exampleFormControlSelect6">Cook Time (in hours)</label>
+                    <input type="number" class="form-control" id="exampleFormControlInput7" name="time" placeholder="6">
+                </div>
+                <input type="text" class="form-control" name="liked_by" value="be the first to like this!" hidden>
+                <div style="width: 80%;" class="mx-auto">
+                    <input class="btn btn-primary green-dark-background mx-auto main-button-add-edit-recipe" type="submit" value="Add Recipe">
+                </div>
+                
                 </form>
             </div>
         </div>

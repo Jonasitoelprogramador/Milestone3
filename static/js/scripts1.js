@@ -53,28 +53,25 @@ function next_input() {
         var nme = "ingredients"};
         var number = x.parentElement.children.length;
         x.parentElement.children[number - 1].children[1].children[2].readOnly = true;
-    if (x == document.getElementsByClassName("steps")[0].children[0]) {
-        var template_literal = `Step ${number + 1}:`
+        if (x == document.getElementsByClassName("steps")[0].children[0]) {
+            var template_literal = `Step ${number + 1}:`
     }
     else {
-        var template_literal = `${number + 1}.`
-    }
+        var template_literal = `${number + 1}.`}
     var inpt = document.createElement("div");
     inpt.className = "row";
     inpt.setAttribute = ("type", "text");
     inpt.innerHTML = 
-    `<div class="mx-auto">  
-        <label for="exampleFormControlSelect3" style="display: block;">${template_literal}</label>
+    `<div class="col-md-6">
+            <div></div>
+            <span style="margin-right: 8px;">${template_literal}</span>
+            <input type="text" class="form-control" name=${nme} placeholder="Kosovan">
     </div>
-    <span class="mx-auto" style="width: 50%;">
-        <div></div>
-        <div></div>
-        <input type="text" class="form-control" name="ingredients" placeholder="Kosovan" style="width: 74%;"> 
-    </span>
-    <span class="top-level-secondary-ingredient-buttons" style="width: 50%;">
-        <i type="button" class="${x.parentElement.children[0].children[2].children[0].className}"></i>
-        <i type="button" class="${x.parentElement.children[0].children[2].children[1].className}"></i>
-    </span>`;
+    <div class="col-md-6"> 
+            <input type="button" class="${x.parentElement.children[0].children[1].children[0].className}" value="Done">
+            <input type="button" class="${x.parentElement.children[0].children[1].children[1].className}" value="Edit">
+            <input type="button" class="${d}" value="Delete">
+    </div>`;
     console.log(x.parentElement.children[0].children[1].children[1]);
     var element = x.parentElement;
     console.log(element);

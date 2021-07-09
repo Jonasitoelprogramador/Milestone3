@@ -1,5 +1,6 @@
 {% extends "index.html" %}
  {% block content %}
+ <h3 id="add h3 title" style="display: inline;"></h3>
  <!--Basic structure taken from: https://getbootstrap.com/docs/4.4/components/forms/-->
  <div class="container padding-top-bottom-50">
         <div class="card add-edit-card margin-top-bottom-50">
@@ -20,20 +21,25 @@
                     </div>
                 </div> 
                 <div class="form-group ingredients mx-auto ingredients-input">
+                    <div>
                         <div class="mx-auto">  
                             <label for="exampleFormControlSelect3" style="display: block;">Ingredients</label>
                         </div>
                         <span class="mx-auto" style="width: 50%;">
+                            <div></div>
                             <span style="margin-right: 8px;">1.</span>
-                            <input type="text" class="form-control" name="ingredients" placeholder="Kosovan" style="width: 74%;">
+                            <input type="text" class="form-control" name="ingredients" placeholder="Kosovan" style="width: 74%;"> 
                         </span>
-                        <span class="top-level-secondary-ingredient-buttons" style="width: 50%;"> 
+                        <span class="top-level-secondary-ingredient-buttons" style="width: 50%;">
                             <i type="button" class="btn btn-primary edit green-dark-background far fa-edit"></i>
                             <i type="button" class="fas fa-check btn btn-primary done green-dark-background"></i>
                         </span>
+                    </div>
                 </div>
                 <div class="ingredients-input">
+                    <div>
                         <input type="button" class="mx-auto btn btn-primary next-ingredient green-dark-background main-button-add-edit-recipe" value="Next Ingredient">
+                    </div>
                 </div>
                 <div class="form-group steps mx-auto ingredients-input">
                     <div class="mx-auto">  
@@ -44,8 +50,8 @@
                         <input type="text" class="form-control" name="method" placeholder="Put the chicken in the stuffing..." style="width: 74%;">
                     </span>
                     <span class="top-level-secondary-ingredient-buttons" style="width: 50%;"> 
-                        <i type="button" class="btn btn-primary edit green-dark-background far fa-edit"></i>
-                        <i type="button" class="fas fa-check btn btn-primary done green-dark-background"></i>
+                        <i type="button" class="btn btn-primary edit-method green-dark-background far fa-edit"></i>
+                        <i type="button" class="fas fa-check btn btn-primary done-method green-dark-background"></i>
                     </span>
                 </div>
                 <div class="ingredients-input">

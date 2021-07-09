@@ -30,33 +30,34 @@ if (document.getElementById("edit h3 title")) {
     ingredient_delete[j].addEventListener("click", delete_input);
     }}
 else if (document.getElementById("add h3 title")) {
-event_listener_next_input("next-ingredient", next_input);
-event_listener_next_input("edit", edit_input);
-event_listener_next_input("done", input_done);
-event_listener_next_input("next-step", next_input);
-event_listener_next_input("edit-method", edit_input);
-event_listener_next_input("done-method", input_done);
+
+    event_listener_next_input("next-ingredient", next_input);
+    event_listener_next_input("edit", edit_input);
+    event_listener_next_input("done", input_done);
+    event_listener_next_input("next-step", next_input);
+    event_listener_next_input("edit-method", edit_input);
+    event_listener_next_input("done-method", input_done);
 }
 
 
 function next_input() {
-    if (this.className=="btn btn-primary next-step")
-    {console.log("step"); 
-    var x = document.getElementsByClassName("steps")[0].children[0];
-    var d = "btn btn-primary dlt-method";
-    var nme = "method"
+    if (this.className=="btn btn-primary next-step"){
+        console.log("step"); 
+        var x = document.getElementsByClassName("steps")[0].children[0];
+        var d = "btn btn-primary dlt-method";
+        var nme = "method"
     }
     else {
-    var x = document.getElementsByClassName("ingredients")[0].children[0];
-    console.log("ingredient");
-    var d = "btn btn-primary dlt"
-    var nme = "ingredients"};
-    var number = x.parentElement.children.length;
-    x.parentElement.children[number - 1].children[0].children[2].readOnly = true;
-    if (x == document.getElementsByClassName("steps")[0].children[0]) {
-        var template_literal = `Step ${number + 1}:`
+        var x = document.getElementsByClassName("ingredients")[0].children[0];
+        var d = "btn btn-primary dlt"
+        var nme = "ingredients"};
+        var number = x.parentElement.children.length;
+        x.parentElement.children[number - 1].children[1].children[2].readOnly = true;
+        if (x == document.getElementsByClassName("steps")[0].children[0]) {
+            var template_literal = `Step ${number + 1}:`
     }
-    else {var template_literal = `${number + 1}.`}
+    else {
+        var template_literal = `${number + 1}.`}
     var inpt = document.createElement("div");
     inpt.className = "row";
     inpt.setAttribute = ("type", "text");
@@ -76,19 +77,19 @@ function next_input() {
     console.log(element);
     element.appendChild(inpt);
     if (this.className=="btn btn-primary next-step") {
-    event_listener_next_input("next-step", next_input);
-    event_listener_next_input("edit-method", edit_input);
-    event_listener_next_input("done-method", input_done);
-    event_listener_next_input("dlt-method", delete_input);}
+        event_listener_next_input("next-step", next_input);
+        event_listener_next_input("edit-method", edit_input);
+        event_listener_next_input("done-method", input_done);
+        event_listener_next_input("dlt-method", delete_input);}
     else {
-    console.log("yea poo")
-    event_listener_next_input("next-ingredient", next_input);
-    event_listener_next_input("edit", edit_input);
-    event_listener_next_input("done", input_done);
-    event_listener_next_input("dlt", delete_input);}
+        event_listener_next_input("next-ingredient", next_input);
+        event_listener_next_input("edit", edit_input);
+        event_listener_next_input("done", input_done);
+        event_listener_next_input("dlt", delete_input);}
 }
 
 function edit_input() {
+    console.log(this);
     this.parentElement.previousElementSibling.children[2].readOnly = false;
 }
 

@@ -10990,6 +10990,10 @@ textarea.form-control-lg {
   text-align: left;
 }
 
+.text-right {
+  text-align: right;
+}
+
 .margin-top-15 {
   margin-top: 15px;
 }

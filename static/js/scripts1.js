@@ -59,15 +59,14 @@ function next_input() {
     else {
         var template_literal = `${number + 1}.`}
     var inpt = document.createElement("div");
-    inpt.className = "row";
     inpt.setAttribute = ("type", "text");
     inpt.innerHTML = 
-    `<div class="col-md-6">
+    `<div>
             <div></div>
             <span style="margin-right: 8px;">${template_literal}</span>
             <input type="text" class="form-control" name=${nme} placeholder="Kosovan">
     </div>
-    <div class="col-md-6"> 
+    <div> 
             <input type="button" class="${x.parentElement.children[0].children[1].children[0].className}" value="Done">
             <input type="button" class="${x.parentElement.children[0].children[1].children[1].className}" value="Edit">
             <input type="button" class="${d}" value="Delete">

@@ -52,7 +52,7 @@ function next_input() {
         var d = "btn btn-primary dlt"
         var nme = "ingredients"};
         var number = x.parentElement.children.length;
-        x.parentElement.children[number - 1].children[1].children[2].readOnly = true;
+        x.parentElement.children[number - 1].children[2].children[1].readOnly = true;
     if (x == document.getElementsByClassName("steps")[0].children[0]) {
         var template_literal = `Step ${number + 1}:`
     }
@@ -62,8 +62,8 @@ function next_input() {
     var inpt = document.createElement("div");
     inpt.setAttribute = ("type", "text");
     inpt.innerHTML = 
-    `<span>${template_literal}</span>
-    <span class="mx-auto" style="width: 50%;">
+    `<span style="width: 30px;" class="inline-block text-left">${template_literal}</span>
+    <span class="mx-auto inline-block" style="width: 50%;">
         <div></div>
         <div></div>
         <input type="text" class="form-control" name="ingredients" placeholder="Kosovan" style="width: 74%;"> 
@@ -71,6 +71,7 @@ function next_input() {
     <span class="top-level-secondary-ingredient-buttons" style="width: 50%;">
         <i type="button" class="${x.parentElement.children[0].children[2].children[0].className}"></i>
         <i type="button" class="${x.parentElement.children[0].children[2].children[1].className}"></i>
+        <input type="button" class="${d}" value="Delete">
     </span>`;
     console.log(x.parentElement.children[0].children[1].children[1]);
     var element = x.parentElement;

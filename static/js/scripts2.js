@@ -62,16 +62,17 @@ function next_input() {
     var inpt = document.createElement("div");
     inpt.setAttribute = ("type", "text");
     inpt.innerHTML = 
-    `<span style="width: 30px;" class="inline-block text-left">${template_literal}</span>
-    <span class="mx-auto inline-block" style="width: 50%;">
+    `<div></div>
+    <span style="width: 30px;" class="inline-block text-left">${template_literal}</span>
+    <span class="mx-auto inline-block" style="width: 63%;">
         <div></div>
         <div></div>
-        <input type="text" class="form-control" name="ingredients" placeholder="Kosovan" style="width: 74%;"> 
+        <input type="text" class="form-control" name="ingredients" placeholder="Kosovan""> 
     </span>
     <span class="top-level-secondary-ingredient-buttons" style="width: 50%;">
-        <i type="button" class="${x.parentElement.children[0].children[2].children[0].className}"></i>
-        <i type="button" class="${x.parentElement.children[0].children[2].children[1].className}"></i>
-        <input type="button" class="${d}" value="Delete">
+        <i type="button" class="${x.parentElement.children[0].children[3].children[0].className}"></i>
+        <i type="button" class="${x.parentElement.children[0].children[3].children[1].className}"></i>
+        <i type="button" class="far fa-trash-alt ${d} green-dark-background "></i>
     </span>`;
     console.log(x.parentElement.children[0].children[1].children[1]);
     var element = x.parentElement;
@@ -121,7 +122,7 @@ function delete_input() {
         else {
             var inner = i+1+"."
         }
-        span = rows[i].children[0].children[1]
+        span = rows[i].children[1]
         span.innerHTML = inner;
         span.setAttribute = ("style","display: block;");} 
 }

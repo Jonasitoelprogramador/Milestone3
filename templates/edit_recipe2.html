@@ -35,6 +35,13 @@
                                 <i type="button" class="fas fa-check btn btn-primary done green-dark-background"></i>
                             </span>
                         </div>
+                        {% for i in (range(recipe.ingredients|count))[:-1] %}
+                        {% with number=i+2, ingredient=recipe.ingredients[i+1], punct=".",
+                        done_method_ingredient="done", edit_method_ingredient="edit", delete_method_ingredient="dlt",
+                        ingredients_or_method="ingredients" %}
+                            {% include 'row.html' %}
+                        {% endwith %}
+                        {% endfor %}
                     </div>
                     <div class="ingredients-input">
                         <div>
@@ -56,6 +63,13 @@
                                 <i type="button" class="fas fa-check btn btn-primary done-method green-dark-background"></i>
                             </span>
                         </div>
+                        {% for i in (range(recipe.method|count))[:-1] %}
+                        {% with number=i+2, ingredient=recipe.method[i+1], step="Step ", punct=":", 
+                        done_method_ingredient="done-method", edit_method_ingredient="edit-method", delete_method_ingredient="dlt-method",
+                        ingredients_or_method="method" %}
+                        {% include 'row.html' %}
+                        {% endwith %}
+                        {% endfor %}
                     </div>
                     <div class="method-input">
                             <input type="button" class="mx-auto btn btn-primary next-step green-dark-background main-button-add-edit-recipe" value="Next Ingredient">

@@ -24,7 +24,7 @@ if (document.getElementById("edit h3 title")) {
     method_delete = document.getElementsByClassName("dlt-method");
     next_step = document.getElementsByClassName("next-step")[0];
     next_step.addEventListener("click", next_input);
-    for (var h = 0; h < ingredient_done.length; h++) {
+    for (var h = 0; h < method_done.length; h++) {
     method_done[h].addEventListener("click", input_done);
     method_edit[h].addEventListener("click", edit_input)}
     for (var j = 0; j < method_delete.length; j++) {
@@ -58,17 +58,19 @@ function next_input() {
     if (x == document.getElementsByClassName("steps")[0].children[0]) {
         var template_literal = `Step ${number + 1}:`
         var w = "70px";
+        width = "54%"
     }
     else {
         var template_literal = `${number + 1}.`
         var w = "30px";
+        width = "63%"
     }
     var inpt = document.createElement("div");
     inpt.setAttribute = ("type", "text");
     inpt.innerHTML = 
     `<div></div>
     <span style="width: ${w};" class="inline-block text-left">${template_literal}</span>
-    <span class="mx-auto inline-block" style="width: 63%;">
+    <span class="mx-auto inline-block" style="width: ${width};">
         <div></div>
         <div></div>
         <input type="text" class="form-control" name="ingredients" placeholder="Kosovan""> 
@@ -76,13 +78,13 @@ function next_input() {
     <span class="top-level-secondary-ingredient-buttons" style="width: 50%;">
         <i type="button" class="${x.parentElement.children[0].children[3].children[0].className}"></i>
         <i type="button" class="${x.parentElement.children[0].children[3].children[1].className}"></i>
-        <i type="button" class="far fa-trash-alt ${d} green-dark-background "></i>
+        <i type="button" class="fas fa-trash-alt ${d} green-dark-background"></i>
     </span>`;
     console.log(x);
     var element = x.parentElement;
     console.log(element);
     element.appendChild(inpt);
-    if (this.className=="btn btn-primary next-step") {
+    if (this.className=="mx-auto btn btn-primary next-step green-dark-background main-button-add-edit-recipe") {
         event_listener_next_input("next-step", next_input);
         event_listener_next_input("edit-method", edit_input);
         event_listener_next_input("done-method", input_done);
@@ -108,19 +110,19 @@ function input_done() {
 
 function delete_input() {
    this.parentElement.parentElement.remove();
-   if (this.className=="btn btn-primary dlt-method")
+   if (this.className=="fas fa-trash-alt btn btn-primary dlt-method green-dark-background")
         {console.log("method"); 
         var z = document.getElementsByClassName("steps")[0].children;
     }
     else {
         var z = document.getElementsByClassName("ingredients")[0].children;
-        console.log(z);
+        console.log("hello");
     };
    var rows = z;
    var lgth = rows.length;
    console.log(lgth);
    for (var i = 0; i < lgth; i++) {
-        if (this.className=="btn btn-primary dlt-method") {
+        if (this.className=="fas fa-trash-alt btn btn-primary dlt-method green-dark-background") {
             var inner = "Step "+(i+1)+":"
         }
         else {

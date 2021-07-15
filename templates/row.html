@@ -1,12 +1,12 @@
-<div class="row">  
-        <div class="col-md-6">
-            <div></div>
-            <span style="margin-right: 8px;">{{step}}{{number}}{{punct}}</span>
-            <input type="text" class="form-control" name="{{ingredients_or_method}}" placeholder="Kosovan" value="{{ingredient}}">
-        </div>
-        <div class="col-md-6 top-level-secondary-ingredient-buttons"> 
-            <input type="button" class="btn btn-primary {{done_method_ingredient}}" value="Done">
-            <input type="button" class="btn btn-primary {{edit_method_ingredient}}" value="Edit">
-            <input type="button" class="btn btn-primary {{delete_method_ingredient}}" value="Delete">
-        </div>
-    </div>
+<div>
+    <div></div>
+    <span style="width: {{number_width}};" class="inline-block">{{step}}{{number}}{{punct}}</span>
+    <span class="mx-auto inline-block" style="width: {{input_span_width}};">
+        <div></div>
+        <input type="text" class="form-control" name="ingredients" placeholder="Kosovan" value="{{ingredient}}"> 
+    </span>
+    <span class="top-level-secondary-ingredient-buttons" style="width: 50%;">
+        <i type="button" class="btn btn-primary edit green-dark-background far fa-edit"></i>
+        <i type="button" class="fas fa-check btn btn-primary done green-dark-background"></i>
+    </span>
+</div>

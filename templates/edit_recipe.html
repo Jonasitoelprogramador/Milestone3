@@ -1,78 +1,94 @@
 {% extends "index.html" %}
  {% block content %}
  <h3 id="edit h3 title" style="display: inline;"></h3>
- <!--Taken from: https://getbootstrap.com/docs/4.4/components/forms/-->
+ <!--Basic structure taken from: https://getbootstrap.com/docs/4.4/components/forms/-->
  <div class="container padding-top-bottom-50">
-    <div class="card add-edit-card margin-top-bottom-50">
-        <div class="card-body white-background">
-            <form method="POST" action="{{ url_for('edit_recipe', recipe_id=recipe._id) }}">
-    <div class="form-group row">
-        <div class="col-md-12">
-            <label for="exampleFormControlInput1">Name</label>
-            <input type="text" class="form-control" id="exampleFormControlInput1" name="name" placeholder="Sheppard's Bush" value="{{recipe.name}}">
-        </div>
-    </div>
-    <div class="form-group row">
-        <div class="col-md-12">
-            <label for="exampleFormControlInput2">Nationality</label>
-            <input type="text" class="form-control" id="exampleFormControlInput2" name="nationality" placeholder="Pig" value="{{recipe.nationality}}">
-        </div>
-    </div>
-    <div class="form-group ingredients">
-        <div class="row">  
-            <div class="col-md-6">
-                <label for="exampleFormControlSelect3" style="display: block;">Ingredients</label>
-                <span style="margin-right: 8px;">1.</span>
-                <input type="text" class="form-control" name="ingredients" placeholder="Kosovan" value="{{recipe.ingredients[0]}}">
+        <div class="card add-edit-card margin-top-bottom-50">
+            <div class="card-body white-background">
+                <form method="POST" action="{{ url_for('edit_recipe', recipe_id=recipe._id) }}">
+                    <div class="name-nationality">   
+                        <div class="form-group">
+                                <div>
+                                    <label for="exampleFormControlInput1" id="name-label">Name</label>
+                                    <input type="text" class="form-control" id="exampleFormControlInput1" name="name" value="{{recipe.name}}" style="display: block;">
+                                </div>
+                        </div>
+                        <div class="form-group">
+                            <div>
+                                <label for="exampleFormControlInput2">Nationality</label>
+                                <input type="text" class="form-control" id="exampleFormControlInput2" name="nationality" value="{{recipe.nationality}}">
+                            </div>
+                        </div>
+                    </div> 
+                    <div class="form-group ingredients mx-auto ingredients-input">
+                        <div>
+                            <div class="mx-auto">  
+                                <label for="exampleFormControlSelect3" style="display: block;">Ingredients</label>
+                            </div>
+                            <span style="width: 30px;" class="inline-block">1.</span>
+                            <span class="mx-auto inline-block" style="width: 63%;">
+                                <div></div>
+                                <input type="text" class="form-control" name="ingredients" value="{{recipe.ingredients[0]}}"> 
+                            </span>
+                            <span class="top-level-secondary-ingredient-buttons" style="width: 50%;">
+                                <i type="button" class="btn btn-primary edit green-dark-background far fa-edit"></i>
+                                <i type="button" class="fas fa-check btn btn-primary done green-dark-background"></i>
+                            </span>
+                        </div>
+                        {% for i in (range(recipe.ingredients|count))[:-1] %}
+                        {% with number=i+2, ingredient=recipe.ingredients[i+1], punct=".",
+                        done_method_ingredient="done", edit_method_ingredient="edit", delete_method_ingredient="dlt",
+                        ingredients_or_method="ingredients", number_width="30px", input_span_width="63%" %}
+                            {% include 'row.html' %}
+                        {% endwith %}
+                        {% endfor %}
+                    </div>
+                    <div class="ingredients-input">
+                        <div>
+                            <input type="button" class="mx-auto btn btn-primary next-ingredient green-dark-background main-button-add-edit-recipe" value="Next Ingredient">
+                        </div>
+                    </div>
+                    <div class="form-group steps mx-auto ingredients-input">
+                        <div>
+                            <div class="mx-auto">  
+                                <label for="exampleFormControlSelect3" style="display: block;">Method</label>
+                            </div>
+                            <span style="width: 70px;" class="inline-block">Step 1:</span>
+                            <span class="mx-auto inline-block" style="width: 54%;">
+                                <div></div>
+                                <input type="text" class="form-control" name="steps" value="{{recipe.method[0]}}"> 
+                            </span>
+                            <span class="top-level-secondary-ingredient-buttons" style="width: 50%;">
+                                <i type="button" class="btn btn-primary edit-method green-dark-background far fa-edit"></i>
+                                <i type="button" class="fas fa-check btn btn-primary done-method green-dark-background"></i>
+                            </span>
+                        </div>
+                        {% for i in (range(recipe.method|count))[:-1] %}
+                        {% with number=i+2, ingredient=recipe.method[i+1], step="Step ", punct=":", 
+                        done_method_ingredient="done-method", edit_method_ingredient="edit-method", delete_method_ingredient="dlt-method",
+                        ingredients_or_method="method", number_width="70px", input_span_width="54%" %}
+                        {% include 'row.html' %}
+                        {% endwith %}
+                        {% endfor %}
+                    </div>
+                    <div class="method-input">
+                            <input type="button" class="mx-auto btn btn-primary next-step green-dark-background main-button-add-edit-recipe" value="Next Ingredient">
+                    </div>
+                    <div style="width: 80%;" class="mx-auto">
+                        <label for="exampleFormControlSxelect6">Description</label>
+                        <textarea type="text" class="form-control" id="exampleFormControlInput6" name="description" rows="6" cols="40">{{recipe.description}}</textarea>
+                    </div>
+                    <div style="width: 80%;" class="mx-auto">
+                        <label for="exampleFormControlSelect6">Cook Time (in hours)</label>
+                        <input type="number" class="form-control" id="exampleFormControlInput7" name="time" value="{{recipe.time}}">
+                    </div>
+                    <input type="text" class="form-control" name="liked_by" value="be the first to like this!" hidden>
+                    <div style="width: 80%;" class="mx-auto">
+                        <input class="btn btn-primary green-dark-background mx-auto main-button-add-edit-recipe" type="submit" value="Add Recipe">
+                    </div>
+                </form>
             </div>
-            <div class="col-md-6 top-level-secondary-ingredient-buttons">
-                <i type="button" class="btn btn-primary edit green-dark-background far fa-edit"></i>
-                <i type="button" class="fas fa-check btn btn-primary done green-dark-background"></i>
-            </div>
         </div>
-        {% for i in (range(recipe.ingredients|count))[:-1] %}
-            {% with number=i+2, ingredient=recipe.ingredients[i+1], punct=".",
-            done_method_ingredient="done", edit_method_ingredient="edit", delete_method_ingredient="dlt",
-            ingredients_or_method="ingredients" %}
-                {% include 'row.html' %}
-            {% endwith %}
-        {% endfor %}
-    </div>
-    <div class="row">
-        <div class="col-md-6">
-            <input type="button" class="btn btn-primary next-ingredient" value="Next Ingredient">
-        </div>
-    </div>
-    <div class="form-group steps">
-        <div class="row">  
-            <div class="col-md-6">
-                <label for="exampleFormControlSelect3" style="display: block;">Method</label>
-                <span style="margin-right: 8px;">Step 1:</span>
-                <input type="text" class="form-control" name="method" value="{{recipe.method[0]}}">
-            </div>
-            <div class="col-md-6 top-level-secondary-ingredient-buttons"> 
-                <input type="button" class="btn btn-primary done-method" value="Done">
-                <input type="button" class="btn btn-primary edit-method" value="Edit">
-            </div>
-        </div>  
-        {% for i in (range(recipe.method|count))[:-1] %}
-            {% with number=i+2, ingredient=recipe.method[i+1], step="Step ", punct=":", 
-            done_method_ingredient="done-method", edit_method_ingredient="edit-method", delete_method_ingredient="dlt-method",
-            ingredients_or_method="method" %}
-                {% include 'row.html' %}
-            {% endwith %}
-        {% endfor %}
-    </div>
-    <div class="row">
-        <div class="col-md-6">
-                <input type="button" class="btn btn-primary next-step" value="Next Step">
-        </div>
-    </div>    
-    <label for="exampleFormControlSelect6">Description</label>
-    <input type="text" class="form-control" id="exampleFormControlInput6" name="description" value="{{recipe.description}}">
-    <label for="exampleFormControlSelect6">Cook Time</label>
-    <input type="number" class="form-control" id="exampleFormControlInput7" name="time" value="{{recipe.time}}">
-    <input class="btn btn-primary" type="submit" value="Edit Recipe">
-</form>
+</div>
  {% endblock %}
  

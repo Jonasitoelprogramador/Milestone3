@@ -18,19 +18,19 @@ if (document.getElementById("edit h3 title")) {
     ingredient_edit[k].addEventListener("click", edit_input);}
     for (var g = 0; g < ingredient_delete.length; g++) {
     ingredient_delete[g].addEventListener("click", delete_input);}
-    ingredient_done = document.getElementsByClassName("done-method");
-    ingredient_edit = document.getElementsByClassName("edit-method");
-    ingredient_delete = document.getElementsByClassName("dlt-method");
-    next_ingredient = document.getElementsByClassName("next-step")[0];
-    next_ingredient.addEventListener("click", next_input);
+    
+    method_done = document.getElementsByClassName("done-method");
+    method_edit = document.getElementsByClassName("edit-method");
+    method_delete = document.getElementsByClassName("dlt-method");
+    next_step = document.getElementsByClassName("next-step")[0];
+    next_step.addEventListener("click", next_input);
     for (var h = 0; h < ingredient_done.length; h++) {
-    ingredient_done[h].addEventListener("click", input_done);
-    ingredient_edit[h].addEventListener("click", edit_input)}
-    for (var j = 0; j < ingredient_delete.length; j++) {
-    ingredient_delete[j].addEventListener("click", delete_input);
+    method_done[h].addEventListener("click", input_done);
+    method_edit[h].addEventListener("click", edit_input)}
+    for (var j = 0; j < method_delete.length; j++) {
+    method_delete[j].addEventListener("click", delete_input);
     }}
 else if (document.getElementById("add h3 title")) {
-
     event_listener_next_input("next-ingredient", next_input);
     event_listener_next_input("edit", edit_input);
     event_listener_next_input("done", input_done);
@@ -41,29 +41,33 @@ else if (document.getElementById("add h3 title")) {
 
 
 function next_input() {
-    if (this.className=="btn btn-primary next-step"){
+    if (this.className=="mx-auto btn btn-primary next-step green-dark-background main-button-add-edit-recipe"){
         console.log("step"); 
         var x = document.getElementsByClassName("steps")[0].children[0];
         var d = "btn btn-primary dlt-method";
         var nme = "method"
+        var w = "70px";
     }
     else {
         var x = document.getElementsByClassName("ingredients")[0].children[0];
         var d = "btn btn-primary dlt"
         var nme = "ingredients"};
         var number = x.parentElement.children.length;
+        var w = "30px";
         x.parentElement.children[number - 1].children[2].children[1].readOnly = true;
     if (x == document.getElementsByClassName("steps")[0].children[0]) {
         var template_literal = `Step ${number + 1}:`
+        var w = "70px";
     }
     else {
         var template_literal = `${number + 1}.`
+        var w = "30px";
     }
     var inpt = document.createElement("div");
     inpt.setAttribute = ("type", "text");
     inpt.innerHTML = 
     `<div></div>
-    <span style="width: 30px;" class="inline-block text-left">${template_literal}</span>
+    <span style="width: ${w};" class="inline-block text-left">${template_literal}</span>
     <span class="mx-auto inline-block" style="width: 63%;">
         <div></div>
         <div></div>
@@ -74,7 +78,7 @@ function next_input() {
         <i type="button" class="${x.parentElement.children[0].children[3].children[1].className}"></i>
         <i type="button" class="far fa-trash-alt ${d} green-dark-background "></i>
     </span>`;
-    console.log(x.parentElement.children[0].children[1].children[1]);
+    console.log(x);
     var element = x.parentElement;
     console.log(element);
     element.appendChild(inpt);

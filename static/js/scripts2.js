@@ -85,11 +85,13 @@ function next_input() {
     console.log(element);
     element.appendChild(inpt);
     if (this.className=="mx-auto btn btn-primary next-step green-dark-background main-button-add-edit-recipe") {
+        console.log("method eventy");
         event_listener_next_input("next-step", next_input);
         event_listener_next_input("edit-method", edit_input);
         event_listener_next_input("done-method", input_done);
         event_listener_next_input("dlt-method", delete_input);}
     else {
+        console.log("eventy");
         event_listener_next_input("next-ingredient", next_input);
         event_listener_next_input("edit", edit_input);
         event_listener_next_input("done", input_done);
@@ -109,6 +111,7 @@ function input_done() {
 
 
 function delete_input() {
+    console.log("delete_input")
    this.parentElement.parentElement.remove();
    if (this.className=="fas fa-trash-alt btn btn-primary dlt-method green-dark-background")
         {console.log("method"); 

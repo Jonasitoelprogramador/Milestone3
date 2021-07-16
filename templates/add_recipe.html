@@ -2,10 +2,10 @@
  {% block content %}
  <h3 id="add h3 title" style="display: inline;"></h3>
  <!--Basic structure taken from: https://getbootstrap.com/docs/4.4/components/forms/-->
- <div class="container padding-top-bottom-50">
+ <div class="padding-top-bottom-50">
         <div class="card add-edit-card margin-top-bottom-50">
             <div class="card-body white-background">
-                <form method="POST" action="{{ url_for('add_recipe') }}">
+                <form method="POST" action="{{ url_for('add_recipe') }}" class="form-margin">
                     <div class="name-nationality">   
                         <div class="form-group">
                                 <div>
@@ -20,7 +20,7 @@
                             </div>
                         </div>
                     </div> 
-                    <div class="form-group ingredients mx-auto ingredients-input">
+                    <div class="form-group ingredients margins-auto ingredients-input">
                         <div>
                             <div class="mx-auto">  
                                 <label for="exampleFormControlSelect3" style="display: block;">Ingredients</label>
@@ -42,7 +42,7 @@
                             <input type="button" class="mx-auto btn btn-primary next-ingredient green-dark-background main-button-add-edit-recipe" value="Next Ingredient">
                         </div>
                     </div>
-                    <div class="form-group steps mx-auto ingredients-input">
+                    <div class="form-group steps margins-auto ingredients-input">
                         <div>
                             <div class="mx-auto">  
                                 <label for="exampleFormControlSelect3" style="display: block;">Method</label>
@@ -60,18 +60,20 @@
                         </div>
                     </div>
                     <div class="method-input">
-                            <input type="button" class="mx-auto btn btn-primary next-step green-dark-background main-button-add-edit-recipe" value="Next Ingredient">
+                        <div>
+                                <input type="button" class="mx-auto btn btn-primary next-step green-dark-background main-button-add-edit-recipe" value="Next Ingredient">
+                        </div>
                     </div>
-                    <div style="width: 80%;" class="mx-auto">
+                    <div style="width: 80%;" class="margins-auto">
                         <label for="exampleFormControlSxelect6">Description</label>
                         <textarea type="text" class="form-control" id="exampleFormControlInput6" name="description" placeholder="Delicious smokey flavour coupled with..." rows="6" cols="40"></textarea>
                     </div>
-                    <div style="width: 80%;" class="mx-auto">
+                    <div style="width: 80%;" class="margins-auto">
                         <label for="exampleFormControlSelect6">Cook Time (in hours)</label>
                         <input type="number" class="form-control" id="exampleFormControlInput7" name="time" placeholder="6">
                     </div>
                     <input type="text" class="form-control" name="liked_by" value="be the first to like this!" hidden>
-                    <div style="width: 80%;" class="mx-auto">
+                    <div style="width: 80%;" class="margins-auto">
                         <input class="btn btn-primary green-dark-background mx-auto main-button-add-edit-recipe" type="submit" value="Add Recipe">
                     </div>
                 </form>

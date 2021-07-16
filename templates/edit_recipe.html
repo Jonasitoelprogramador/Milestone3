@@ -2,7 +2,7 @@
  {% block content %}
  <h3 id="edit h3 title" style="display: inline;"></h3>
  <!--Basic structure taken from: https://getbootstrap.com/docs/4.4/components/forms/-->
- <div class="container padding-top-bottom-50">
+ <div class="padding-top-bottom-50">
         <div class="card add-edit-card margin-top-bottom-50">
             <div class="card-body white-background">
                 <form method="POST" action="{{ url_for('edit_recipe', recipe_id=recipe._id) }}">

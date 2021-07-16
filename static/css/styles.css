@@ -11062,6 +11062,11 @@ textarea.form-control-lg {
   margin: auto;
 }
 
+.method-input {
+  width: 80%;
+  margin: auto;
+}
+
 .main-button-add-edit-recipe {
   display: block;
   margin-top: 15px !important;
@@ -11071,8 +11076,23 @@ textarea.form-control-lg {
   background-color: #fff;
 }
 
-/*@media (max-width: 991px) {
-  .add-edit-card {
-    width: 45%;
+.form-margin {
+}
+
+@media (max-width: 1290px) {
+  form > div {
+    width: 100% !important;
   }
+  .ingredients-input {
+    width: 100%;
+    margin: 0px !important
+  }
+  .method-input {
+    width: 100%;
+    margin: 0px !important
+  }
+}
+
+.margins-auto {
+  margin: auto;
 }

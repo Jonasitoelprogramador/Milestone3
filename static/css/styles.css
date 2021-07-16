@@ -1145,7 +1145,7 @@ progress {
 
   .col-md-6 {
     flex: 0 0 auto;
-    width: 30%;
+    width: 40%;
   }
 
   .col-md-7 {
@@ -10970,7 +10970,7 @@ textarea.form-control-lg {
 }
 
 
-@media (max-width: 1399px) {
+/*@media (max-width: 1399px) {
   .col-md-6 {
     width: 32%;
   }
@@ -10980,7 +10980,7 @@ textarea.form-control-lg {
   .col-md-6 {
     width: 45%;
   }
-}
+}*/
 
 .no-list-style {
   list-style: none;
@@ -11069,4 +11069,10 @@ textarea.form-control-lg {
 
 .white-background {
   background-color: #fff;
+}
+
+/*@media (max-width: 991px) {
+  .add-edit-card {
+    width: 45%;
+  }
 }

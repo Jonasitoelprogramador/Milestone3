@@ -70,7 +70,7 @@ function next_input() {
     inpt.innerHTML = 
     `<div></div>
     <span style="width: ${w};" class="inline-block text-left">${template_literal}</span>
-    <span class="mx-auto inline-block" style="width: ${width};">
+    <span class="mx-auto inline-block input-box-${nme}" style="width: ${width};">
         <div></div>
         <div></div>
         <input type="text" class="form-control" name="ingredients" placeholder="Kosovan""> 

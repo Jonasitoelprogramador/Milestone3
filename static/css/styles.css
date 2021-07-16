@@ -11093,6 +11093,38 @@ textarea.form-control-lg {
   }
 }
 
+@media (max-width: 1060px) {
+  .add-edit-card {
+    width: 65% !important;
+  }
+}
+
+@media (max-width: 814px) {
+  .add-edit-card {
+    width: 85% !important;
+  }
+}
+
+@media (max-width: 627px) {
+  .add-edit-card {
+    width: 95% !important;
+  }
+}
+
+@media (max-width: 558px) {
+  .top-level-secondary-ingredient-buttons > i {
+    font-size: 10px;
+  }
+}
+
 .margins-auto {
   margin: auto;
+}
+
+.input-box-ingredients {
+  width: 63%;
+}
+
+.input-box-method {
+  width: 54%;
 }

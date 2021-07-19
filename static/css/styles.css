@@ -11111,11 +11111,17 @@ textarea.form-control-lg {
   }
 }
 
-@media (max-width: 558px) {
-  .top-level-secondary-ingredient-buttons > i {
-    font-size: 10px;
-  }
+/*@media (max-width: 517px) {
+  .add-edit-card {
+    width: 100% !important;
 }
+  .no-border-responsive {
+    border: 0px !important;
+  }
+  .padding-top-bottom-50 {
+    padding: 0px;
+  }
+}*/
 
 .margins-auto {
   margin: auto;
@@ -11127,4 +11133,27 @@ textarea.form-control-lg {
 
 .input-box-method {
   width: 54%;
+}
+
+.no-border-responsive {
+}
+
+@media (max-width: 562px) {
+.top-level-secondary-ingredient-buttons {
+  padding-top: 10px !important;
+  padding-bottom: 10px !important;
+  display: block;
+  text-align: center;
+  margin: auto;
+}
+.input-box-ingredients {
+  width: 92% !important;
+}
+.input-box-method {
+  width: 82% !important;
+}
+}
+
+.padding-bottom-10px {
+  padding-bottom: 10px;
 }

@@ -66,7 +66,7 @@ function next_input() {
         width = "63%"
     }
     var inpt = document.createElement("div");
-    inpt.setAttribute = ("type", "text");
+    inpt.className = ("padding-bottom-10px");
     inpt.innerHTML = 
     `<div></div>
     <span style="width: ${w};" class="inline-block text-left">${template_literal}</span>

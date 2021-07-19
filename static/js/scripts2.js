@@ -80,7 +80,7 @@ function next_input() {
         <i type="button" class="${x.parentElement.children[0].children[3].children[1].className}"></i>
         <i type="button" class="fas fa-trash-alt ${d} green-dark-background"></i>
     </span>`;
-    console.log(x);
+    console.log("new row");
     var element = x.parentElement;
     console.log(element);
     element.appendChild(inpt);

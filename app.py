@@ -128,7 +128,7 @@ def add_recipe():
         }
         print(request.form.to_dict())
         mongo.db.recipes.insert_one(recipe)
-        return render_template("recipes.html", message="recipe submitted!", title="Thanks!")
+        return render_template("recipes.html", title="Updated, big swing")
     return render_template("add_recipe.html", title="What is the last recipe you really enjoyed?")
 
 
@@ -168,7 +168,7 @@ def edit_recipe(recipe_id):
             }
             mongo.db.recipes.update({"_id": ObjectId(recipe_id)}, submit)
             return render_template(
-                "recipes.html", message="recipe updated!", recipes=recipes, title="Recipes for one and all!", subtitle="Welcome to your new home of recipes!")
+                "recipes.html", title="Boom!  Changes made, baby")
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
     return render_template("edit_recipe.html", recipe=recipe, title="What do you need to change?")
 

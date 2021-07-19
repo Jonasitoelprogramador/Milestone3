@@ -11163,6 +11163,18 @@ textarea.form-control-lg {
 }
 
 a:hover {
-  color: white !important;
+  color: #fff !important;
+}
+
+active {
+  border-bottom: #fff;
+}
+
+.my-nav-links {
+  text-decoration: none;
+}
+
+a:target {
+  color: #fff;
 }
 

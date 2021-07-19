@@ -135,3 +135,4 @@ function delete_input() {
         span.innerHTML = inner;
         span.setAttribute = ("style","display: block;");} 
 }
+

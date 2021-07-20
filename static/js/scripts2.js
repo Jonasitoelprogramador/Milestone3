@@ -136,3 +136,19 @@ function delete_input() {
         span.setAttribute = ("style","display: block;");} 
 }
 
+function nav_link () {
+    // this will get the full URL at the address bar
+    var url = window.location.href;
+    console.log(url);
+    // passes on every "a" tag
+    links = document.getElementsByClassName("my-nav-links");
+    for (var i = 0; i < links.length; i++) {
+        console.log(links[i].href);
+        // checks if its the same on the address bar
+        if (url == links[i].href) {
+            links[i].className = "my-nav-links indigo-dark-text current-page";
+        }
+    }
+}
+         
+nav_link();

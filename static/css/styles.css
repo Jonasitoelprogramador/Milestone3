@@ -211,7 +211,7 @@ a {
   text-decoration: underline;
 }
 a:hover {
-  color: #0a58ca;
+  color: #093045;
 }
 
 a:not([href]):not([class]), a:not([href]):not([class]):hover {
@@ -11158,23 +11158,34 @@ textarea.form-control-lg {
   padding-bottom: 10px;
 }
 
-.margin-left-15px {
-  margin-left: 15px;
+.margin-left-25px {
+  margin-left: 35px;
 }
 
 a:hover {
   color: #fff !important;
 }
 
-active {
-  border-bottom: #fff;
-}
 
 .my-nav-links {
   text-decoration: none;
+  font-size: 1.5rem;
 }
 
-a:target {
-  color: #fff;
+a:active {
+  border-bottom: #fff;
 }
 
+.current-page {
+  color: #fff !important;
+}
+
+.more-details-button:hover {
+  color: #92A660 !important;
+  border-color: #92A660 !important;
+}
+
+.form-buttons:hover {
+  background-color: #093045 !important;
+  border-color: #093045 !important;
+}

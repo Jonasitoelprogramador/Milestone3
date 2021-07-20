@@ -18,17 +18,17 @@
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-light green-dark-background">
             <div class="container px-4 px-lg-5">
-                <a class="navbar-brand indigo-dark-text active" href="{{ url_for('get_recipes') }}">Home</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <div class="collapse navbar-collapse topmenu" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+                        <a class="indigo-dark-text my-nav-links" href="{{ url_for('get_recipes') }}">Home</a>
                         {% if session.user %}
-                            <li class="nav-item margin-left-15px"><a class="my-nav-links indigo-dark-text" aria-current="page" href="{{ url_for('logout') }}">Logout</a></li>
-                            <li class="nav-item margin-left-15px"><a class="my-nav-links indigo-dark-text" aria-current="page" href="{{ url_for('profile', username=session['user']) }}">User Page</a></li>
-                            <li class="nav-item margin-left-15px"><a id="add_recipe" class="my-nav-links indigo-dark-text" aria-current="page" href="{{ url_for('add_recipe') }}">Add Recipe</a></li>
+                            <li class="nav-item margin-left-25px"><a class="my-nav-links indigo-dark-text" aria-current="page" href="{{ url_for('logout') }}">Logout</a></li>
+                            <li class="nav-item margin-left-25px"><a class="my-nav-links indigo-dark-text" aria-current="page" href="{{ url_for('profile', username=session['user']) }}">User Page</a></li>
+                            <li class="nav-item margin-left-25px"><a class="my-nav-links indigo-dark-text" aria-current="page" href="{{ url_for('add_recipe') }}">Add Recipe</a></li>
                         {% else %}
-                            <li class="nav-item margin-left-15px"><a class="my-nav-links indigo-dark-text" aria-current="page" href="{{ url_for('register') }}">Register</a></li>
-                            <li class="nav-item margin-left-15px"><a class="my-nav-links indigo-dark-text" aria-current="page" href="{{ url_for('login') }}">Login</a></li>
+                            <li class="nav-item margin-left-25px"><a class="my-nav-links indigo-dark-text" aria-current="page" href="{{ url_for('register') }}">Register</a></li>
+                            <li class="nav-item margin-left-25px"><a class="my-nav-links indigo-dark-text" aria-current="page" href="{{ url_for('login') }}">Login</a></li>
                         {% endif %}
                     </ul>
                     <form action="{{ url_for('search') }}" method="POST">

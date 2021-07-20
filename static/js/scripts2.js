@@ -152,3 +152,14 @@ function nav_link () {
 }
          
 nav_link();
+
+var burger = document.getElementById("burger");
+burger.addEventListener("click", burger_function)
+
+function burger_function() {
+    navs = document.getElementsByClassName("nav-item");
+    console.log(navs)
+    for (var i = 0; i < navs.length; i++) {
+        navs[i].className += "block-display"
+    }
+}

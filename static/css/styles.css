@@ -11189,3 +11189,24 @@ a:active {
   background-color: #093045 !important;
   border-color: #093045 !important;
 }
+
+.search-bar:hover {
+  color: #92A660 !important;
+  border-color: #92A660 !important;
+  background-color: #093045;
+}
+
+.more-ingredient-buttons:hover {
+  background-color: #093045 !important;
+  border-color: #92A660 !important;
+}
+
+.login-register:hover {
+  background-color: #093045;
+  border-color: #093045;
+}
+
+.sign-already:hover {
+  background-color: #92A660;
+  border-color: #92A660;
+}

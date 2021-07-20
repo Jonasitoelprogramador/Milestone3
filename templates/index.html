@@ -33,7 +33,7 @@
                     </ul>
                     <form action="{{ url_for('search') }}" method="POST">
                         <input id="search-input" type="text" name="query" id="query" minlength="3" class="validate" required>
-                        <input type="submit" class="indigo-dark-background btn btn-primary dark-indigo-border indigo-dark-background" value="Search">
+                        <input type="submit" class="indigo-dark-background btn btn-primary dark-indigo-border indigo-dark-background search-bar" value="Search">
                     </form>
                 </div>
             </div>
@@ -49,17 +49,6 @@
         </header>
         <!-- Section-->
         <section class="green-dark-background">
-        <!-- flash messages - THIS IS TAKEN FROM CODE INSTITUE VIDEO on creating auser for your website -->
-        {% with messages = get_flashed_messages() %}
-            {% if messages %}
-                {% for message in messages %}
-                    <div class="row flashes">
-                        <h4>{{ message }}</h4>
-                    </div>
-                {% endfor %}
-            {% endif %}
-        {% endwith %}
-
         {% block content %}
         {% endblock %}
         </section>

@@ -147,7 +147,6 @@ function nav_link () {
         console.log(links[i].href);
         // checks if its the same on the address bar
         if (url == links[i].href) {
-            console.log("yesssssir")
             counter += 1;
             links[i].className = "my-nav-links indigo-dark-text current-page";
         }
@@ -163,6 +162,8 @@ var burger = document.getElementById("burger");
 burger.addEventListener("click", burger_function)
 
 function burger_function() {
+    collapse = document.getElementById("navbarSupportedContent");
+    collapse.className -= "collapse";
     navs = document.getElementsByClassName("nav-item");
     console.log(navs)
     for (var i = 0; i < navs.length; i++) {

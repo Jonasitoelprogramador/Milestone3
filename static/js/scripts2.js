@@ -167,6 +167,19 @@ function burger_function() {
     navs = document.getElementsByClassName("nav-item");
     console.log(navs)
     for (var i = 0; i < navs.length; i++) {
-        navs[i].className += "block-display"
+        navs[i].className -= "margin-left-25px";
+        navs[i].className += "block-display";
     }
 }
+
+var navbar = document.getElementById("navbarSupportedContent");
+
+function navbar_function () {
+    console.log("jim");
+    if (nav_bar.className == "collapse") {}
+    else {
+        nav_bar.className = "collapse" 
+    }
+}
+
+navbar.addEventListener("click", navbar_function);

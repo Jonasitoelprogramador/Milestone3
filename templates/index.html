@@ -18,10 +18,10 @@
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-light green-dark-background">
             <div class="container px-4 px-lg-5">
-                <button id="burger" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="true" aria-label="Toggle navigation">
+                <button id="burger" class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
-                  </button>
-                <div class="collapse navbar-collapse topmenu" id="navbarSupportedContent">
+                </button>
+                <div class="collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
                         <li class="nav-item"><a class="indigo-dark-text my-nav-links" href="{{ url_for('get_recipes') }}" id="home">Home</a></li>
                         {% if session.user %}

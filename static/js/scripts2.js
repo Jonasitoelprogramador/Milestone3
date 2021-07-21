@@ -142,13 +142,19 @@ function nav_link () {
     console.log(url);
     // passes on every "a" tag
     links = document.getElementsByClassName("my-nav-links");
+    var counter = 0;
     for (var i = 0; i < links.length; i++) {
         console.log(links[i].href);
         // checks if its the same on the address bar
         if (url == links[i].href) {
+            console.log("yesssssir")
+            counter += 1;
             links[i].className = "my-nav-links indigo-dark-text current-page";
         }
     }
+        if (counter == 0) {
+        document.getElementById("home").className = "my-nav-links indigo-dark-text current-page";
+        }
 }
          
 nav_link();

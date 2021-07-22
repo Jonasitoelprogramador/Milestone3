@@ -11273,4 +11273,20 @@ a:active {
   .form-card {
     width: 80%;
   }
+  .card1 {
+    border-left-width: 4px !important;
+    border-right-width: 4px !important;
+    border-top-width: 4px !important;
+    border-bottom-width: 2px !important;
+  }
+  .card2 {
+    border-left-width: 4px !important;
+    border-right-width: 4px !important;
+    border-top-width: 2px !important;
+    border-bottom-width: 4px !important;
+  }
 }
+
+.responsive-more-details-top {}
+
+.responsive-more-details-bottom{}

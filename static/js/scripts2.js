@@ -114,7 +114,7 @@ function input_done() {
 function delete_input() {
     console.log("delete_input")
    this.parentElement.parentElement.remove();
-   if (this.className=="fas fa-trash-alt btn btn-primary dlt-method green-dark-background")
+   if (this.className=="fas fa-trash-alt btn btn-primary dlt-method green-dark-background form-buttons")
         {console.log("method"); 
         var z = document.getElementsByClassName("steps")[0].children;
     }
@@ -126,7 +126,7 @@ function delete_input() {
    var lgth = rows.length;
    console.log(lgth);
    for (var i = 0; i < lgth; i++) {
-        if (this.className=="fas fa-trash-alt btn btn-primary dlt-method green-dark-background") {
+        if (this.className=="fas fa-trash-alt btn btn-primary dlt-method green-dark-background form-buttons") {
             var inner = "Step "+(i+1)+":"
         }
         else {

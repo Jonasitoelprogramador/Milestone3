@@ -165,14 +165,7 @@ function burger_function() {
     var nav_bar = document.getElementById("navbarSupportedContent");
     if (nav_bar.className == "collapse") {
         collapse = document.getElementById("navbarSupportedContent");
-        collapse.className -= "collapse";
-        navs = document.getElementsByClassName("nav-item");
-        console.log(navs)
-        for (var i = 0; i < navs.length; i++) {
-            navs[i].className -= "margin-left-25px";
-            navs[i].className += "block-display";
-        }
-    }
+        collapse.className -= "collapse";}
     else {
         nav_bar.className = "collapse"
     }

@@ -302,7 +302,7 @@ th {
 }
 
 label {
-  display: inline-block;
+  display: inline-block !important;
 }
 
 button {
@@ -3424,7 +3424,7 @@ textarea.form-control-lg {
   opacity: 0;
 }
 
-.collapse:not(.show) {
+.collapse {
   display: none;
 }
 
@@ -11226,4 +11226,27 @@ a:active {
 
 .block-display {
   display: block !important;
+}
+
+.dissappear-burger {
+  
+}
+
+@media (min-width: 992px) {
+  .dissappear-burger {
+    display: none;
+  }
+  .collapse:not(.show) {
+    display: inline;
+  }
+  .list-element-nav {
+    display: inline !important;
+  }
+}
+
+.list-element-nav {
+}
+
+#search-form {
+  float: right !important;
 }

@@ -1,6 +1,6 @@
 function event_listener_next_input(input1, input2) {
     var vor1 = document.getElementsByClassName(input1);
-    console.log(vor1);
+    console.log(vor1.length);
     var vor2 = vor1[vor1.length - 1];
     console.log(vor2);
     vor2.addEventListener("click", input2);
@@ -41,7 +41,7 @@ else if (document.getElementById("add h3 title")) {
 
 
 function next_input() {
-    if (this.className=="mx-auto btn btn-primary next-step green-dark-background main-button-add-edit-recipe"){
+    if (this.className=="mx-auto btn btn-primary next-step green-dark-background main-button-add-edit-recipe form-buttons"){
         console.log("step"); 
         var x = document.getElementsByClassName("steps")[0].children[0];
         var d = "btn btn-primary dlt-method";
@@ -49,6 +49,7 @@ function next_input() {
         var w = "70px";
     }
     else {
+        console.log("ingredeient");
         var x = document.getElementsByClassName("ingredients")[0].children[0];
         var d = "btn btn-primary dlt"
         var nme = "ingredients"};
@@ -78,13 +79,13 @@ function next_input() {
     <span class="top-level-secondary-ingredient-buttons" style="width: 50%;">
         <i type="button" class="${x.parentElement.children[0].children[3].children[0].className}"></i>
         <i type="button" class="${x.parentElement.children[0].children[3].children[1].className}"></i>
-        <i type="button" class="fas fa-trash-alt ${d} green-dark-background"></i>
+        <i type="button" class="fas fa-trash-alt ${d} green-dark-background form-buttons"></i>
     </span>`;
     console.log("new row");
     var element = x.parentElement;
     console.log(element);
     element.appendChild(inpt);
-    if (this.className=="mx-auto btn btn-primary next-step green-dark-background main-button-add-edit-recipe") {
+    if (this.className=="mx-auto btn btn-primary next-step green-dark-background main-button-add-edit-recipe form-buttons") {
         console.log("method eventy");
         event_listener_next_input("next-step", next_input);
         event_listener_next_input("edit-method", edit_input);

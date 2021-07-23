@@ -46,6 +46,7 @@
                 <div class="text-center">
                     <h1 class="display-4 fw-bolder green-dark-text">{{title}}</h1>
                     <p class="lead mb-0 green-dark-text">{{subtitle}}</p>
+                    <a id="home-button" type="button" class="mx-auto btn btn-primary dark-green-border green-dark-background margin-top-15px" {{hidden_or_not}} href="{{ url_for('get_recipes') }}">return home</a>
                 </div>
             </div>
         </header>

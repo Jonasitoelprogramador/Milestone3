@@ -74,7 +74,7 @@ function next_input() {
     <span class="mx-auto inline-block input-box-${nme}" style="width: ${width};">
         <div></div>
         <div></div>
-        <input type="text" class="form-control" name="ingredients" placeholder="Kosovan""> 
+        <input type="text" class="form-control" name="${nme}" placeholder="Kosovan""> 
     </span>
     <span class="top-level-secondary-ingredient-buttons" style="width: 50%;">
         <i type="button" class="${x.parentElement.children[0].children[3].children[0].className}"></i>

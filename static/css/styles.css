@@ -11002,12 +11002,6 @@ textarea.form-control-lg {
   margin-bottom: 10px;
 }
 
-.padding-top-bottom-50 {
-  padding-top: 50px;
-  padding-bottom: 50px;
-}
-
-
 .form-card {
   width: 60%;
   margin: auto;
@@ -11110,18 +11104,6 @@ textarea.form-control-lg {
     width: 95% !important;
   }
 }
-
-/*@media (max-width: 517px) {
-  .add-edit-card {
-    width: 100% !important;
-}
-  .no-border-responsive {
-    border: 0px !important;
-  }
-  .padding-top-bottom-50 {
-    padding: 0px;
-  }
-}*/
 
 .margins-auto {
   margin: auto;
@@ -11290,3 +11272,12 @@ a:active {
 .responsive-more-details-top {}
 
 .responsive-more-details-bottom{}
+
+#home-button:hover {
+  background-color: #093045;
+  border-color: #fff;
+}
+
+.margin-top-15px {
+  margin-top: 15px;
+}

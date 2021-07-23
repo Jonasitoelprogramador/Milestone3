@@ -170,6 +170,7 @@ def edit_recipe(recipe_id):
                 "method": request.form.getlist("method"),
                 "description": request.form.get("description"),
                 "time": request.form.get("time"),
+                "liked_by": request.form.getlist("liked_by"),
             }
             mongo.db.recipes.update({"_id": ObjectId(recipe_id)}, submit)
             return render_template(

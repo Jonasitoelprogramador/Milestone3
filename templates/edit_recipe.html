@@ -84,13 +84,14 @@
                         <label for="exampleFormControlSelect6">Cook Time (in hours)</label>
                         <input type="number" class="form-control" id="exampleFormControlInput7" name="time" value="{{recipe.time}}">
                     </div>
-                    <input type="text" class="form-control" name="liked_by" value="be the first to like this!" hidden>
+                    {% for liked in recipe.liked_by|unique %}
+                        <input type="text" class="form-control" name="liked_by" value="{{liked}}" hidden>
+                    {% endfor %}
                     <div style="width: 80%;" class="mx-auto">
                         <input class="btn btn-primary green-dark-background mx-auto main-button-add-edit-recipe form-buttons" type="submit" value="Edit Recipe">
                     </div>
                 </form>
             </div>
-        </div>
 </div>
  {% endblock %}
  

@@ -3,9 +3,7 @@ called when said element is clicked on.  This function finds a list of all of th
 selects the last of these to have the event listener added to.*/
 function event_listener_next_input(input1, input2) {
     var vor1 = document.getElementsByClassName(input1);
-    console.log(vor1.length);
     var vor2 = vor1[vor1.length - 1];
-    console.log(vor2);
     vor2.addEventListener("click", input2);
 }
 
@@ -53,13 +51,11 @@ the html template depending on whether the latter is being injected into edit_re
 part of this code adds the necessary event listeners to the injected html template. */ 
 function next_input() {
     if (this.className == "mx-auto btn btn-primary next-step green-dark-background main-button-add-edit-recipe form-buttons") {
-        console.log("step");
         var x = document.getElementsByClassName("steps")[0].children[0];
         var d = "btn btn-primary dlt-method";
         var nme = "method"
         var w = "70px";
     } else {
-        console.log("ingredient");
         var x = document.getElementsByClassName("ingredients")[0].children[0];
         var d = "btn btn-primary dlt"
         var nme = "ingredients"
@@ -91,18 +87,14 @@ function next_input() {
         <i type="button" class="${x.parentElement.children[0].children[3].children[1].className}"></i>
         <i type="button" class="fas fa-trash-alt ${d} green-dark-background form-buttons"></i>
     </span>`;
-    console.log("new row");
     var element = x.parentElement;
-    console.log(element);
     element.appendChild(inpt);
     if (this.className == "mx-auto btn btn-primary next-step green-dark-background main-button-add-edit-recipe form-buttons") {
-        console.log("method eventy");
         event_listener_next_input("next-step", next_input);
         event_listener_next_input("edit-method", edit_input);
         event_listener_next_input("done-method", input_done);
         event_listener_next_input("dlt-method", delete_input);
     } else {
-        console.log("eventy");
         event_listener_next_input("next-ingredient", next_input);
         event_listener_next_input("edit", edit_input);
         event_listener_next_input("done", input_done);
@@ -112,13 +104,11 @@ function next_input() {
 
 //This allows the user to edit a given input by changes its readOnly value to false.
 function edit_input() {
-    console.log(this);
     this.parentElement.previousElementSibling.children[2].readOnly = false;
 }
 
 //This prevents the user from further editing a given input by changing its readOnly value to true.
 function input_done() {
-    console.log(this);
     this.parentElement.previousElementSibling.children[2].readOnly = true;
 }
 
@@ -126,18 +116,14 @@ function input_done() {
 ingredients section (the first if clause), correctly renumbers each row with either just the integer (ingredients section)
 or the integer and the word 'step' (method section).*/
 function delete_input() {
-    console.log("delete_input")
     this.parentElement.parentElement.remove();
     if (this.className == "fas fa-trash-alt btn btn-primary dlt-method green-dark-background form-buttons") {
-        console.log("method");
         var z = document.getElementsByClassName("steps")[0].children;
     } else {
         var z = document.getElementsByClassName("ingredients")[0].children;
-        console.log("hello");
     };
     var rows = z;
     var lgth = rows.length;
-    console.log(lgth);
     for (var i = 0; i < lgth; i++) {
         if (this.className == "fas fa-trash-alt btn btn-primary dlt-method green-dark-background form-buttons") {
             var inner = "Step " + (i + 1) + ":"
@@ -155,12 +141,10 @@ This is achieved by adding the CSS class 'current-page' to the corresponding lin
 function nav_link() {
     // this will get the full URL at the address bar
     var url = window.location.href;
-    console.log(url);
     // passes on every "a" tag
     links = document.getElementsByClassName("my-nav-links");
     var counter = 0;
     for (var i = 0; i < links.length; i++) {
-        console.log(links[i].href);
         // checks if its the same on the address bar
         if (url == links[i].href) {
             counter += 1;

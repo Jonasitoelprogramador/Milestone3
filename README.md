@@ -1,16 +1,11 @@
-# City Search
+# Recipes with Friends
 
-City Search is a web app that aims to make it easier for people to find well-reviewed activities and/or places in a given city.
-The user will input an activity or type of place (e.g. tennis courts or Italian restaurant) and a city and will be returned a 
-list of the five best-reviewed instances of said activity or type of place within the inputted city.  These results will also 
-be displayed on a map.  The idea is to save the user from having to spend time sifting through a "dump" of search results by
-returning the top 5 best reviewed results.
+Recipes with Friends is a web app that aims to provide an online space where people can share their favourite recipes.  Most amateur cooks have some sort of recipe book or collection where they store their favourtie recipes and which they can peruse if in search of something to make for dinner and the idea behind this site is to have a shared favourite recipe book!  Users can create, add, delete, like and search for recipes and, in doing so, create a space for people to come together and share! 
 
-This site targets anyone who lives in a city and who enjoys discovering new places and activities.  The site is also perfect 
-for tourists who want to find the best places to go quickly and easily.
+This site targets amateur chefs who want to make new dishes but struggle to find inspiration for new recipes, as well as people who would like to experience cooking within a more sociable environment. 
 
 The site aims to achieve its goal by having good, crisp UX which produces a positive reaction in the user, powerful and well-
-designed search and filtering functionality and responsive design to allow the site to be accessed on any screen size.
+designed search and filtering functionality, high-quality CRUD funtionality as well as an ability to 'like' recipes and finally responsive design to allow the site to be accessed on any screen size.
 
 ## User Stories
 
@@ -18,24 +13,30 @@ designed search and filtering functionality and responsive design to allow the s
 1. As a first time user, I want to have a positive emotional response when visiting the site (be impressed with the quality
  of the website) so that I am encourgaed to return.
 2. As a first time user, I want to be able to easily understand the aim and idea behind the site.
-3. As a first time user, I want to be able to use the search function in order to quickly find high-rated places and to 
-see where these places are on a map.
+3. As a first time user, I want to be able to navigate through the site and use the 'more details' button to find out more information about a given recipe. 
+4. As a first time user, I would like to be able to use the register page to create myself an account.
 
 ### Returning-users
-1.  As a first time user, I want to be able to repeatedly use the search function with running into any bugs and without 
-any negative effect on UX.
-2. As a Returning Visitor, I want to be able to contact the site owner and be able to find and use their social meadia links.
-3. As a Returning Visitor, I want to be able to access the website on various different screen sizes and for it to evoke a 
+1.  As a Returning visitor, I would like to be able to login using my username and password and then to be able to make use of the full CRUD functionality as well as the 'like recipe' function.
+2. As a Returning visitor, I would like to be able to use the serach functionality in order to find a given recipe/recipes.
+3. As a Returning Visitor, I want to be able to contact the site owner and be able to find and use their social meadia links.
+4. As a Returning Visitor, I want to be able to access the website on various different screen sizes and for it to evoke a 
 positive response.
 
 ## Features
-The site is formed of one page and has a header, footer and main body. 
+The site is formed of seven page each of which have a header, footer and main body. 
 
-### Responsive nabar 
+### Header
 
-This is contained in the header section and has a "hamburger" toggle that allows the user to access a "Home" link and an "About"
-link.  The former refreshes the markers on the map and resets the "The Top 5" column (more on this below).  The "About" link 
-opens up a Bootstrap modal which contains text relating to the purpose and idea behind the site.
+This exists across all pages and contains the below.
+
+#### Responsive nabar 
+
+This allows users to quickly and intuitively naviaget between pages of the site.  On larger screen sizes the links are 
+organised across the width of the navbar but on smaller screen sizes this is replaced by a 'burger' toggle which displays 
+links vertically.
+
+a "hamburger" toggle that allows the user to access a "Home" link and an "About" link.  The former refreshes the markers on the map and resets the "The Top 5" column (more on this below).  The "About" link opens up a Bootstrap modal which contains text relating to the purpose and idea behind the site.
 
 ### Title and subtitle
 There is a clear title displaying the name of the site for the user to see as well as a smaller subtitle which gives more

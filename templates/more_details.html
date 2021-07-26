@@ -3,6 +3,7 @@
 <div class="container section-padding">
     <div class="row">
       <div class="col-sm-12 col-md-6 text-center padding-right-zero no-padding">
+        <!--This code outlines the card on the left side of the screen and includes nationality, cook time and ingredients of the recipe-->
         <div class="card1 margin-right-zero ingredients-card height-100 responsive-more-details-top">
             <div class="card-body height-100 indigo-dark-background white-text">
                 <h4>Nationality</h4>
@@ -11,6 +12,7 @@
                 <p>{{recipe.time}} hour(s)</p>
                 <h4>Ingredients</h4>
                 <ul class="no-list-style no-padding">
+                  <!--Jinja used to inject the recipe in question's ingredients-->
                     {% for ingredient in recipe.ingredients %}
                        <li>{{ingredient}}</li>
                    {% endfor %}     
@@ -19,6 +21,7 @@
         </div>
       </div>
       <div class="col-sm-12 col-md-6 text-center padding-left-zero responsive-more-details-bottom no-padding">
+        <!--This code outlines the card on the right side of the screen and includes the recipe method and the users that have liked the recipe-->
         <div class="card2 margin-left-zero text-center ingredients-card height-100 responsive-more-details-top">
             <div class="card-body height-100 indigo-dark-background white-text">
                 <h4>Method</h4>
@@ -34,11 +37,13 @@
                    {% endfor %}
                 </ul>
                 <div class="margin-top-15 margin-bottom-10">
+                  <!--If the user is logged in, they will also be shown edit and delete buttons-->
                     {% if session.user %}
                     <a href="{{  url_for('edit_recipe', recipe_id=recipe._id) }}" class="more-ingredient-buttons btn btn-primary no-margin green-dark-background dark-green
                     -border" type="button" style="margin-left: 20px;">Edit</a>
                     <a href="{{  url_for('delete_recipe', recipe_id=recipe._id) }}" class="more-ingredient-buttons btn btn-primary no-margin green-dark-background dark-green
                     -border" type="button" style="margin-left: 20px;">Delete</a>
+                    <!--This is a form that, when clicked, specifies that the current user has 'liked' this recipe-->
                     <form method="POST" action="{{ url_for('like_recipe', recipe_id=recipe._id) }}" style="display: inline;">
                       <input class="more-ingredient-buttons btn btn-primary no-margin green-dark-background dark-green
                       -border" type="submit" style="margin-left: 20px;" value="Like">

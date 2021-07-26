@@ -1,18 +1,23 @@
 {% extends "index.html" %}
  {% block content %}
+ <!--This h3 link is used to identify this page to the JS code.-->
  <h3 id="edit h3 title" style="display: inline;"></h3>
  <!--Basic structure taken from: https://getbootstrap.com/docs/4.4/components/forms/-->
+ <!--The three lines below outline the 'card' that the form (see below) is contained within. -->
  <div class="padding-top-bottom-50">
         <div class="card add-edit-card margin-top-bottom-50">
             <div class="card-body white-background">
+                <!--The form is outlined here-->
                 <form method="POST" action="{{ url_for('edit_recipe', recipe_id=recipe._id) }}">
-                    <div class="name-nationality">   
+                    <div class="name-nationality">
+                        <!--Form input - Name-->   
                         <div class="form-group padding-bottom-10px">
                                 <div>
                                     <label for="exampleFormControlInput1" id="name-label" class="padding-bottom-10px">Name</label>
                                     <input type="text" class="form-control" id="exampleFormControlInput1" name="name" value="{{recipe.name}}" style="display: block;">
                                 </div>
                         </div>
+                        <!--Form input - Nationality-->
                         <div class="form-group padding-bottom-10px">
                             <div>
                                 <label for="exampleFormControlInput2" class="padding-bottom-10px">Nationality</label>
@@ -21,6 +26,7 @@
                         </div>
                     </div> 
                     <div class="form-group ingredients mx-auto ingredients-input">
+                         <!--Form input - Ingredients-->
                         <div class="padding-bottom-10px">
                             <div class="mx-auto padding-bottom-10px">  
                                 <label for="exampleFormControlSelect3" style="display: block;">Ingredients</label>
@@ -36,6 +42,8 @@
                                 <i type="button" class="fas fa-check btn btn-primary done green-dark-background form-buttons"></i>
                             </span>
                         </div>
+                        <!--This jinja code accesses the 'ingredients' values for each entry in the database and then injects them 
+                        into row.html which is, in turn, injected here.-->
                         {% for i in (range(recipe.ingredients|count))[:-1] %}
                         {% with number=i+2, ingredient=recipe.ingredients[i+1], punct=".",
                         done_method_ingredient="done", edit_method_ingredient="edit", delete_method_ingredient="dlt",
@@ -50,6 +58,7 @@
                         </div>
                     </div>
                     <div class="form-group steps mx-auto ingredients-input">
+                        <!--Form input - Method-->
                         <div class="padding-bottom-10px">
                             <div class="mx-auto padding-bottom-10px">  
                                 <label for="exampleFormControlSelect3" style="display: block;">Method</label>
@@ -65,6 +74,8 @@
                                 <i type="button" class="fas fa-check btn btn-primary done-method green-dark-background form-buttons"></i>
                             </span>
                         </div>
+                        <!--The same as the jinga code above but in this case the 'method' values for each recipe are accessed
+                        and injected.-->
                         {% for i in (range(recipe.method|count))[:-1] %}
                         {% with number=i+2, ingredient=recipe.method[i+1], step="Step ", punct=":", 
                         done_method_ingredient="done-method", edit_method_ingredient="edit-method", delete_method_ingredient="dlt-method",
@@ -76,14 +87,17 @@
                     <div class="method-input">
                             <input type="button" class="mx-auto btn btn-primary next-step green-dark-background main-button-add-edit-recipe form-buttons" value="Next Ingredient">
                     </div>
+                    <!--Form input - Description-->
                     <div style="width: 80%;" class="mx-auto">
                         <label for="exampleFormControlSxelect6">Description</label>
                         <textarea type="text" class="form-control" id="exampleFormControlInput6" name="description" rows="6" cols="40">{{recipe.description}}</textarea>
                     </div>
+                    <!--Form input - Cook Time-->
                     <div style="width: 80%;" class="mx-auto">
                         <label for="exampleFormControlSelect6">Cook Time (in hours)</label>
                         <input type="number" class="form-control" id="exampleFormControlInput7" name="time" value="{{recipe.time}}">
                     </div>
+                    <!--Checks if any users have liked this recipe and creates a hidden input that passes the users that have liked the recipe to the database on submission of the form-->
                     {% for liked in recipe.liked_by|unique %}
                         <input type="text" class="form-control" name="liked_by" value="{{liked}}" hidden>
                     {% endfor %}

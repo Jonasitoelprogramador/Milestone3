@@ -1,9 +1,11 @@
 {% extends "index.html" %}
  {% block content %}
  <!--Inspired by bootstrap cards: https://getbootstrap.com/docs/4.0/components/card/-->
-<div class="container padding-top-bottom-50">
+ <!--The below 3 lines outline the 'card' in which the form is embedded-->
+ <div class="container padding-top-bottom-50">
     <div class="card form-card">
         <div class="card-body">
+            <!--Form which takes username and password as inputs-->
             <form method="POST" action="{{ url_for('register') }}" class="register-form mx-auto"> 
                 <div class="row">
                     <label for="username">Username</label>
@@ -13,6 +15,7 @@
                     <label for="password">Password</label>
                     <input type="text" id="password" name="password" class="validate" minlength="5" maxlength="15" required>
                 </div>
+                 <!--This div contains both a submission button for the form and a button with a link to the register page -->
                 <div class="row form-call-action">
                     <input type="submit" class="btn btn-primary dark-green-border green-dark-background login-register" value="Register">
                     <a href="{{ url_for('login') }}" class="sign-already btn btn-primary dark-indigo-border indigo-dark-background margin-top-15">Already registered?</a>

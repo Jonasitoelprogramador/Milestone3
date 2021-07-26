@@ -5,21 +5,24 @@
                 <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
                 </div>
                     <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+                        <!--Jinja code that cycles through recipes created by the user and displays them on the card below-->
                         {% for r in recipes %}
                         {% if r.user == session['user'] %}
                         <div class="col mb-5">
+                                        <!--'Card' into which recipe details are injected-->
                                         <div class="card h-100 indigo-dark-background text-white">
-                                            <!-- Product details-->
+                                            <!-- Recipe details-->
                                             <div class="card-body p-4">
                                                 <div class="text-center">
-                                                    <!-- Product name-->
+                                                    <!-- Recipe name, description and user-->
                                                     <h5 class="fw-bolder">{{r.name}}<br></h5>
                                                     <p><br>{{r.description}}<br></p>
                                                     <p><br>Added by: {{r.user}}<br></p>
                                                 </div>
                                             </div>
-                                            <!-- Product actions-->
+                                            <!-- Recipe actions-->
                                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                                 <!--Button that links to more_details.html page-->
                                                 <div class="text-center">
                                                     <a class="btn white-border mt-auto text-white more-details-button" href="{{ url_for('more_details', recipe_id=r._id)}}">More details</a>
                                                 </div>

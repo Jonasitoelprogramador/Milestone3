@@ -10969,19 +10969,6 @@ textarea.form-control-lg {
   padding-bottom: 50px;
 }
 
-
-/*@media (max-width: 1399px) {
-  .col-md-6 {
-    width: 32%;
-  }
-}
-
-@media (max-width: 991px) {
-  .col-md-6 {
-    width: 45%;
-  }
-}*/
-
 .no-list-style {
   list-style: none;
 }

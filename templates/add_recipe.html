@@ -1,18 +1,23 @@
 {% extends "index.html" %}
  {% block content %}
+ <!--This h3 link is used to identify this page to the JS code.-->
  <h3 id="add h3 title" style="display: inline;"></h3>
  <!--Basic structure taken from: https://getbootstrap.com/docs/4.4/components/forms/-->
+ <!--The three lines below outline the 'card' that the form (see below) is contained within. -->
  <div class="padding-top-bottom-50">
         <div class="card add-edit-card margin-top-bottom-50 no-border-responsive">
             <div class="card-body white-background">
+                <!--The form is outlined here-->
                 <form method="POST" action="{{ url_for('add_recipe') }}" class="form-margin">
                     <div class="name-nationality">   
+                        <!--Form input - Name-->
                         <div class="form-group padding-bottom-10px">
                                 <div>
                                     <label for="exampleFormControlInput1" id="name-label" class="padding-bottom-10px">Name</label>
                                     <input type="text" class="form-control padding-bottom-10px" id="exampleFormControlInput1" name="name" placeholder="Sheppard's Bush" style="display: block;">
                                 </div>
                         </div>
+                        <!--Form input - Nationality-->
                         <div class="form-group padding-bottom-10px">
                             <div>
                                 <label for="exampleFormControlInput2" class="padding-bottom-10px">Nationality</label>
@@ -21,6 +26,7 @@
                         </div>
                     </div> 
                     <div class="form-group ingredients margins-auto ingredients-input">
+                        <!--Form input - Ingredients-->
                         <div class="padding-bottom-10px">
                             <div class="mx-auto padding-bottom-10px">  
                                 <label for="exampleFormControlSelect3" style="display: block;">Ingredients</label>
@@ -43,6 +49,7 @@
                         </div>
                     </div>
                     <div class="form-group steps margins-auto ingredients-input">
+                        <!--Form input - Method-->
                         <div class="padding-bottom-10px">
                             <div class="mx-auto">  
                                 <label for="exampleFormControlSelect3" style="display: block;">Method</label>

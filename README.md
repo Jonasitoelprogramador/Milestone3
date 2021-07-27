@@ -31,67 +31,89 @@ The site is formed of seven page each of which have a header, footer and main bo
 This exists across all pages and contains the below.
 
 #### Responsive nabar 
-
-This allows users to quickly and intuitively naviaget between pages of the site.  On larger screen sizes the links are 
+This allows users to quickly and intuitively navigate between pages of the site.  On larger screen sizes the links are 
 organised across the width of the navbar but on smaller screen sizes this is replaced by a 'burger' toggle which displays 
-links vertically.
+links vertically when toggled thus allowing for smooth transition across pages even with smaller screen sizes.
 
-a "hamburger" toggle that allows the user to access a "Home" link and an "About" link.  The former refreshes the markers on the map and resets the "The Top 5" column (more on this below).  The "About" link opens up a Bootstrap modal which contains text relating to the purpose and idea behind the site.
+#### Title and subtitle
+There is a clear title and subtitle on the homepage displaying the name of the site and a little extra information in order to welcome first-time users.  This feature is also used to display various other messages to the user across other pages on the site.  This is in order to help the user orientate themselves throughout the site and also serves to provide a response after a call to action as been taken up. 
 
-### Title and subtitle
-There is a clear title displaying the name of the site for the user to see as well as a smaller subtitle which gives more
-information about the site without overloading the user.
+#### Searchbar
+This allows users to find recipes quickly and easily no matter where they are in the site, whether that be by recipe name
+or by ingredient.  This provides a more succint way to find recipes that via browsing (see below).
 
-### Map section
-The map section displays a map which is used to show the location of each of the results that are returned from the 
-search function.  This is achieved by placing pointers or "markers" on the map.  This allows the results to be displayed visually as well as in text format thus improving UX by 
-adding to the visual intrigue of the site.  The map also obviously shows where the places/activities are 
-within the city meaning the user does not need to visit another site for directions.
+### Footer
+This also exists across all pages and contains the below.
 
-### Form section
-The form section allows the user to input the city that they would like to search as welll as what type of place/activity 
-there are looking for.  The form has two clearly labelled inputs and a submit button.  There is also a "Refresh Markers"
-button which deletes any markers that have been already placed on the map and which also renews the list of results in 
-the "Top 5 Results" section.
-
-### Copyright and contact sections
+#### Copyright and contact sections
 Clearly displays copyright and contact information.  In the contact section there is also a link that opens an email 
 platform with an email addressed to Jonasitoelprogramdor@journeyman.com.  This facilitates the user sending an email
 and thus encourages the user to send an email.
 
-### Links section
+#### Links section
 Displays icons that open up their respective social media pages in a new tab on clicking.  This allows the user to 
 easily post about, share or find out additional information about the site.
 
-### Note on APIs
-This project uses two different APIs in order to provide the functionality explained above.  How these APIs are
-manipulated can be observed in maps.js section of this app, however, I will briefly explain in words the role of
-the APIs in this project.
+### Homepage
+This page displays all of the recipes in the database in the order of most recently added at the top.  This allows
+the user, on entering the site, to browse all recipes and thus to get an idea of what the site is/does as
+well as to start finding recipes that look good to them!  Each recipe is displayed on a 'card' with the name, a
+description and who the recipe was added by.  There is also a call to action in the 'more details' button.
 
-### Google Maps Javascript API
-This is an API provided by Google.  This project uses the Places Library within the Gmaps JS API which contains 
-various functions that allow the user to search for places within a given area.  This application uses the 
-TextSearch function where a search string, the coordinates of a given city and search radius are inputted 
-and an array of objects is returned (the search string and city are inputted by the user).  Each object 
-represents a place that matches the search string within the specified radius (in this app the radius is set to
-10km).
+### Userpage
+This is similar to the Homepage, however, only displays recipes that the current user uploaded.
 
-Each object in this array of objects has both a "rating" (the average of all of the review scores for that place) 
-property and a "user_ratings_total" (the number of review scores) property and this is what is used to filter the
-objects.  That is, any object with a user_ratings_total of less than 15 is immediately discarded in order to 
-ensure reliability of the rating values.  The five objects with the highest ratings are then selected and passed
-to a function that represents these places on the site. 
-Nb. If there is more than one object with the same rating value, the object(s) with a higher number of reviews is
-prioritized for selection.
+### Add Recipes Page
+Used to add recipes to the database.  This is possible via a form where the user can input the name,
+nationality, ingredients, method and cook-time of a given recipe.  Extra ingredients and method inputs can be
+added by clicking the 'next ingredient' or 'next step buttons' respectively.  There is also the functionality
+to edit or delete method steps or ingredients if need be using the adjacent buttons.  The idea of this is to 
+make adding recipes to the database as easy and intuitive as possible for the user and to allow for any mistakes
+made in inputting to be correctly quickly and easily.  The form on this page and the edit recipes page has been built by javascript.  Please see scripts2.js for more details. 
 
-More information via this link: https://developers.google.com/maps/documentation/javascript/places?hl=en#TextSearchRequests.
+### Edit Recipes Page
+This is functionally the same as the Add Recipes Page, however, the details of the recipe that is being edited 
+are automatically inputted into the form.  This means that the user does not have to re-input all of the recipe's
+details into the form each time they want to edit the recipe.  This saves time and encourages users to make
+edits if need be.
 
-### Open Cage Geocoding API
-The second API in this project is used to transform the "city" value which is inputted via an HTML form by the user 
-from a string to coordinates.  This is necessary because the Gmaps API TextSearch takes coordinates for the location
-parameter in its request.
+### More Details Page
+This page displays all of the possible values of a given recipe, that is, name, nationality, cook-time, ingredients,
+method and liked by.  Note that on this page, the name and desciption of the recipe are displayed in the header
+as the title and the subtitle respectively.  This page also has the following three calls to action: edit, delete
+and like.  Edit takes the user to the Edit Recipe Page (see above), delete deletes the recipe entirely from the database
+and like will add that user's name to the list of users that like the given recipe.
 
-More information re this API via this link: https://opencagedata.com/api.
+### Login Page
+This page contains a 'card' and within that a form that requires both a username and password.  There are also two buttons:
+'login' which submits the inputted data to be checked against the data in the database and 'register' which takes the user
+to the Register Page (see below) if they don't have a username/password.  This is designed to be as easy and intuitive as
+possible and to make the authentication process as straightforward as possible.
+
+### Register Page
+This page is similarly laid out to the Login Page.  The difference is that the submit button uses the inputted data to create
+a new user and the second button takes the user to the Login Page.
+
+### Note on the database
+This site uses MongoDB database to store both recipe information and authentication details.  All of the pages in this site display some CRUD functionality and thus necessarily communicate with the MongoDB database.  This communiaction is carried out
+via Flask (see app.py) and anything displayed to the site is displayed via Jinja template language.
+
+As alluded to above, the MongoDB database has two separate collections: recipes and users.  Each record in the recipes collection has id, name, natioanlity, ingredients, method, description, time, liked_by attributes and each record in the users collection has id, username and password attributes.
+
+## Testing
+
+This app has full CRUD functionality and search and 'like' functionality and connects to a MongoDB database via Flask.  The site also has an interactive javascript-built form that is populated from MongoDB.  This can create potential bugs if not thoroughly tested.  Thus, I have devised a detailed selection of manual tests in order to ensure that the app is bug-free.  
+
+1. Test: Ensure all links in navbar work i.e. they take the user to their respective pages and that they change colour when clicked or when hovered over in order to orientate the user in the site.
+Result: All behaves as it should.
+[(screenshot evidence)](.e.g./assets/images/screenshots/testing/preliminary-submit.png)
+
+2. Test: Ensure links in footer work i.e. they take the user to the correct social media site/open an email address to jonasitoelprogramdor and change colour when hovered over.  
+Result: All behaves as it should
+[(screenshot evidence)](.e.g./assets/images/screenshots/testing/preliminary-submit.png)
+
+3. Test: Ensure 'more details' button takes the user to the More Details page.
+Result: All behaves as it should.
 
 ## Testing
 
@@ -102,7 +124,7 @@ Therefore, I have devised various specific tests in order to ensure this feature
 
 1. Test:  Input of a valid city and valid type of place before pressing submit.    
 Result: The function returns a set of markers correctly distributed on the map as well as a list of results in the 
-respective section
+respective section.
 [(screenshot evidence)](./assets/images/screenshots/testing/preliminary-submit.png). 
 
 2. Test: Input of a valid city and valid type of place before pressing submit (directly after first submit).  

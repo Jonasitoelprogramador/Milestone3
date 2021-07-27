@@ -132,7 +132,7 @@ def add_recipe():
         print(request.form.to_dict())
         mongo.db.recipes.insert_one(recipe)
         return render_template("recipes.html", title="Updated, big swing")
-    return render_template("add_recipe.html", title="What is the last recipe you really enjoyed?")
+    return render_template("add_recipe.html", title="What is the last recipe you really enjoyed?", hidden_or_not="hidden")
 
 
 # This has been inspired by code in CS's project "task manager"
@@ -176,7 +176,7 @@ def edit_recipe(recipe_id):
             return render_template(
                 "recipes.html", title="Boom!  Changes made, baby")
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
-    return render_template("edit_recipe.html", recipe=recipe, title="What do you need to change?")
+    return render_template("edit_recipe.html", recipe=recipe, title="What do you need to change?", hidden_or_not="hidden")
 
 
 # This has been inspired by code in CS's project "task manager"

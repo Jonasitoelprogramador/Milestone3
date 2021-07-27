@@ -40,7 +40,7 @@ There is a clear title and subtitle on the homepage displaying the name of the s
 
 #### Searchbar
 This allows users to find recipes quickly and easily no matter where they are in the site, whether that be by recipe name
-or by ingredient.  This provides a more succint way to find recipes that via browsing (see below).
+or by ingredient.  This provides a more succint way to find recipes that via browsing (see below).  The search function searches for the name, recipe and ingredients of a given recipe.
 
 ### Footer
 This also exists across all pages and contains the below.
@@ -98,22 +98,46 @@ a new user and the second button takes the user to the Login Page.
 This site uses MongoDB database to store both recipe information and authentication details.  All of the pages in this site display some CRUD functionality and thus necessarily communicate with the MongoDB database.  This communiaction is carried out
 via Flask (see app.py) and anything displayed to the site is displayed via Jinja template language.
 
-As alluded to above, the MongoDB database has two separate collections: recipes and users.  Each record in the recipes collection has id, name, natioanlity, ingredients, method, description, time, liked_by attributes and each record in the users collection has id, username and password attributes.
+As alluded to above, the MongoDB database has two separate collections: recipes and users.  Each record in the recipes collection has id, name, natioanlity, ingredients, method, description, time, liked_by attributes and each record in the users collection has id, username and password attributes.  In the recipes collection, the ingredients, method and liked_by attributes are all arrays.  All other attributes for both collections are strings.
 
 ## Testing
 
 This app has full CRUD functionality and search and 'like' functionality and connects to a MongoDB database via Flask.  The site also has an interactive javascript-built form that is populated from MongoDB.  This can create potential bugs if not thoroughly tested.  Thus, I have devised a detailed selection of manual tests in order to ensure that the app is bug-free.  
 
-1. Test: Ensure all links in navbar work i.e. they take the user to their respective pages and that they change colour when clicked or when hovered over in order to orientate the user in the site.
+1. Test: Click on all the links in navbar and ensure they take the user to their respective pages and that they change colour when clicked or when hovered over.
 Result: All behaves as it should.
 [(screenshot evidence)](.e.g./assets/images/screenshots/testing/preliminary-submit.png)
 
-2. Test: Ensure links in footer work i.e. they take the user to the correct social media site/open an email address to jonasitoelprogramdor and change colour when hovered over.  
-Result: All behaves as it should
+2. Test: This search function searches for matching terms across across the name, method and ingredients attributes for a given recipe so each of these must be tested.  In this test, a value for each of these attributes is searched for, for the "Feijao" recipe.
+Result of search for "Feijao": returns Feijao recipe - pass. 
+Result of search for "Cook for an hour": returns Feijao recipe - pass
+Result of search for "lardons": returns Feijao recipe - pass
 [(screenshot evidence)](.e.g./assets/images/screenshots/testing/preliminary-submit.png)
 
-3. Test: Ensure 'more details' button takes the user to the More Details page.
-Result: All behaves as it should.
+3. Test: Click and hover over all links in footer.  they take the user to the correct social media site/open an email address to jonasitoelprogramdor and change colour when hovered over.  
+Facebook link result: Open a new Facebook tab on click and change colour on hover.
+Instagram link result: Open a new Instagram tab on click and change colour on hover.
+Twitter link result: Open a new Twitter tab on click and change colour on hover.
+Youtube link result: Open a new Youtube tab on click and change colour on hover.
+Here link result: Open an email address to jonasitoelprogramdor on click and change colour on hover.
+[(screenshot evidence)](.e.g./assets/images/screenshots/testing/preliminary-submit.png)
+
+4. Test: Click 'more details' button.
+Homepage result: It takes the user to the More Details page.
+Userpage result: It takes the user to the More Details page.
+[(screenshot evidence)](.e.g./assets/images/screenshots/testing/preliminary-submit.png)
+
+5. Test: Click the 'edit', 'delete' and 'like' buttons.
+Edit button result: Takes the user to the Edit Recipe Page. 
+Delete button result: Delete the recipe entirely. 
+Done button result: Add the user to the list of users that have liked this page.
+[(screenshot evidence)](.e.g./assets/images/screenshots/testing/preliminary-submit.png)
+
+6. Test: Fill in the form on the add_recipes.html page and then click submit.
+Result: Input values are saved in the recipes collection in the Mongo database.
+[(screenshot evidence)](.e.g./assets/images/screenshots/testing/preliminary-submit.png)
+
+7. Test: Add new ingredients and steps to the form on the add_recipes.html page.
 
 ## Testing
 

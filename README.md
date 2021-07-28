@@ -102,6 +102,8 @@ As alluded to above, the MongoDB database has two separate collections: recipes 
 
 ## Testing
 
+### Manual Testing
+
 This app has full CRUD functionality and search and 'like' functionality and connects to a MongoDB database via Flask.  The site also has an interactive javascript-built form that is populated from MongoDB.  This can create potential bugs if not thoroughly tested.  Thus, I have devised a detailed selection of manual tests in order to ensure that the app is bug-free.  
 
 1. Test: Click on all the links in navbar.
@@ -135,7 +137,7 @@ Userpage result: It takes the user to the More Details page.
 5. Test: Click the 'edit', 'delete' and 'like' buttons on the More Details Page.
 Edit button result: Takes the user to the Edit Recipe Page. 
 Delete button result: Delete the recipe entirely. 
-Done button result: Add the user to the list of users that have liked this page.
+Like button result: Add the user to the list of users that have liked this page.
 [(screenshot evidence)](.e.g./assets/images/screenshots/testing/preliminary-submit.png)
 
 6. Test: Fill in the form on the Add Recipes Page and then click submit.
@@ -150,100 +152,61 @@ Result: A new input is created for the 'ingredients' and 'method' section of the
 Result: A new input is created for the 'ingredients' and 'method' section of the form respectively.
 [(screenshot evidence)](.e.g./assets/images/screenshots/testing/preliminary-submit.png)
 
-9. Test: Click the 'done', 'edit' and 'delete' buttons for the newly created inputs on both the 
+9. Test: Click the 'done', 'edit' and 'delete' buttons for the inputs on both the 
 Add Recipes Page and the Edit Recipes Page.
 Result:  The 'done' and 'edit' buttons  make the input 'readonly' and not 'readonly' respectively
-and the 'delete' button deletes the new input.
+and the 'delete' button deletes the new input, this does not cause the numbering to be disrupted.
 [(screenshot evidence)](.e.g./assets/images/screenshots/testing/preliminary-submit.png)
 
-8.  Test: Click the 'done', 'edit' and 'delete' buttons for the automatically created inputs on the Edit
-Recipes Page.
-Result: The 'done' and 'edit' buttons  make the input 'readonly' and not 'readonly' respectively
-and the 'delete' button deletes the new input.
-[(screenshot evidence)](.e.g./assets/images/screenshots/testing/preliminary-submit.png)
-
-9.  Test:  Click the logout button followed by the home button on the navbar.  Then click the 'more details'
+10.  Test: Click the logout button followed by the home button on the navbar.  Then click the 'more details'
 button of a given recipe.
 Result: The recipe's More Details Page does not give the user the option to edit, add or delete the recipe
 as the user is logged out.
 [(screenshot evidence)](.e.g./assets/images/screenshots/testing/preliminary-submit.png)
 
-10. Test:  Click the logout button.
+11. Test: Click the logout button.
 Result: The navbar only shows the 'Home', 'Register' and 'Login' links.
 [(screenshot evidence)](.e.g./assets/images/screenshots/testing/preliminary-submit.png)
 
-11. Test: On the Login Page input a username and password that do not match a value in the database.
+12. Test: On the Login Page input a username and password that do not match a value in the database.
 Result: The user is not granted entry and a message is displayed on the title of the login page telling the user
 either the username or password are incorrect.
 [(screenshot evidence)](.e.g./assets/images/screenshots/testing/preliminary-submit.png)
 
-12. Test:  On the Login Page the username and/or password fields are left blank.
+13. Test:  On the Login Page the username and/or password fields are left blank.
 Result: Both fields display a "Please fill out this field" message if nothing is inputted. 
 [(screenshot evidence)](.e.g./assets/images/screenshots/testing/preliminary-submit.png)
 
-13. Test: On the Login Page input a username and password that match a value in the database.
+14. Test: On the Login Page input a username and password that match a value in the database.
 Result: The user's Userpage is displayed and the navbar displays "Logout", "Home", "Username" and "Add Recipe"
 links.
 [(screenshot evidence)](.e.g./assets/images/screenshots/testing/preliminary-submit.png)
 
-14.  Test: On the Login Page click on the 'sign up' button.
-Result: The user is taken to theRegister Page.
+15.  Test: On the Login Page click on the 'sign up' button.
+Result: The user is taken to the Register Page.
 [(screenshot evidence)](.e.g./assets/images/screenshots/testing/preliminary-submit.png)
 
-15. Test: Click on the 'more details' button when logged in as a user.
+16. Test: Click on the 'more details' button when logged in as a user.
 Result: The buttons 'delete', 'edit' and 'like' are displayed to the user.
 [(screenshot evidence)](.e.g./assets/images/screenshots/testing/preliminary-submit.png)
 
-16. Test: On the Register Page input a username and password that do not match a value in the database.
+17. Test: On the Register Page input a username and password that do not match a value in the database.
 Result: The user is taken to the Userpage and a new user is created in the database.
 [(screenshot evidence)](.e.g./assets/images/screenshots/testing/preliminary-submit.png)
 
-17. Test:  On the Register Page the username and/or password fields are left blank.
+18. Test:  On the Register Page the username and/or password fields are left blank.
 Result: Both fields display a "Please fill out this field" message if nothing is inputted. 
 [(screenshot evidence)](.e.g./assets/images/screenshots/testing/preliminary-submit.png)
 
-18. Test: On the Register Page input a username and password that match a value in the database.
+19. Test: On the Register Page input a username and password that match a value in the database.
 Result: The user remains on the same page and the message "This user already exists!" is displayed as the
 page title.
 [(screenshot evidence)](.e.g./assets/images/screenshots/testing/preliminary-submit.png)
 
-19.  Test: On the Register Page click on the 'Already Registered?' button.
+20.  Test: On the Register Page click on the 'Already Registered?' button.
 Result: The user is taken to the Login Page.
 [(screenshot evidence)](.e.g./assets/images/screenshots/testing/preliminary-submit.png)
 
-## Testing
-
-### Search functionality testing
-The search function and display in the app is interactive, uses two different APIs and manipulates and filters various
-different data types.  This section needs to be tested robustly in order to ensure consistent functionality.
-Therefore, I have devised various specific tests in order to ensure this feature is not buggy:
-
-1. Test:  Input of a valid city and valid type of place before pressing submit.    
-Result: The function returns a set of markers correctly distributed on the map as well as a list of results in the 
-respective section.
-[(screenshot evidence)](./assets/images/screenshots/testing/preliminary-submit.png). 
-
-2. Test: Input of a valid city and valid type of place before pressing submit (directly after first submit).  
-Result: As above
-[(screenshot evidence)](./assets/images/screenshots/testing/secondary-submit.png).
-
-3. Test: Input of a string which does not correspond to a real place.  
-Result: Javascript alert with "Invalid City or Type of Place"
-[(screenshot evidence)](./assets/images/screenshots/testing/invalid-input.png).
-
-4. Test: No input.   
-Result: This is caught by the HTML form "required parameter"
-[(screenshot evidence)](./assets/images/screenshots/testing/no-input.png).
-
-5. Test: Click on the "refresh markers" button.  
-Result: Markers, map centre and text in "The Top Five" section are refreshed.
-[(screenshot evidence)](./assets/images/screenshots/testing/refresh-markers.png).
-
-6. Test: Use the search function directly after having clicked the "refresh markers" button.  
-Result: Same result as in first and second tests.
-
-7. Test: Throughout the above tests, ensure the loading animation behaves correctly.  
-Result: No issues.
 
 ### User Story Testing
 1. As a first time user, I want to have a positive emotional response when visiting the site (be impressed with the quality

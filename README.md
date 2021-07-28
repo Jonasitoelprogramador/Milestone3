@@ -132,7 +132,7 @@ Homepage result: It takes the user to the More Details page.
 Userpage result: It takes the user to the More Details page.
 [(screenshot evidence)](.e.g./assets/images/screenshots/testing/preliminary-submit.png)
 
-5. Test: Click the 'edit', 'delete' and 'like' buttons.
+5. Test: Click the 'edit', 'delete' and 'like' buttons on the More Details Page.
 Edit button result: Takes the user to the Edit Recipe Page. 
 Delete button result: Delete the recipe entirely. 
 Done button result: Add the user to the list of users that have liked this page.
@@ -160,7 +160,56 @@ and the 'delete' button deletes the new input.
 Recipes Page.
 Result: The 'done' and 'edit' buttons  make the input 'readonly' and not 'readonly' respectively
 and the 'delete' button deletes the new input.
+[(screenshot evidence)](.e.g./assets/images/screenshots/testing/preliminary-submit.png)
 
+9.  Test:  Click the logout button followed by the home button on the navbar.  Then click the 'more details'
+button of a given recipe.
+Result: The recipe's More Details Page does not give the user the option to edit, add or delete the recipe
+as the user is logged out.
+[(screenshot evidence)](.e.g./assets/images/screenshots/testing/preliminary-submit.png)
+
+10. Test:  Click the logout button.
+Result: The navbar only shows the 'Home', 'Register' and 'Login' links.
+[(screenshot evidence)](.e.g./assets/images/screenshots/testing/preliminary-submit.png)
+
+11. Test: On the Login Page input a username and password that do not match a value in the database.
+Result: The user is not granted entry and a message is displayed on the title of the login page telling the user
+either the username or password are incorrect.
+[(screenshot evidence)](.e.g./assets/images/screenshots/testing/preliminary-submit.png)
+
+12. Test:  On the Login Page the username and/or password fields are left blank.
+Result: Both fields display a "Please fill out this field" message if nothing is inputted. 
+[(screenshot evidence)](.e.g./assets/images/screenshots/testing/preliminary-submit.png)
+
+13. Test: On the Login Page input a username and password that match a value in the database.
+Result: The user's Userpage is displayed and the navbar displays "Logout", "Home", "Username" and "Add Recipe"
+links.
+[(screenshot evidence)](.e.g./assets/images/screenshots/testing/preliminary-submit.png)
+
+14.  Test: On the Login Page click on the 'sign up' button.
+Result: The user is taken to theRegister Page.
+[(screenshot evidence)](.e.g./assets/images/screenshots/testing/preliminary-submit.png)
+
+15. Test: Click on the 'more details' button when logged in as a user.
+Result: The buttons 'delete', 'edit' and 'like' are displayed to the user.
+[(screenshot evidence)](.e.g./assets/images/screenshots/testing/preliminary-submit.png)
+
+16. Test: On the Register Page input a username and password that do not match a value in the database.
+Result: The user is taken to the Userpage and a new user is created in the database.
+[(screenshot evidence)](.e.g./assets/images/screenshots/testing/preliminary-submit.png)
+
+17. Test:  On the Register Page the username and/or password fields are left blank.
+Result: Both fields display a "Please fill out this field" message if nothing is inputted. 
+[(screenshot evidence)](.e.g./assets/images/screenshots/testing/preliminary-submit.png)
+
+18. Test: On the Register Page input a username and password that match a value in the database.
+Result: The user remains on the same page and the message "This user already exists!" is displayed as the
+page title.
+[(screenshot evidence)](.e.g./assets/images/screenshots/testing/preliminary-submit.png)
+
+19.  Test: On the Register Page click on the 'Already Registered?' button.
+Result: The user is taken to the Login Page.
+[(screenshot evidence)](.e.g./assets/images/screenshots/testing/preliminary-submit.png)
 
 ## Testing
 

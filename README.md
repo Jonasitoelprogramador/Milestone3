@@ -104,8 +104,13 @@ As alluded to above, the MongoDB database has two separate collections: recipes 
 
 This app has full CRUD functionality and search and 'like' functionality and connects to a MongoDB database via Flask.  The site also has an interactive javascript-built form that is populated from MongoDB.  This can create potential bugs if not thoroughly tested.  Thus, I have devised a detailed selection of manual tests in order to ensure that the app is bug-free.  
 
-1. Test: Click on all the links in navbar and ensure they take the user to their respective pages and that they change colour when clicked or when hovered over.
-Result: All behaves as it should.
+1. Test: Click on all the links in navbar.
+Home link result: Takes the user to the Homepage and changes colour when clicked or when hovered over.
+Logout link result: Takes the user to the Login and changes colour when clicked or when hovered over.
+Userpage link result: Takes the user to the Userpage and changes colour when clicked or when hovered over.
+Add Recipe link result: Takes the user to the Add Recipe and changes colour when clicked or when hovered over.
+Register link result: Takes the user to the Register Page and changes colour when clicked or when hovered over.
+Login link result: Takes the user to the Login Page and changes colour when clicked or when hovered over.
 [(screenshot evidence)](.e.g./assets/images/screenshots/testing/preliminary-submit.png)
 
 2. Test: This search function searches for matching terms across across the name, method and ingredients attributes for a given recipe so each of these must be tested.  In this test, a value for each of these attributes is searched for, for the "Feijao" recipe.
@@ -133,11 +138,29 @@ Delete button result: Delete the recipe entirely.
 Done button result: Add the user to the list of users that have liked this page.
 [(screenshot evidence)](.e.g./assets/images/screenshots/testing/preliminary-submit.png)
 
-6. Test: Fill in the form on the add_recipes.html page and then click submit.
+6. Test: Fill in the form on the Add Recipes Page and then click submit.
 Result: Input values are saved in the recipes collection in the Mongo database.
 [(screenshot evidence)](.e.g./assets/images/screenshots/testing/preliminary-submit.png)
 
-7. Test: Add new ingredients and steps to the form on the add_recipes.html page.
+7. Test: Click the 'Next Ingredient' and 'Next Step' on the form on the Add Recipes Page.
+Result: A new input is created for the 'ingredients' and 'method' section of the form respectively.
+[(screenshot evidence)](.e.g./assets/images/screenshots/testing/preliminary-submit.png)
+
+8. Test: Click the 'Next Ingredient' and 'Next Step' on the form on the Edit Recipes Page.
+Result: A new input is created for the 'ingredients' and 'method' section of the form respectively.
+[(screenshot evidence)](.e.g./assets/images/screenshots/testing/preliminary-submit.png)
+
+9. Test: Click the 'done', 'edit' and 'delete' buttons for the newly created inputs on both the 
+Add Recipes Page and the Edit Recipes Page.
+Result:  The 'done' and 'edit' buttons  make the input 'readonly' and not 'readonly' respectively
+and the 'delete' button deletes the new input.
+[(screenshot evidence)](.e.g./assets/images/screenshots/testing/preliminary-submit.png)
+
+8.  Test: Click the 'done', 'edit' and 'delete' buttons for the automatically created inputs on the Edit
+Recipes Page.
+Result: The 'done' and 'edit' buttons  make the input 'readonly' and not 'readonly' respectively
+and the 'delete' button deletes the new input.
+
 
 ## Testing
 

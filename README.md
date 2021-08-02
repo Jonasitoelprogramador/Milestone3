@@ -256,19 +256,17 @@ The javascript code was put through a code beautifier also to eliminate syntax e
 
 ### Bugs
 
-Bug: The "The Top 5" section would only occupy half of its intended column width after submit button was pressed when
-screen width was less than 990px.  
-Fix: The rightmost column in the upper Bootsrap row was not being assigned the correct width at smaller breakpoints. 
-Javascript code was modified at line 53, 91 in order to rectify this.
+Bug: The footer was not sticky.  FIX THIS!!!!
+Fix: 
 
-Bug: The javascript alert that is called when the input of the "City" field is not valid was causing the loading 
-animation to continue despite code removing it (the loading-screen class) from the DOM.  
-Fix: A timeout of 100ms was set in order to give the JS code time to remove the loading-screen class from the
-DOM before the alert prevented this from happening.     
+Bug: Everytime that a recipe was edited, the users in its "liked by" attribute would be deleted.
+Fix: Add an extra hidden input to the Edit Recipes page that passes the users that have liked the recipe to the database on submission of the Edit Recipe form.
 
-Bug: The textsearch function would only return 20 results rather than the maximum of 60.  
-Fix: I used a pagination method (JS lines 87-89) inside the callback function (JS lines 81) in order to access all 
-of the returned results. 
+Bug: The "Home" navbar link would not be white when the page was loaded for the first time.  On subsequent loads it would show up white.
+Fix: Add logic to the JS code that adds a class to the "Home" link element on the first load of the page as long as other conditions have not been met.
+
+Bug:
+Fix:
 
 ## Technologies
 

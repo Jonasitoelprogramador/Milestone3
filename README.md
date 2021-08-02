@@ -219,38 +219,33 @@ Result: The user is taken to the Login Page.
 1. As a first time user, I want to have a positive emotional response when visiting the site (be impressed with the quality
  of the website) so that I am encourgaed to return.
     * The website uses a high-contrast colour schemata as well as various bootstrap components such as cards, forms, navbars and buttons in order to give the impression of quality.  One example of a boostrap card is the below link:
-    [(screenshot evidence)](testing/images/user-story-testing/user-story-1/bootstrap-card-example.png)
-    [(screenshot evidence)](testing/images/user-story-testing/user-story-1/bootstrap-card-example.png)
+    [(screenshot evidence)](testing/images/user-story-testing/user-story-1)
 
 2. As a first time user, I want to be able to easily understand the aim and idea behind the site.
     * The homepage of the site allows users to directly browse through recipes and there is a clear 'more details' button that provides more information about each recipe. 
-    [(screenshot evidence)](testing/images/user-story-testing/user-story-2/homepage-title.png)
     * There is a clear title and subtitle that introduces the auim of the website 
-    [(screenshot evidence)](testing/images/user-story-testing/user-story-2/recipe-browse.png)
+    [(screenshot evidence)](testing/images/user-story-testing/user-story-2)
 
 3. As a first time user, I want to be able to navigate through the site and use the 'more details' button to find out more information about a given recipe. 
     * On the homepage and the Userpage, on each card which corresponds to one recipe, there is a clear 'more details' button which changes colour when hovered over to provide visual feedback to the user.
-    [screenshot evidence](testing/images/user-story-testing/user-story-3/more-details-hover.png)
+    [screenshot evidence](testing/images/user-story-testing/user-story-3)
 
 4. As a first time user, I would like to be able to use the register page to create myself an account.
     * There is a clear navbar link to 'register' when the user is not logged in.
     * If the user finds themselves on the Login Page but has not yet made a username and password, there is a 'Sign Up' to the register page.
-    [screenshot evidence](testing/images/user-story-testing/user-story-4/register.png)
-    [screenshot evidence](testing/images/user-story-testing/user-story-4/sign-up.png)
+    [screenshot evidence](testing/images/user-story-testing/user-story-4)
 
 5. As a Returning visitor, I would like to be able to login using my username and password and then to be able to make use of the full CRUD functionality as well as the 'like recipe' function.
     * Clear link in the navbar to the login page.
     * On the More Details Page (see user story 3) there is a clear 3-button set that allows a logged-in user to like, edit or delete the given recipe.
     * Clear link in the navbar for logged-in users to 'Add Recipe'. 
-    [screenshot evidence](testing/images/user-story-testing/user-story-3/more-details-hover.png)
-    [screenshot evidence](testing/images/user-story-testing/user-story-3/more-details-hover.png)
-    [screenshot evidence](testing/images/user-story-testing/user-story-3/more-details-hover.png)
+    [screenshot evidence](testing/images/user-story-testing/user-story-5)
 
 6. As a Returning Visitor, I want to be able to access the website on various different screen sizes and for it to evoke a 
 positive response.
     * The site uses a combination of Bootstrap responsive design and media queries in order to ensure UX remains consistent
-    and of high quality on any screen-size. 
-    [image link](../assets/images/screenshots/testing/responsive-design.png)
+    and of high quality on any screen-size.  The navbar uses a toggle button to show/hide the navbar links when the screensize is narrower.  The screenshot evidence does not show the Login, Edit Recipe and Profile pages as these are structually the same as the Register, Add Recipe and Home Pages respectively.    
+    [screenshot evidence](testing/images/user-story-testing/user-story-6)
 
 ### Automated testing
 The HTML and the CSS code were put through the W3C schools HTML and CSS validators respectively to eliminated any potential syntax errors.

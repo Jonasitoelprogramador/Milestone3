@@ -236,7 +236,7 @@ Result: The user is taken to the Login Page.
     [screenshot evidence](testing/images/user-story-testing/user-story-4)
 
 5. As a Returning visitor, I would like to be able to login using my username and password and then to be able to make use of the full CRUD functionality as well as the 'like recipe' function.
-    * Clear link in the navbar to the login page.
+    * Clear link in the navbar to the Login page.
     * On the More Details Page (see user story 3) there is a clear 3-button set that allows a logged-in user to like, edit or delete the given recipe.
     * Clear link in the navbar for logged-in users to 'Add Recipe'. 
     [screenshot evidence](testing/images/user-story-testing/user-story-5)
@@ -265,8 +265,8 @@ Fix: Add an extra hidden input to the Edit Recipes page that passes the users th
 Bug: The "Home" navbar link would not be white when the page was loaded for the first time.  On subsequent loads it would show up white.
 Fix: Add logic to the JS code that adds a class to the "Home" link element on the first load of the page as long as other conditions have not been met.
 
-Bug:
-Fix:
+Bug: Clicking the "Next Step" button on the Edit Recipe page would add an extra input to the ingredients section but not to the method section.
+Fix: The logic in the javascript, specifically the "next_input" function, needed to be modified in order for the code to target either the "method" section or the "ingredients" section depending on which button was pressed.
 
 ## Technologies
 
@@ -274,8 +274,10 @@ Fix:
 
 HTML5 was used in order to provide the text content the structure of the site.   
 CSS3 was used to add styling.
-Javascript (ECMAScript 2018) was used in order to add interactivity and to manipulate the API functionailty and 
-output.
+Javascript (ECMAScript 2018) was used in order to add interactivity and to create the interactive forms for the Edit Recipe and the Add Recipe pages.
+Jinja template language was used in order to inject the content from the database into the HTML templates so that it could 
+be displayed to the user.
+Python programming language was used in order to be able to run the Flask framework. 
 
 ### Frameworks, Libraries and Programs
 
@@ -285,21 +287,15 @@ Bootstrap: was used to add responsivess and to aid with the structure of the sit
 Hover.CSS3: was used on the media links in the header and the social media links in the footer in order that they
 take on a different colour when hovered over. (link: https://ianlunn.github.io/Hover/)
 
-Google Fonts: was used in order to import one of the fonts that is used across the website ('Abril Fatface'). 
-(link: https://fonts.google.com/).
-
 Git: was used to save changes in the website's files. Gitpod terminal was used to save changes to Git and Push to send these changes to GitHub. (link: https://git-scm.com/)
 
 GitHub: where the files are stored after being "pushed". (link: https://github.com/)
 
-The Places Library service within the Google Maps API was used to search for different places within a given area and return the 
-results. (link: https://developers.google.com/maps/documentation/javascript/places?hl=en#TextSearchRequests).
+Flask framework (written in Python programming language) is used to run the backend of the application.  That is, it deals with requests from the browser and send back the correct HTML template as an HTTP response.
 
-Google Maps API was used in order to display the interactive map. (link: https://developers.google.com/maps/documentation/javascript/overview?hl=en)
+PyMongo is a module containing tools that are used to connect with the  
 
-OpenCage Geocoding API was used to convert the string inputted by the user into coordinates. (link: https://opencagedata.com/api)
-
-Color-Calculator was used to find a harmonious colour scheme: (link: https://www.sessions.edu/color-calculator/)
+Color-Calculator was used to find a harmonious and high-contrast colour scheme: (link: https://www.sessions.edu/color-calculator/)
 
 ## Design
 

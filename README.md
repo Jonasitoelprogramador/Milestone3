@@ -291,9 +291,9 @@ Git: was used to save changes in the website's files. Gitpod terminal was used t
 
 GitHub: where the files are stored after being "pushed". (link: https://github.com/)
 
-Flask framework (written in Python programming language) is used to run the backend of the application.  That is, it deals with requests from the browser and send back the correct HTML template as an HTTP response.
+Flask framework (written in Python programming language): is used to run the backend of the application.  That is, it deals with requests from the browser and send back the correct HTML template as an HTTP response.
 
-PyMongo is a module containing tools that are used to connect with the  
+PyMongo: is a module containing tools that are used to connect with MongoDB when working in python.  
 
 Color-Calculator was used to find a harmonious and high-contrast colour scheme: (link: https://www.sessions.edu/color-calculator/)
 
@@ -301,13 +301,11 @@ Color-Calculator was used to find a harmonious and high-contrast colour scheme: 
 
 ### Colour Scheme
 
-There are three main colours: white, violet and pastel blue. These colours was chosen both for their colour harmony and to allow for high levels
-of contrast for UX purposes.
+There are three main colours: off white, green and dark blue. These colours was chosen both for their colour harmony and to allow for high levels of contrast for UX purposes.
 
 ### Typography
 
-The two fonts used across the site are "Abril Fatface" and "Courier New" with backup fonts being "cursive" and "Courier, monospace" respectively.
-The former is used more for titles and prominent links and the latter any other text.
+
 
 ## Wireframes
 

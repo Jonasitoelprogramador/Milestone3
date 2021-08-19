@@ -79,7 +79,7 @@
                      <!--Form input - Cook Time-->
                     <div style="width: 80%;" class="margins-auto">
                         <label for="exampleFormControlSelect6">Cook Time (in hours)</label>
-                        <input type="number" class="form-control" id="exampleFormControlInput7" name="time" placeholder="6">
+                        <input type="number" step=".25" min="0" oninput="validity.valid||(value='')" class="form-control" id="exampleFormControlInput7" name="time" placeholder="6">
                     </div>
                     <input type="text" class="form-control" name="liked_by" value="be the first to like this!" hidden>
                     <div style="width: 80%;" class="margins-auto">

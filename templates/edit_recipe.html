@@ -95,7 +95,7 @@
                     <!--Form input - Cook Time-->
                     <div style="width: 80%;" class="mx-auto">
                         <label for="exampleFormControlSelect6">Cook Time (in hours)</label>
-                        <input type="number" class="form-control" id="exampleFormControlInput7" name="time" value="{{recipe.time}}">
+                        <input step=".25" min="0" oninput="validity.valid||(value='')" type="number" class="form-control" id="exampleFormControlInput7" name="time" value="{{recipe.time}}">
                     </div>
                     <!--Checks if any users have liked this recipe and creates a hidden input that passes the users that have liked the recipe to the database on submission of the form-->
                     {% for liked in recipe.liked_by|unique %}

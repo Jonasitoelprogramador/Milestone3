@@ -82,7 +82,7 @@ function next_input() {
         <div></div>
         <input type="text" class="form-control" name="${nme}" placeholder="Kosovan""> 
     </span>
-    <span class="top-level-secondary-ingredient-buttons" style="width: 50%;">
+    <span class="top-level-secondary-ingredient-buttons">
         <i type="button" class="${x.parentElement.children[0].children[3].children[0].className}"></i>
         <i type="button" class="${x.parentElement.children[0].children[3].children[1].className}"></i>
         <i type="button" class="fas fa-trash-alt ${d} green-dark-background form-buttons"></i>

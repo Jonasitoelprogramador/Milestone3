@@ -11057,9 +11057,6 @@ textarea.form-control-lg {
   background-color: #fff;
 }
 
-.form-margin {
-}
-
 @media (max-width: 1290px) {
   form > div {
     width: 100% !important;

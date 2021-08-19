@@ -238,6 +238,7 @@ textarea {
   padding-left: var(--bs-gutter-x, 0.75rem);
   margin-right: auto;
   margin-left: auto;
+  position: relative;
 }
 
 @media (min-width: 576px) {
@@ -1148,4 +1149,14 @@ a:active {
 
 .margin-top-15px {
   margin-top: 15px;
+}
+
+.hero-container {
+  width: 100% !important;
+  height: 400px !important;
+}
+
+.hero-image {
+  height: 100% !important;
+  width: 100% !important;
 }

@@ -72,7 +72,7 @@ def register():
 
             # put the new user into 'session' cookie
             session["user"] = request.form.get("username").lower()
-            return redirect(url_for("profile", username=session["user"]))
+            return redirect(url_for("get_recipes", username=session["user"]))
 
     return render_template("register.html", title="Get started!", hidden_or_not="hidden")
 

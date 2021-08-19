@@ -27,9 +27,9 @@
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4 list-element-nav">
                             <li class="nav-item list-element-nav" style="padding: 0px;"><a class="indigo-dark-text my-nav-links" href="{{ url_for('get_recipes') }}" id="home">Home</a></li>
                             {% if session.user %}
-                                <li class="nav-item list-element-nav"><a class="my-nav-links indigo-dark-text" aria-current="page" href="{{ url_for('logout') }}">Logout</a></li>
                                 <li class="nav-item list-element-nav"><a class="my-nav-links indigo-dark-text" aria-current="page" href="{{ url_for('profile', username=session['user']) }}">User Page</a></li>
                                 <li class="nav-item list-element-nav"><a class="my-nav-links indigo-dark-text" aria-current="page" href="{{ url_for('add_recipe') }}">Add Recipe</a></li>
+                                <li class="nav-item list-element-nav"><a class="my-nav-links indigo-dark-text" aria-current="page" href="{{ url_for('logout') }}">Logout</a></li>
                             {% else %}
                                 <li class="nav-item list-element-nav"><a class="my-nav-links indigo-dark-text" aria-current="page" href="{{ url_for('register') }}">Register</a></li>
                                 <li class="nav-item list-element-nav"><a class="my-nav-links indigo-dark-text" aria-current="page" href="{{ url_for('login') }}">Login</a></li>
@@ -44,8 +44,9 @@
                 </div>
             </nav>
             <!-- Header-->
-            <div class="py-5 indigo-dark-background">
-                <div class="container px-4 px-lg-5 my-5">
+            <div style="height: 400px; width: 100%;">
+                <div class="hero-container">
+                    <img src="../static/images/StockSnap_573HXXCQWB.jpg" alt="" class="hero-image">
                     <div class="text-center">
                         <h1 class="display-4 fw-bolder green-dark-text">{{title}}</h1>
                         <p class="lead mb-0 green-dark-text">{{subtitle}}</p>

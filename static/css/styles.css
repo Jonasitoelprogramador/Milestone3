@@ -10909,7 +10909,7 @@ textarea.form-control-lg {
 }
 
 .indigo-dark-background {
-  background-color: #093045;
+  background-color: #163031;
 }
 
 .green-dark-text {
@@ -10921,7 +10921,7 @@ textarea.form-control-lg {
 }
 
 .indigo-dark-text {
-  color: #093045 !important;
+  color: #163031 !important;
 }
 
 #footer-padding {
@@ -11017,7 +11017,7 @@ textarea.form-control-lg {
 }
 
 .dark-indigo-border {
-  border-color: #093045;
+  border-color: #163031;
 }
 
 .form-call-action a {
@@ -11264,4 +11264,21 @@ a:active {
 
 .margin-top-15px {
   margin-top: 15px;
+}
+
+.hero-container {
+  width: 100% !important;
+  height: 400px !important;
+}
+
+.hero-image {
+  height: 100% !important;
+  width: 100% !important;
+}
+
+.centered {
+  position: absolute;
+  top: 38%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }

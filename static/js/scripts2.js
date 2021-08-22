@@ -141,11 +141,13 @@ This is achieved by adding the CSS class 'current-page' to the corresponding lin
 function nav_link() {
     // this will get the full URL at the address bar
     var url = window.location.href;
+    console.log(url)
     // passes on every "a" tag
     links = document.getElementsByClassName("my-nav-links");
+    console.log(links);
     var counter = 0;
     for (var i = 0; i < links.length; i++) {
-        // checks if its the same on the address bar
+        // checks if it's the same on the address bar
         if (url == links[i].href) {
             counter += 1;
             links[i].className = "my-nav-links indigo-dark-text current-page";

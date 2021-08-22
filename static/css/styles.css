@@ -4263,7 +4263,7 @@ textarea.form-control-lg {
   word-wrap: break-word;
   background-color: #fff;
   background-clip: border-box;
-  border: 10px solid #093045;
+  border: 10px solid #163031;
   border-radius: 0.25rem;
 }
 
@@ -10908,22 +10908,6 @@ textarea.form-control-lg {
     margin-top: 30px;
 }
 
-.indigo-dark-background {
-  background-color: #163031;
-}
-
-.green-dark-text {
-  color: #5B8A54 !important;
-}
-
-.green-dark-background {
-  background-color: #5B8A54;
-}
-
-.indigo-dark-text {
-  color: #163031 !important;
-}
-
 #footer-padding {
   padding-top: 30px;
 }
@@ -11187,7 +11171,7 @@ a:active {
 }
 
 .here:hover {
-  color: #92A660 !important;
+  color: #8b6846 !important;
 }
 
 .block-display {
@@ -11281,4 +11265,24 @@ a:active {
   top: 38%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+.darken {
+  filter: brightness(70%);
+}
+
+.indigo-dark-background {
+  background-color: #163031;
+}
+
+.green-dark-text {
+  color: #8b6846 !important;
+}
+
+.green-dark-background {
+  background-color: #8b6846;
+}
+
+.indigo-dark-text {
+  color: #163031 !important;
 }

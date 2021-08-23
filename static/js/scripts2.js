@@ -147,14 +147,15 @@ function nav_link() {
     console.log(links);
     var counter = 0;
     for (var i = 0; i < links.length; i++) {
+        console.log(links[i].href);
         // checks if it's the same on the address bar
         if (url == links[i].href) {
             counter += 1;
-            links[i].className = "my-nav-links indigo-dark-text current-page";
+            links[i].className = "my-nav-links white-text current-page";
         }
     }
     if (counter == 0) {
-        document.getElementById("home").className = "my-nav-links indigo-dark-text current-page";
+        document.getElementById("home").className = "my-nav-links white-text current-page";
     }
 }
 

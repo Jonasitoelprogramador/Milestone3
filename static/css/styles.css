@@ -11113,7 +11113,7 @@ textarea.form-control-lg {
 }
 
 a:hover {
-  color: #fff !important;
+  color: #163031 !important;
 }
 
 
@@ -11127,33 +11127,34 @@ a:active {
 }
 
 .current-page {
-  color: #fff !important;
+  text-decoration: none;
+  border-bottom: 3px solid #fff;
 }
 
 .more-details-button:hover {
-  color: #92A660 !important;
-  border-color: #92A660 !important;
+  color: #8b6846 !important;
+  border-color: #8b6846 !important;
 }
 
 .form-buttons:hover {
-  background-color: #093045 !important;
-  border-color: #093045 !important;
+  background-color: #163031 !important;
+  border-color: #163031 !important;
 }
 
 .search-bar:hover {
-  color: #92A660 !important;
-  border-color: #92A660 !important;
-  background-color: #093045;
+  color: #8b6846 !important;
+  border-color: #8b6846 !important;
+  background-color: #163031;
 }
 
 .more-ingredient-buttons:hover {
-  background-color: #093045 !important;
+  background-color: #163031 !important;
   border-color: #92A660 !important;
 }
 
 .login-register:hover {
-  background-color: #093045;
-  border-color: #093045;
+  background-color: #163031;
+  border-color: #163031;
 }
 
 .sign-already:hover {
@@ -11162,7 +11163,7 @@ a:active {
 }
 
 .my-media-links:hover {
-  color: #fff !important;
+  color: #8b6846 !important;
 }
 
 .here {
@@ -11176,10 +11177,6 @@ a:active {
 
 .block-display {
   display: block !important;
-}
-
-.dissappear-burger {
-  
 }
 
 @media (min-width: 992px) {
@@ -11237,13 +11234,10 @@ a:active {
   }
 }
 
-.responsive-more-details-top {}
-
-.responsive-more-details-bottom{}
-
 #home-button:hover {
-  background-color: #093045;
+  color: #163031;
   border-color: #fff;
+  background-color: #8b6846;
 }
 
 .margin-top-15px {
@@ -11284,5 +11278,5 @@ a:active {
 }
 
 .indigo-dark-text {
-  color: #163031 !important;
+  color: #163031   !important;
 }

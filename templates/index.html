@@ -25,14 +25,14 @@
                     <div class="collapse" id="navbarSupportedContent" style="width: 100% !important;">
                         <!--Navlinks that collapse into a 'burger' toggle on smaller screen sizes-->
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4 list-element-nav">
-                            <li class="nav-item list-element-nav" style="padding: 0px;"><a class="indigo-dark-text my-nav-links" href="{{ url_for('get_recipes') }}" id="home">Home</a></li>
+                            <li class="nav-item list-element-nav" style="padding: 0px;"><a class="white-text my-nav-links" href="{{ url_for('get_recipes') }}" id="home">Home</a></li>
                             {% if session.user %}
-                                <li class="nav-item list-element-nav"><a class="my-nav-links indigo-dark-text" aria-current="page" href="{{ url_for('profile', username=session['user']) }}">User Page</a></li>
-                                <li class="nav-item list-element-nav"><a class="my-nav-links indigo-dark-text" aria-current="page" href="{{ url_for('add_recipe') }}">Add Recipe</a></li>
-                                <li class="nav-item list-element-nav"><a class="my-nav-links indigo-dark-text" aria-current="page" href="{{ url_for('logout') }}">Logout</a></li>
+                                <li class="nav-item list-element-nav"><a class="my-nav-links white-text" aria-current="page" href="{{ url_for('profile', username=session['user']) }}">User Page</a></li>
+                                <li class="nav-item list-element-nav"><a class="my-nav-links white-text" aria-current="page" href="{{ url_for('add_recipe') }}">Add Recipe</a></li>
+                                <li class="nav-item list-element-nav"><a class="my-nav-links white-text" aria-current="page" href="{{ url_for('logout') }}">Logout</a></li>
                             {% else %}
-                                <li class="nav-item list-element-nav"><a class="my-nav-links indigo-dark-text" aria-current="page" href="{{ url_for('register') }}">Register</a></li>
-                                <li class="nav-item list-element-nav"><a class="my-nav-links indigo-dark-text" aria-current="page" href="{{ url_for('login') }}">Login</a></li>
+                                <li class="nav-item list-element-nav"><a class="my-nav-links white-text" aria-current="page" href="{{ url_for('register') }}">Register</a></li>
+                                <li class="nav-item list-element-nav"><a class="my-nav-links white-text" aria-current="page" href="{{ url_for('login') }}">Login</a></li>
                             {% endif %}
                         </ul>
                         <!--Serach function-->

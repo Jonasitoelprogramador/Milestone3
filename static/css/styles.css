@@ -11131,9 +11131,15 @@ a:active {
   border-bottom: 3px solid #fff;
 }
 
+.add-delete-like:hover {
+  color: #163031 !important;
+  background-color: #8b6846 !important;
+  border-color: #8b6846 !important;
+}
+
 .more-details-button:hover {
   color: #8b6846 !important;
-  border-color: #8b6846 !important;
+  background-color: #163031 !important;
 }
 
 .form-buttons:hover {
@@ -11256,13 +11262,13 @@ a:active {
 
 .centered {
   position: absolute;
-  top: 38%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
 
 .darken {
-  filter: brightness(70%);
+  filter: brightness(50%);
 }
 
 .indigo-dark-background {
@@ -11279,4 +11285,8 @@ a:active {
 
 .indigo-dark-text {
   color: #163031   !important;
+}
+
+.main-title {
+  text-shadow: -2px 0 #163031, 0 2px #163031, 2px 0 #163031, 0 -2px #163031;
 }

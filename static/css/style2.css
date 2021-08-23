@@ -1160,3 +1160,11 @@ a:active {
   height: 100% !important;
   width: 100% !important;
 }
+
+#imaged {
+  background: url("../../static/images/tomatoes-cropped.jpg");
+  background-repeat: no-repeat center;
+  height: 450px;
+  width: 100%;
+  background-color: aqua;
+}

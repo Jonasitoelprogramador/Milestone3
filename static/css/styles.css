@@ -11290,3 +11290,19 @@ a:active {
 .main-title {
   text-shadow: -2px 0 #163031, 0 2px #163031, 2px 0 #163031, 0 -2px #163031;
 }
+
+.hero-container {
+  width: 100% !important;
+  height: 400px !important;
+}
+
+.hero-image { 
+  position: relative;
+}
+
+#imaged {
+  background: url("../../static/images/tomatoes-uncropped.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}

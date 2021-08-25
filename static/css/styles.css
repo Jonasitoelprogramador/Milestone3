@@ -11263,8 +11263,8 @@ a:active {
 .centered {
   position: absolute;
   top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  left: 30%;
+  transform: translate(-20%, -50%);
 }
 
 .darken {
@@ -11305,4 +11305,25 @@ a:active {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+}
+
+.hero-image-size {
+  height: 400px;
+  width: 100%;
+}
+
+@media (max-width: 875px) {
+  .hero-image-size {
+    height: 320px !important;
+  }
+  .hero-container {
+    height: 320px !important;
+  }
+}
+
+@media (max-width: 497px) {
+  .centered {
+    left: 20%;
+    transform: translate(-10%, -50%);
+  }
 }

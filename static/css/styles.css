@@ -11118,7 +11118,7 @@ a:hover {
 
 
 .my-nav-links {
-  text-decoration: none;
+  text-decoration: none !important;
   font-size: 1.5rem;
 }
 
@@ -11263,7 +11263,7 @@ a:active {
 .centered {
   position: absolute;
   top: 50%;
-  left: 30%;
+  left: 33%;
   transform: translate(-20%, -50%);
 }
 

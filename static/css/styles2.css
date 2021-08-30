@@ -464,17 +464,23 @@ a:active {
   }
 }
 
-@media (min-width: 1200px) {
-  .recipe-cards > * {
-    flex: 0 0 auto;
-    width: 25%;
-}}
+.recipe-cards > * {
+  flex: 0 0 auto;
+  width: 50%;}
 
 @media (min-width: 768px) {
 .recipe-cards > * {
     flex: 0 0 auto;
     width: 33.3333333333%;
-}}
+}
+}
+
+@media (max-width: 500px) {
+  .recipe-cards > * {
+      flex: 0 0 auto;
+      width: 100%;
+  }
+  }
 
 
 

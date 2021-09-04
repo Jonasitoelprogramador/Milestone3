@@ -532,3 +532,13 @@ background-clip: border-box;
 border: 10px solid #163031;
 border-radius: 0.25rem;
 }
+
+.btn-primary {
+  color: #fff;
+  background-color: #8b6846;
+  border-color: #8b6846;
+  border-top-color: #8b6846;
+  border-right-color: #8b6846;
+  border-bottom-color: #8b6846;
+  border-left-color: #8b6846;
+}

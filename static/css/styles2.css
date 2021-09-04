@@ -385,6 +385,11 @@ a:active {
   }
 }
 
+#home-button {
+  position: relative;
+  bottom: 210px;
+}
+
 #home-button:hover {
   color: #163031;
   border-color: #fff;
@@ -410,7 +415,7 @@ a:active {
 }
 
 .indigo-dark-background {
-  background-color: #163031;
+  background-color: #163031 !important;
 }
 
 .green-dark-text {

@@ -2,32 +2,28 @@
 {% block content %}
 <section class="py-5">
             <div class="container px-4 px-lg-5 mt-5">
-                <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
-                </div>
-                    <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+                    <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center recipe-cards">
                         <!--Jinja code that cycles through recipes created by the user and displays them on the card below-->
-                        {% for r in recipes %}
-                        {% if r.user == session['user'] %}
+                        {% for recipe in recipes %}
+                        {% if recipe.user == session['user'] %}
                         <div class="col mb-5">
-                                        <!--'Card' into which recipe details are injected-->
-                                        <div class="card h-100 indigo-dark-background text-white">
-                                            <!-- Recipe details-->
-                                            <div class="card-body p-4">
-                                                <div class="text-center">
-                                                    <!-- Recipe name, description and user-->
-                                                    <h5 class="fw-bolder">{{r.name}}<br></h5>
-                                                    <p><br>{{r.description}}<br></p>
-                                                    <p><br>Added by: {{r.user}}<br></p>
-                                                </div>
-                                            </div>
-                                            <!-- Recipe actions-->
-                                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                                 <!--Button that links to more_details.html page-->
-                                                <div class="text-center">
-                                                    <a class="btn white-border mt-auto text-white more-details-button" href="{{ url_for('more_details', recipe_id=r._id)}}">More details</a>
-                                                </div>
-                                            </div>
-                                        </div>
+                            <!--'Card' outline-->
+                            <div class="card h-100  indigo-dark-background">
+                                <!-- Recipe details-->
+                                <div class="card-body p-4">
+                                    <div class="text-center">
+                                        <!-- Recipe name, description and user-->
+                                        <h5 class="fw-bolder white-text">{{recipe.name}}<br></h5>
+                                        <p class="white-text"><br>{{recipe.description}}<br></p>
+                                        <p class="white-text"><br>Added by: {{recipe.user}}<br></p>
+                                    </div>
+                                </div>
+                                <!-- Recipe actions-->
+                                <div class="card-footer p-4 pt-0 border-top-0 bg-transparent white-text">
+                                    <!--Button that links to more_details.html page-->
+                                    <div class="text-center"><a class="btn mt-auto white-text white-border more-details-button" href="{{ url_for('more_details', recipe_id=recipe._id)}}">More details</a></div>
+                                </div>
+                            </div>
                         </div>
                         {% endif %}                
                         {% endfor %}

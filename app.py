@@ -19,18 +19,20 @@ app.config["MONGO_DBNAME"] = os.environ.get("MONGO_DBNAME")
 mongo = PyMongo(app)
 
 
-# This has been inspired by code in CS's project "task manager"
+# This has been inspired by code in CS's project "task manager".  If the URL inputted into the browser matches
+# the string "/get_recipes" the server will send through the HTML file associated with the website's homepage and this
+# template will be rendered.
 @app.route("/")
 @app.route("/get_recipes")
 def get_recipes():
     recipes = mongo.db.recipes.find()
-    return render_template("recipes.html", recipes=recipes, title="Recipes for one and all!", subtitle="Welcome to your new home of recipes!", hidden_or_not="hidden")
+    return render_template("recipes.html", recipes=recipes, title="Recipes for one and all!", hidden_or_not="hidden")
 
 
-# This has been taken from CI's example project "task manager"
+# This has been taken from CI's example project "task manager".  This gets the session user's username and the recipies 
+# from the db and injects these into the profile.html template which is then rendered.  
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
-    # grab the session user's username from db
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
     recipes = mongo.db.recipes.find()
@@ -44,25 +46,26 @@ def profile(username):
 
 
 # This has been taken from CI's example project "task manager"
+# Renders the logout.html template. and removes user from session cookie
 @app.route("/logout")
 def logout():
-    # remove user from session cookie
     session.pop("user")
     return redirect(url_for("login"))
 
 
 # This has been taken from CI's example project "task manager"
+# This checks whether a given username and password are already in the db.
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
         # check if username already exists in db
         existing_user = mongo.db.users.find_one(
             {"username": request.form.get("username").lower()})
-
+        # Shows a message saying the username already exists.
         if existing_user:
             return render_template(
                 "register.html", title="This user already exists!", hidden_or_not="hidden")
-        
+        # If username and password not in the db, a new username and password are added to the db.
         else:
             register = {
                 "username": request.form.get("username").lower(),
@@ -78,6 +81,8 @@ def register():
 
 
 # This has been taken from CI's example project "task manager"
+# Checks if the login details are correct and if so, redirects the user to the profile page and adds the user to the 
+# 'session' cookie.  If not, the user is shown an error message.
 @app.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == "POST":
@@ -94,19 +99,21 @@ def login():
             else:
                 # invalid password match
                 return render_template(
-        "login.html", title="Error: username/password.  Think, dude!", hidden_or_not="hidden")
+        "login.html", title="Error: username/password.  Think!", hidden_or_not="hidden")
 
         else:
             # username doesn't exist
             flash("Incorrect Username and/or Password")
             return render_template(
-        "login.html", title="Error: username/password.  Think, dude!", hidden_or_not="hidden")
+        "login.html", title="Error: username/password.  Think!", hidden_or_not="hidden")
 
     return render_template(
-        "login.html", title="Welcome back you cheeky monkey", hidden_or_not="hidden")
+        "login.html", title="Welcome back!", hidden_or_not="hidden")
 
 
 # This has been inspired by code in CS's project "task manager"
+# Queries the db for recipes that match the input and injects these recipes into the "recipes.html" template which is 
+# then rendered. 
 @app.route("/search", methods=["GET", "POST"])
 def search():
     query = request.form.get("query")
@@ -114,7 +121,8 @@ def search():
     return render_template("recipes.html", recipes=recipes, title="Voilà!")
 
 
-# This has been inspired by code in CS's project "task manager"
+# This has been inspired by code in CS's project "task manager
+# Checks the request method is post and if so, adds the dictionary to the db.
 @app.route("/add_recipe", methods=["GET", "POST"])
 def add_recipe():
     if request.method == "POST":
@@ -130,11 +138,14 @@ def add_recipe():
         }
         print(request.form.to_dict())
         mongo.db.recipes.insert_one(recipe)
-        return render_template("recipes.html", title="Updated, big swing")
+        # Renders the recipes.html template with a feedback message for the user.
+        return render_template("recipes.html", title="Added!")
     return render_template("add_recipe.html", title="What is the last recipe you really enjoyed?", hidden_or_not="hidden")
 
 
 # This has been inspired by code in CS's project "task manager"
+# Gets the name and the description of the recipe in question and injects these into the
+# more_details template which is then rendered.
 @app.route("/more_details/<recipe_id>/", methods=["GET"])
 def more_details(recipe_id):
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
@@ -146,14 +157,19 @@ def more_details(recipe_id):
 
 @app.route("/like_recipe/<recipe_id>/", methods=["GET", "POST"])
 def like_recipe(recipe_id):
+    # Finds the recipe that has been "liked"
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
+    # Get the recipe's name and description
     recipe_name = recipe["name"]
     recipe_description = recipe["description"]
+    # Adds the username of the session user onto the 'liked_by' attribute of the recipe in question.
     mongo.db.recipes.update({'_id': ObjectId(recipe_id)}, {
         '$push': {'liked_by': session['user']}})
+    # Removes the previous string from the 'liked_by' attribute of the recipe in question. 
     mongo.db.recipes.update({'_id': ObjectId(recipe_id)}, {
         '$pull': {'liked_by': "be the first to like this!"}})
     new_recipe = mongo.db.recipes.find_one({'_id': ObjectId(recipe_id)})
+    # Renders the more_details template with the below attributes being injected into the template.
     return render_template(
         "more_details.html", recipe=new_recipe, title=recipe_name, subtitle=recipe_description)
 
@@ -173,7 +189,7 @@ def edit_recipe(recipe_id):
             }
             mongo.db.recipes.update({"_id": ObjectId(recipe_id)}, submit)
             return render_template(
-                "recipes.html", title="Boom!  Changes made, baby")
+                "recipes.html", title="Changes made!")
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
     return render_template("edit_recipe.html", recipe=recipe, title="What do you need to change?", hidden_or_not="hidden")
 

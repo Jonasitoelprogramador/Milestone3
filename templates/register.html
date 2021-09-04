@@ -3,7 +3,7 @@
  <!--Inspired by bootstrap cards: https://getbootstrap.com/docs/4.0/components/card/-->
  <!--The below 3 lines outline the 'card' in which the form is embedded-->
  <div class="container padding-top-bottom-50">
-    <div class="card form-card">
+    <div class="card-login-register form-card">
         <div class="card-body">
             <!--Form which takes username and password as inputs-->
             <form method="POST" action="{{ url_for('register') }}" class="register-form mx-auto"> 
@@ -11,7 +11,7 @@
                     <label for="username">Username</label>
                     <input type="text" id="username" name="username" class="validate" minlength="5" maxlength="15" required>
                 </div>
-                <div class="row">
+                <div class="row password">
                     <label for="password">Password</label>
                     <input type="text" id="password" name="password" class="validate" minlength="5" maxlength="15" required>
                 </div>

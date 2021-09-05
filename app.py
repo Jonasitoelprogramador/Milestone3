@@ -175,6 +175,8 @@ def like_recipe(recipe_id):
 
 
 # This has been inspired by code in CS's project "task manager"
+# Works in a very similar way to add_recipe; if the request is POST, a dictionary is submitted to the db with the new
+# attributes for the recipe being edited.
 @app.route("/edit_recipe/<recipe_id>/", methods=["GET", "POST"])
 def edit_recipe(recipe_id):
     if request.method == "POST":
@@ -186,8 +188,10 @@ def edit_recipe(recipe_id):
                 "description": request.form.get("description"),
                 "time": request.form.get("time"),
                 "liked_by": request.form.getlist("liked_by"),
+                "user": request.form.get("user"),
             }
             mongo.db.recipes.update({"_id": ObjectId(recipe_id)}, submit)
+            # The recipes.html page is returned with a message for the user.
             return render_template(
                 "recipes.html", title="Changes made!")
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
@@ -195,9 +199,11 @@ def edit_recipe(recipe_id):
 
 
 # This has been inspired by code in CS's project "task manager"
+# Finds the recipe that matches the given ID and deletes it from the db.
 @app.route("/delete_recipe/<recipe_id>/")
 def delete_recipe(recipe_id):
     mongo.db.recipes.remove({"_id": ObjectId(recipe_id)})
+    # Renders a recipes.html page with a feedback message for the user 
     return render_template("recipes.html", title="recipe deleted!")
 
 

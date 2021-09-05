@@ -83,9 +83,9 @@ function next_input() {
         <input type="text" class="form-control" name="${nme}" placeholder="Kosovan""> 
     </span>
     <span class="top-level-secondary-ingredient-buttons">
-        <i type="button" class="${x.parentElement.children[0].children[3].children[0].className}"></i>
-        <i type="button" class="${x.parentElement.children[0].children[3].children[1].className}"></i>
-        <i type="button" class="fas fa-trash-alt ${d} green-dark-background form-buttons"></i>
+        <i type="button" class="${x.parentElement.children[0].children[3].children[0].className}" aria-label="button that allows the user to edit the input field"></i>
+        <i type="button" class="${x.parentElement.children[0].children[3].children[1].className}" aria-label="button that prevents the user from editing the input field"></i>
+        <i type="button" class="fas fa-trash-alt ${d} green-dark-background form-buttons" aria-label="button that deletes the selected input field"></i>
     </span>`;
     var element = x.parentElement;
     element.appendChild(inpt);

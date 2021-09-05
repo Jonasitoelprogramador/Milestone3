@@ -247,6 +247,9 @@ positive response.
     and of high quality on any screen-size.  The navbar uses a toggle button to show/hide the navbar links when the screensize is narrower.  The screenshot evidence does not show the Login, Edit Recipe and Profile pages as these are structually the same as the Register, Add Recipe and Home Pages respectively.    
     [screenshot evidence](testing/images/user-story-testing/user-story-6)
 
+Please note that the image evidence for the user story testing was taken before a final change in the colour schemata of 
+the application.  All interactive/functional parts of the website remain the same, however. 
+
 ### Automated testing
 The HTML and the CSS code were put through the W3C schools HTML and CSS validators respectively to eliminated any potential syntax errors.
 (HTML: https://validator.w3.org/)
@@ -256,8 +259,9 @@ The javascript code was put through a code beautifier also to eliminate syntax e
 
 ### Bugs
 
-Bug: The footer was not sticky.  FIX THIS!!!!
-Fix: 
+Bug: After changing the bootstrap file from being local to a CDN, the CSS behaved slightly differently. 
+Fix: The problem occured as a result of specificity so I created several new classes in my CSS to target (with a lower
+specificity) the classes that were not functioning as they had done before.
 
 Bug: Everytime that a recipe was edited, the users in its "liked by" attribute would be deleted.
 Fix: Add an extra hidden input to the Edit Recipes page that passes the users that have liked the recipe to the database on submission of the Edit Recipe form.
@@ -322,14 +326,9 @@ now published site link in the "GitHub Pages" section.
 
 ## Accessibility
 
-The aim of this project with regards to accessibility is to ensure that there is text explanation across all features to build 
-a site that is usable for people that use screen readers.  If a feature already has a title/text explaining its function there
-is no need to add additional text.  However, in certain cases, such as in the case of the media links, there is no text explaining
-the function of the link.  Therefore, an aria-label has been added to each link to explain its function.  
+The aim of this project with regards to accessibility is to ensure that there is text explanation across all features to build a site that is usable for people that use screen readers.  If a feature already has a title/text explaining its function there is no need to add additional text.  However, in certain cases, such as in the case of the media links, there is no text explaining the function of the link.  Therefore, an aria-label has been added to each link to explain its function.  
 
-In addition, there are two input fields in the site, each of which corresponds to a label element.  The relationship between these
-two elements can be unclear for a user with a screen reader so the class "labelledby" has been added to both of the input fields 
-in order to show their relationship to their respective label elements. 
+In addition, there are several input fields in the site, each of which corresponds to a label element.  The relationship between these two elements can be unclear for a user with a screen reader so the class "labelledby" has been added to all of the input fields in order to show their relationship to their respective label elements. 
 
 ## Credits
 

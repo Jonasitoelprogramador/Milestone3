@@ -14,14 +14,14 @@
                         <div class="form-group padding-bottom-10px">
                                 <div>
                                     <label for="exampleFormControlInput1" id="name-label" class="padding-bottom-10px">Name</label>
-                                    <input type="text" class="form-control padding-bottom-10px" id="exampleFormControlInput1" name="name" placeholder="Sheppard's Bush" style="display: block;">
+                                    <input type="text" class="form-control padding-bottom-10px" id="exampleFormControlInput1" name="name" placeholder="Sheppard's Bush" style="display: block;" aria-labelledby="name-label">
                                 </div>
                         </div>
                         <!--Form input - Nationality-->
                         <div class="form-group padding-bottom-10px">
                             <div>
-                                <label for="exampleFormControlInput2" class="padding-bottom-10px">Nationality</label>
-                                <input type="text" class="form-control padding-bottom-10px" id="exampleFormControlInput2" name="nationality" placeholder="Pig">
+                                <label for="exampleFormControlInput2" id="nationality-label" class="padding-bottom-10px">Nationality</label>
+                                <input type="text" class="form-control padding-bottom-10px" id="exampleFormControlInput2" name="nationality" placeholder="Pig" aria-labelledby="nationality-label">
                             </div>
                         </div>
                     </div> 
@@ -29,17 +29,17 @@
                         <!--Form input - Ingredients-->
                         <div class="padding-bottom-10px">
                             <div class="mx-auto padding-bottom-10px">  
-                                <label for="exampleFormControlSelect3" style="display: block;">Ingredients</label>
+                                <label for="exampleFormControlSelect3" style="display: block;" id="ingredients-label">Ingredients</label>
                             </div>
                             <span style="width: 30px;" class="inline-block">1.</span>
                             <span class="mx-auto inline-block input-box-ingredients">
                                 <div></div>
                                 <div></div>
-                                <input type="text" class="form-control" name="ingredients" placeholder="Kosovan"> 
+                                <input type="text" class="form-control" name="ingredients" placeholder="Turkish" aria-labelledby="ingredients-label"> 
                             </span>
                             <span class="top-level-secondary-ingredient-buttons">
-                                <i type="button" class="btn btn-primary edit green-dark-background far fa-edit form-buttons"></i>
-                                <i type="button" class="fas fa-check btn btn-primary done green-dark-background form-buttons"></i>
+                                <i type="button" class="btn btn-primary edit green-dark-background far fa-edit form-buttons" aria-label="button that allows the user to edit the input field"></i>
+                                <i type="button" class="fas fa-check btn btn-primary done green-dark-background form-buttons" aria-label="button that prevents the user from editing the input field"></i>
                             </span>
                         </div>
                     </div>
@@ -52,17 +52,17 @@
                         <!--Form input - Method-->
                         <div class="padding-bottom-10px">
                             <div class="mx-auto">  
-                                <label for="exampleFormControlSelect3" style="display: block;">Method</label>
+                                <label for="exampleFormControlSelect3" style="display: block;" id="method-label">Method</label>
                             </div>
                             <span style="width: 70px;" class="inline-block ">Step 1:</span>
                             <span class="mx-auto inline-block input-box-method">
                                 <div></div>
                                 <div></div>
-                                <input type="text" class="form-control" name="method" placeholder="Kosovan"> 
+                                <input type="text" class="form-control" name="method" placeholder="Turkish" aria-labelledby="method-label"> 
                             </span>
                             <span class="top-level-secondary-ingredient-buttons">
-                                <i type="button" class="btn btn-primary edit-method green-dark-background far fa-edit form-buttons"></i>
-                                <i type="button" class="fas fa-check btn btn-primary done-method green-dark-background form-buttons"></i>
+                                <i type="button" class="btn btn-primary edit-method green-dark-background far fa-edit form-buttons" aria-label="button that allows the user to edit the input field"></i>
+                                <i type="button" class="fas fa-check btn btn-primary done-method green-dark-background form-buttons" aria-label="button that prevents the user from editing the input field"></i>
                             </span>
                         </div>
                     </div>
@@ -73,13 +73,13 @@
                     </div>
                      <!--Form input - Description-->
                     <div style="width: 80%;" class="margins-auto">
-                        <label for="exampleFormControlSxelect6">Description</label>
-                        <textarea type="text" class="form-control" id="exampleFormControlInput6" name="description" placeholder="Delicious smokey flavour coupled with..." rows="6" cols="40"></textarea>
+                        <label for="exampleFormControlSxelect6" id="description-label">Description</label>
+                        <textarea type="text" class="form-control" id="exampleFormControlInput6" name="description" placeholder="Delicious smokey flavour coupled with..." rows="6" cols="40" aria-labelledby="description-label"></textarea>
                     </div>
                      <!--Form input - Cook Time-->
                     <div style="width: 80%;" class="margins-auto">
-                        <label for="exampleFormControlSelect6">Cook Time (in hours)</label>
-                        <input type="number" step=".25" min="0" oninput="validity.valid||(value='')" class="form-control" id="exampleFormControlInput7" name="time" placeholder="6">
+                        <label for="exampleFormControlSelect6" id="cook-time-label">Cook Time (in hours)</label>
+                        <input type="number" step=".25" min="0" oninput="validity.valid||(value='')" class="form-control" id="exampleFormControlInput7" name="time" placeholder="6" aria-labelledby="cook-time-label">
                     </div>
                     <input type="text" class="form-control" name="liked_by" value="be the first to like this!" hidden>
                     <div style="width: 80%;" class="margins-auto">

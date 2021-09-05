@@ -319,10 +319,7 @@ There are three main colours: off white, green and dark blue. These colours was 
 
 The project was deployed to GitHub Pages using the following steps...
 
-Log in to GitHub and locate the GitHub Repository At the top of the Repository (not top of page), locate the "Settings" Button 
-on the menu...Scroll down the Settings page until you locate the "GitHub Pages" Section. Under "Source", click the dropdown 
-called "None" and select "Master Branch". The page will automatically refresh. Scroll back down through the page to locate the 
-now published site link in the "GitHub Pages" section.
+Log in to GitHub and locate the GitHub Repository At the top of the Repository (not top of page), locate the "Settings" Button on the menu...Scroll down the Settings page until you locate the "GitHub Pages" Section. Under "Source", click the dropdown called "None" and select "Master Branch". The page will automatically refresh. Scroll back down through the page to locate the now published site link in the "GitHub Pages" section.
 
 ## Accessibility
 
@@ -334,11 +331,12 @@ In addition, there are several input fields in the site, each of which correspon
 
 ### Content
 
-Please set the inline comments across the CSS, HTML and JS files for any code that has been taken from third parties.  Any borrowed code is
-clearly labelled as such.
+Please see the inline comments across the CSS, HTML, python and JS files for any code that has been taken from third parties.  Any borrowed code is clearly labelled as such.
 
 ### ReadMe
 
-The "Deployment" section of the Readme file is obtained from the Code Institue SampleREADME document which can be found: (https://github.com/Code-Institute-Solutions/SampleREADME/blob/master/README.md).
+The "Deployment" section of the Readme file is obtained from the Code Institue SampleREADME document which can be found:(https://github.com/Code-Institute-Solutions/SampleREADME/blob/master/README.md).
+Much of the CSS is taken from bootstrap templates.  In these cases this is clearly indicated and a link to the corresponding
+bootstrap page is provided.
 
 Use the following code to run the project in server: `python3 -m http.server`

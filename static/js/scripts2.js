@@ -35,7 +35,7 @@ if (document.getElementById("edit h3 title")) {
     for (var j = 0; j < method_delete.length; j++) {
         method_delete[j].addEventListener("click", delete_input);
     }
-} else if (document.getElementById("add h3 title")) {
+} else if (document.getElementById("add-h3-title")) {
     event_listener_next_input("next-ingredient", next_input);
     event_listener_next_input("edit", edit_input);
     event_listener_next_input("done", input_done);
@@ -80,7 +80,7 @@ function next_input() {
     <span class="mx-auto inline-block input-box-${nme}" style="width: ${width};">
         <div></div>
         <div></div>
-        <input type="text" class="form-control" name="${nme}" placeholder="Kosovan""> 
+        <input type="text" class="form-control" name="${nme}" placeholder="Turkish""> 
     </span>
     <span class="top-level-secondary-ingredient-buttons">
         <i type="button" class="${x.parentElement.children[0].children[3].children[0].className}" aria-label="button that allows the user to edit the input field"></i>

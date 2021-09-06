@@ -305,11 +305,11 @@ Color-Calculator was used to find a harmonious and high-contrast colour scheme: 
 
 ### Colour Scheme
 
-There are three main colours: off white, green and dark blue. These colours was chosen both for their colour harmony and to allow for high levels of contrast for UX purposes.
+There are three main colours: off white, light brown and dark blue. These colours was chosen both for their colour harmony and to allow for high levels of contrast for UX purposes.
 
 ### Typography
 
-
+The font used across this site is inherited from the bootstrap body class.  There are various different font and backup fonts, however, on Safari and Google Chrome the font selected is Helveltica Neue and on Microsoft Edge the selected font is Helveltica. 
 
 ## Wireframes
 
@@ -319,7 +319,20 @@ There are three main colours: off white, green and dark blue. These colours was 
 
 The project was deployed to Heroku via Github pages using the following steps...
 
-1. Create a file called requirements.txt (pip3 freeze --local > requirements.txt).  See file [here](/requirements.txt)
+1. Create a file called requirements.txt (pip3 freeze --local > requirements.txt).  See file [here](/requirements.txt).  This list contains the dependencies needed to run Flask.
+2. Use the bash code: 'echo web: python3 app.py > Procfile' in order to create a Procfile and to add 'web: python3 app.py > Procfile' to this file.  This tells Heroku which file is used to run the app.
+3. Log into Heroku and on the dashboard click 'new' > 'create new app'.
+4. Create a name for your new app and select the appropriate region.
+5. Set up automatic deployment from Github by clicking 'connect to Github' and then input your repo name and click connect once your repo has been found.
+6. Go to 'settings' and then config variables.  Copy all of the keys and values across from your env.py file.  Note. the 'MONGO_DBNAME is name of the database - in this case milestone3DB.
+7. In the terminal type: 'git add requirements.txt' followed by 'git commit -m "add requirements.txt file"' in order to
+push the new requirements.txt file to Github.
+8. Follow the same steps to add the Prrocfile.
+9. Back on Heroku enable automatic deployment on the 'Deployment' page.
+10. Then click 'Deploy Branch' and wait for the building process to finish.
+11.  Finally, click "View App" to launch your new app.
+
+Note. the above steps are inspired by Code Institute's video: https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+DCP101+2017_T3/courseware/9e2f12f5584e48acb3c29e9b0d7cc4fe/579bbf01edaf47938e6a860b8f08f275/
 
 ## Accessibility
 

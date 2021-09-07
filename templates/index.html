@@ -38,7 +38,7 @@
                         </ul>
                         <!--Serach function-->
                         <form action="{{ url_for('search') }}" method="POST" class="list-element-nav" id="search-form">
-                            <input id="search-input" type="text" name="query" id="query1" minlength="3" class="validate" aria-label="input for search function" required>
+                            <input id="search-input" type="text" name="query" minlength="3" class="validate" aria-label="input for search function" required>
                             <input type="submit" class="indigo-dark-background btn btn-primary dark-indigo-border indigo-dark-background search-bar" value="Search">
                         </form>
                     </div>
@@ -50,7 +50,7 @@
                     <div class="hero-image" id="imaged"></div>
                     <div class="centered text-center">
                         <h1 class="display-4 fw-bolder white-text main-title">{{title}}</h1>
-                        <a id="home-button" type="button" class="mx-auto btn btn-primary dark-green-border green-dark-background" "{{hidden_or_not}}" href="{{ url_for('get_recipes') }}">return home</a>
+                        <a id="home-button" class="mx-auto btn btn-primary dark-green-border green-dark-background" {{hidden_or_not}} href="{{ url_for('get_recipes') }}">return home</a>
                     </div>
                 </div>
             </div>

@@ -118,7 +118,7 @@ Login link result: Takes the user to the Login Page and changes colour when clic
 Result of search for "Feijao": returns Feijao recipe - pass. 
 Result of search for "Cook for an hour": returns Feijao recipe - pass
 Result of search for "lardons": returns Feijao recipe - pass
-[(screenshot evidence)](testing/images/manual-test-2/search-result.png)
+[(screenshot evidence)](testing/images/manual-testing/manual-test-2/search-result.png)
 
 3. Test: Click and hover over all links in footer.  they take the user to the correct social media site/open an email address to jonasitoelprogramdor and change colour when hovered over.  
 Facebook link result: Open a new Facebook tab on click and change colour on hover.
@@ -130,122 +130,122 @@ Here link result: Open an email address to jonasitoelprogramdor on click and cha
 4. Test: Click 'more details' button.
 Homepage result: It takes the user to the More Details page.
 Userpage result: It takes the user to the More Details page.
-[(screenshot evidence)](testing/images/manual-test-4/more-details-page.png)
+[(screenshot evidence)](testing/images/manual-testing/manual-test-4/more-details-page.png)
 
 5. Test: Click the 'edit', 'delete' and 'like' buttons on the More Details Page.
 Edit button result: Takes the user to the Edit Recipe Page. 
 Delete button result: Delete the recipe entirely. 
 Like button result: Add the user to the list of users that have liked this page.
-[(screenshot evidence)](testing/images/manual-test-5/edit-button.png)
-[(screenshot evidence)](testing/images/manual-test-5/edit-page.png)
-[(screenshot evidence)](testing/images/manual-test-5/like-button.png)
-[(screenshot evidence)](testing/images/manual-test-5/liked-recipe.png)
-[(screenshot evidence)](testing/images/manual-test-5/recipe-delete-button.png)
-[(screenshot evidence)](testing/images/manual-test-5/recipe-delete-response.png)
+[(screenshot evidence)](testing/images/manual-testing/manual-test-5/edit-button.png)
+[(screenshot evidence)](testing/images/manual-testing/manual-test-5/edit-page.png)
+[(screenshot evidence)](testing/images/manual-testing/manual-test-5/like-button.png)
+[(screenshot evidence)](testing/images/manual-testing/manual-test-5/liked-recipe.png)
+[(screenshot evidence)](testing/images/manual-testing/manual-test-5/recipe-delete-button.png)
+[(screenshot evidence)](testing/images/manual-testing/manual-test-5/recipe-delete-response.png)
 
 6. Test: Fill in the form on the Add Recipes Page and then click submit.
 Result: Input values are saved in the recipes collection in the Mongo database.
-[(screenshot evidence)](testing/images/manual-test-6/search-result.png)
-[(screenshot evidence)](testing/images/manual-test-6/add-recipe-example.png)
+[(screenshot evidence)](testing/images/manual-testing/manual-test-6/search-result.png)
+[(screenshot evidence)](testing/images/manual-testing/manual-test-6/add-recipe-example.png)
 
 7. Test: Click the 'Next Ingredient' and 'Next Step' on the form on the Add Recipes Page.
 Result: A new input is created for the 'ingredients' and 'method' section of the form respectively.
-[(screenshot evidence)](testing/images/manual-test-7/new-inputs.png)
-[(screenshot evidence)](testing/images/manual-test-7/no-new-inputs.png)
+[(screenshot evidence)](testing/images/manual-testing/manual-test-7/new-inputs.png)
+[(screenshot evidence)](testing/images/manual-testing/manual-test-7/no-new-inputs.png)
 
 8. Test: Click the 'Next Ingredient' and 'Next Step' on the form on the Edit Recipes Page.
 Result: A new input is created for the 'ingredients' and 'method' section of the form respectively.
-[(screenshot evidence)](testing/images/manual-test-8/new-inputs2.png)
-[(screenshot evidence)](testing/images/manual-test-8/no-new-inputs2.png)
+[(screenshot evidence)](testing/images/manual-testing/manual-test-8/new-inputs2.png)
+[(screenshot evidence)](testing/images/manual-testing/manual-test-8/no-new-inputs2.png)
 
 9. Test: Click the 'done', 'edit' and 'delete' buttons for the inputs on both the 
 Add Recipes Page and the Edit Recipes Page.
 Result:  The 'done' and 'edit' buttons  make the input 'readonly' and not 'readonly' respectively
 and the 'delete' button deletes the new input, this does not cause the numbering to be disrupted.
-[(screenshot evidence)](testing/images/manual-test-9/delete-input.png)
-[(screenshot evidence)](testing/images/manual-test-9/readonly-examples.png)
+[(screenshot evidence)](testing/images/manual-testing/manual-test-9/delete-input.png)
+[(screenshot evidence)](testing/images/manual-testing/manual-test-9/readonly-examples.png)
 
 10.  Test: Click the logout button followed by the home button on the navbar.  Then click the 'more details'
 button of a given recipe.
 Result: The recipe's More Details Page does not give the user the option to edit, add or delete the recipe
 as the user is logged out.
-[(screenshot evidence)](testing/images/manual-test-10/more-details-no-buttons.png)
+[(screenshot evidence)](testing/images/manual-testing/manual-test-10/more-details-no-buttons.png)
 
 11. Test: Click the logout button.
 Result: The navbar only shows the 'Home', 'Register' and 'Login' links.
-[(screenshot evidence)](testing/images/manual-test-11/home-register-login.png)
+[(screenshot evidence)](testing/images/manual-testing/manual-test-11/home-register-login.png)
 
 12. Test: On the Login Page input a username and password that do not match a value in the database.
 Result: The user is not granted entry and a message is displayed on the title of the login page telling the user
 either the username or password are incorrect.
-[(screenshot evidence)](testing/images/manual-test-12/incorrect-username-password.png)
+[(screenshot evidence)](testing/images/manual-testing/manual-test-12/incorrect-username-password.png)
 
 13. Test:  On the Login Page the username and/or password fields are left blank.
 Result: Both fields display a "Please fill out this field" message if nothing is inputted. 
-[(screenshot evidence)](testing/images/manual-test-13/blank-field-login.png)
+[(screenshot evidence)](testing/images/manual-testing/manual-test-13/blank-field-login.png)
 
 14. Test: On the Login Page input a username and password that match a value in the database.
 Result: The user's Userpage is displayed and the navbar displays "Logout", "Home", "Username" and "Add Recipe"
 links.
-[(screenshot evidence)](testing/images/manual-test-14/userpage.png)
+[(screenshot evidence)](testing/images/manual-testing/manual-test-14/userpage.png)
 
 15.  Test: On the Login Page click on the 'sign up' button.
 Result: The user is taken to the Register Page.
-[(screenshot evidence)](testing/images/manual-test-15/registerpage.png)
+[(screenshot evidence)](testing/images/manual-testing/manual-test-15/registerpage.png)
 
 16. Test: Click on the 'more details' button when logged in as a user.
 Result: The buttons 'delete', 'edit' and 'like' are displayed to the user.
-[(screenshot evidence)](testing/images/manual-test-16/more-details-buttons.png)
+[(screenshot evidence)](testing/images/manual-testing/manual-test-16/more-details-buttons.png)
 
 17. Test: On the Register Page input a username and password that do not match a value in the database.
 Result: The user is taken to the Userpage and a new user is created in the database.
-[(screenshot evidence)](testing/images/manual-test-17/new-user-mongo.png)
-[(screenshot evidence)](testing/images/manual-test-17/new-user.png)
+[(screenshot evidence)](testing/images/manual-testing/manual-test-17/new-user-mongo.png)
+[(screenshot evidence)](testing/images/manual-testing/manual-test-17/new-user.png)
 
 18. Test:  On the Register Page the username and/or password fields are left blank.
 Result: Both fields display a "Please fill out this field" message if nothing is inputted. 
-[(screenshot evidence)](testing/images/manual-test-18/blank-field-register.png)
+[(screenshot evidence)](testing/images/manual-testing/manual-test-18/blank-field-register.png)
 
 19. Test: On the Register Page input a username and password that match a value in the database.
 Result: The user remains on the same page and the message "This user already exists!" is displayed as the
 page title.
-[(screenshot evidence)](testing/images/manual-test-19/user-already-exists.png)
+[(screenshot evidence)](testing/images/manual-testing/manual-test-19/user-already-exists.png)
 
 20.  Test: On the Register Page click on the 'Already Registered?' button.
 Result: The user is taken to the Login Page.
-[(screenshot evidence)](testing/images/manual-test-20/login-page.png)
+[(screenshot evidence)](testing/images/manual-testing/manual-test-20/login-page.png)
 
 ### User Story Testing
 1. As a first time user, I want to have a positive emotional response when visiting the site (be impressed with the quality
  of the website) so that I am encourgaed to return.
     * The website uses a high-contrast colour schemata as well as various bootstrap components such as cards, forms, navbars and buttons in order to give the impression of quality.  One example of a boostrap card is the below link:
-    [(screenshot evidence)](testing/images/user-story-testing/user-story-1)
+    [(screenshot evidence)](testing/images/manual-testing/user-story-testing/user-story-1)
 
 2. As a first time user, I want to be able to easily understand the aim and idea behind the site.
     * The homepage of the site allows users to directly browse through recipes and there is a clear 'more details' button that provides more information about each recipe. 
     * There is a clear title and subtitle that introduces the auim of the website 
-    [(screenshot evidence)](testing/images/user-story-testing/user-story-2)
+    [(screenshot evidence)](testing/images/manual-testing/user-story-testing/user-story-2)
 
 3. As a first time user, I want to be able to navigate through the site and use the 'more details' button to find out more information about a given recipe. 
     * On the homepage and the Userpage, on each card which corresponds to one recipe, there is a clear 'more details' button which changes colour when hovered over to provide visual feedback to the user.
-    [screenshot evidence](testing/images/user-story-testing/user-story-3)
+    [screenshot evidence](testing/images/manual-testing/user-story-testing/user-story-3)
 
 4. As a first time user, I would like to be able to use the register page to create myself an account.
     * There is a clear navbar link to 'register' when the user is not logged in.
     * If the user finds themselves on the Login Page but has not yet made a username and password, there is a 'Sign Up' to the register page.
-    [screenshot evidence](testing/images/user-story-testing/user-story-4)
+    [screenshot evidence](testing/images/manual-testing/user-story-testing/user-story-4)
 
 5. As a Returning visitor, I would like to be able to login using my username and password and then to be able to make use of the full CRUD functionality as well as the 'like recipe' function.
     * Clear link in the navbar to the Login page.
     * On the More Details Page (see user story 3) there is a clear 3-button set that allows a logged-in user to like, edit or delete the given recipe.
     * Clear link in the navbar for logged-in users to 'Add Recipe'. 
-    [screenshot evidence](testing/images/user-story-testing/user-story-5)
+    [screenshot evidence](testing/images/manual-testing/user-story-testing/user-story-5)
 
 6. As a Returning Visitor, I want to be able to access the website on various different screen sizes and for it to evoke a 
 positive response.
     * The site uses a combination of Bootstrap responsive design and media queries in order to ensure UX remains consistent
     and of high quality on any screen-size.  The navbar uses a toggle button to show/hide the navbar links when the screensize is narrower.  The screenshot evidence does not show the Login, Edit Recipe and Profile pages as these are structually the same as the Register, Add Recipe and Home Pages respectively.    
-    [screenshot evidence](testing/images/user-story-testing/user-story-6)
+    [screenshot evidence](testing/images/manual-testing/user-story-testing/user-story-6)
 
 Please note that the image evidence for the user story testing was taken before a final change in the colour schemata of 
 the application.  All interactive/functional parts of the website remain the same, however. 

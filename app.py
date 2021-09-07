@@ -152,7 +152,7 @@ def more_details(recipe_id):
     recipe_name = recipe["name"]
     recipe_description = recipe['description']
     return render_template(
-        "more_details.html", recipe=recipe, title=recipe_name, subtitle=recipe_description)
+        "more_details.html", recipe=recipe, title=recipe_name, subtitle=recipe_description, more_details_title="more_details_title", more_details_home="more_details_home")
 
 
 @app.route("/like_recipe/<recipe_id>/", methods=["GET", "POST"])

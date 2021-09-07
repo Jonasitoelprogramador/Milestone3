@@ -173,3 +173,4 @@ function burger_function() {
         nav_bar.className = "collapse"
     }
 }
+

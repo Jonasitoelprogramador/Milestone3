@@ -46,6 +46,15 @@
 .text-left {
   text-align: left;
 }
+
+.more_details_title {
+  bottom: 270px !important;
+}
+
+.more_details_home {
+  bottom: 250px !important
+}
+
 /*---------------------Login/Register--------------*/
 
 .card-login-register {
@@ -406,6 +415,9 @@ a:active {
   }
   .hero-container {
     height: 320px !important;
+  }
+  .more_details_home {
+    bottom: 250px !important;
   }
 }
 

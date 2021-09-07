@@ -20,7 +20,7 @@
             <!-- Responsive navbar including links and search function inspired by https://getbootstrap.com/docs/5.0/examples/-->
             <nav class="navbar-light green-dark-background">
                 <div class="container px-4 px-lg-5 navbar-padding">
-                    <button id="burger" class="dissappear-burger navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+                    <button id="burger" class="dissappear-burger navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse" id="navbarSupportedContent" style="width: 100% !important;">
@@ -38,7 +38,7 @@
                         </ul>
                         <!--Serach function-->
                         <form action="{{ url_for('search') }}" method="POST" class="list-element-nav" id="search-form">
-                            <input id="search-input" type="text" name="query" id="query" minlength="3" class="validate" aria-label="input for search function" required>
+                            <input id="search-input" type="text" name="query" id="query1" minlength="3" class="validate" aria-label="input for search function" required>
                             <input type="submit" class="indigo-dark-background btn btn-primary dark-indigo-border indigo-dark-background search-bar" value="Search">
                         </form>
                     </div>
@@ -47,10 +47,10 @@
             <!-- Header-->
             <div class="hero-image-size" style="position: relative;">
                 <div class="hero-container">
-                    <div alt="" class="hero-image" id="imaged"></div>
+                    <div class="hero-image" id="imaged"></div>
                     <div class="centered text-center">
                         <h1 class="display-4 fw-bolder white-text main-title">{{title}}</h1>
-                        <a id="home-button" type="button" class="mx-auto btn btn-primary dark-green-border green-dark-background" {{hidden_or_not}} href="{{ url_for('get_recipes') }}">return home</a>
+                        <a id="home-button" type="button" class="mx-auto btn btn-primary dark-green-border green-dark-background" "{{hidden_or_not}}" href="{{ url_for('get_recipes') }}">return home</a>
                     </div>
                 </div>
             </div>

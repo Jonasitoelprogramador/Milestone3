@@ -1,7 +1,7 @@
 {% extends "index.html" %}
  {% block content %}
  <!--This h3 link is used to identify this page to the JS code.-->
- <h3 id="edit h3 title" style="display: inline;"></h3>
+ <h3 id="edit-h3-title" style="display: inline;"></h3>
  <!--Basic structure taken from: https://getbootstrap.com/docs/4.4/components/forms/-->
  <!--The three lines below outline the 'card' that the form (see below) is contained within. -->
  <div class="padding-top-bottom-50">
@@ -29,17 +29,15 @@
                          <!--Form input - Ingredients-->
                         <div class="padding-bottom-10px">
                             <div class="mx-auto padding-bottom-10px">  
-                                <label for="exampleFormControlSelect3" style="display: block;" id="ingredients-label">Ingredients</label>
+                                <label style="display: block;" id="ingredients-label">Ingredients</label>
                             </div>
                             <span style="width: 30px;" class="inline-block">1.</span>
                             <span class="mx-auto inline-block input-box-ingredients">
-                                <div></div>
-                                <div></div>
                                 <input type="text" class="form-control" name="ingredients" value="{{recipe.ingredients[0]}}" aria-labelledby="ingredients-label"> 
                             </span>
                             <span class="top-level-secondary-ingredient-buttons">
-                                <i type="button" class="btn btn-primary edit green-dark-background far fa-edit form-buttons" aria-label="button that allows the user to edit the input field"></i>
-                                <i type="button" class="fas fa-check btn btn-primary done green-dark-background form-buttons" aria-label="button that prevents the user from editing the input field"></i>
+                                <i class="btn btn-primary edit green-dark-background far fa-edit form-buttons" aria-label="button that allows the user to edit the input field"></i>
+                                <i class="fas fa-check btn btn-primary done green-dark-background form-buttons" aria-label="button that prevents the user from editing the input field"></i>
                             </span>
                         </div>
                         <!--This jinja code accesses the 'ingredients' values for each entry in the database and then injects them 
@@ -61,17 +59,15 @@
                         <!--Form input - Method-->
                         <div class="padding-bottom-10px">
                             <div class="mx-auto padding-bottom-10px">  
-                                <label for="exampleFormControlSelect3" style="display: block;" id="method-label">Method</label>
+                                <label style="display: block;" id="method-label">Method</label>
                             </div>
                             <span style="width: 70px;" class="inline-block">Step 1:</span>
                             <span class="mx-auto inline-block short-input" style="width: 54%;">
-                                <div></div>                  
-                                <div></div>
                                 <input type="text" class="form-control" name="method" value="{{recipe.method[0]}}" aria-labelledby="method-label"> 
                             </span>
                             <span class="top-level-secondary-ingredient-buttons">
-                                <i type="button" class="btn btn-primary edit-method green-dark-background far fa-edit form-buttons" aria-label="button that allows the user to edit the input field"></i>
-                                <i type="button" class="fas fa-check btn btn-primary done-method green-dark-background form-buttons" aria-label="button that prevents the user from editing the input field"></i>
+                                <i class="btn btn-primary edit-method green-dark-background far fa-edit form-buttons" aria-label="button that allows the user to edit the input field"></i>
+                                <i class="fas fa-check btn btn-primary done-method green-dark-background form-buttons" aria-label="button that prevents the user from editing the input field"></i>
                             </span>
                         </div>
                         <!--The same as the jinga code above but in this case the 'method' values for each recipe are accessed
@@ -89,13 +85,13 @@
                     </div>
                     <!--Form input - Description-->
                     <div style="width: 80%;" class="mx-auto">
-                        <label for="exampleFormControlSxelect6">Description</label>
-                        <textarea type="text" class="form-control" id="exampleFormControlInput6" name="description" rows="6" cols="40" aria-labelledby="description-label">{{recipe.description}}</textarea>
+                        <label for="exampleFormControlSelect6" id="description-label-edit">Description</label>
+                        <textarea class="form-control" id="exampleFormControlSelect6" name="description" rows="6" cols="40" aria-labelledby="description-label-edit">{{recipe.description}}</textarea>
                     </div>
                     <!--Form input - Cook Time-->
                     <div style="width: 80%;" class="mx-auto">
-                        <label for="exampleFormControlSelect6">Cook Time (in hours)</label>
-                        <input step=".25" min="0" oninput="validity.valid||(value='')" type="number" class="form-control" id="exampleFormControlInput7" name="time" value="{{recipe.time}}" aria-labelledby="cook-time-label">
+                        <label for="exampleFormControlSelect7" id="cook-time-label-edit">Cook Time (in hours)</label>
+                        <input step=".25" min="0" oninput="validity.valid||(value='')" type="number" class="form-control" id="exampleFormControlSelect7" name="time" value="{{recipe.time}}" aria-labelledby="cook-time-label-edit">
                     </div>
                     <!--Checks if any users have liked this recipe and creates a hidden input that passes the users that have liked the recipe to the database on submission of the form-->
                     {% for liked in recipe.liked_by|unique %}
@@ -107,6 +103,7 @@
                     </div>
                 </form>
             </div>
+        </div>
 </div>
  {% endblock %}
  

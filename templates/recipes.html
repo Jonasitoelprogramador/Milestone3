@@ -6,7 +6,7 @@
                 <div class="row gx-4 gx-lg-5 row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-xl-4 justify-content-center recipe-cards">
     <!--Jinja code that cycle through all recipes in the database and displays each one on a 'card'-->
     {% for recipe in recipes %}
-    <div class="col mb-5">
+                    <div class="col mb-5">
                         <!--'Card' outline-->
                         <div class="card h-100  indigo-dark-background">
                             <!-- Recipe details-->
@@ -25,6 +25,10 @@
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+    </section>
+    
     {% endfor %}
     {{message}}
     

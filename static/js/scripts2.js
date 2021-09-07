@@ -8,9 +8,9 @@ function event_listener_next_input(input1, input2) {
 }
 
 /* This chunk of code is responsible for adding event listeners to the done, edit, delete and next input buttons.  The first if
-clause deals with said buttons on the edit_recipe.html page and the second if clause delas with the buttons on the 
+clause deals with said buttons on the edit_recipe.html page and the second if clause deals with the buttons on the 
 add_recipe.html page.*/
-if (document.getElementById("edit h3 title")) {
+if (document.getElementById("edit-h3-title")) {
     ingredient_done = document.getElementsByClassName("done");
     ingredient_edit = document.getElementsByClassName("edit");
     ingredient_delete = document.getElementsByClassName("dlt");
@@ -50,6 +50,7 @@ for adding the next step in a recipe's method or the next ingredient. The first 
 the html template depending on whether the latter is being injected into edit_recipe.html or add_recipe.html.  The second 
 part of this code adds the necessary event listeners to the injected html template. */ 
 function next_input() {
+    console.log('nothing');
     if (this.className == "mx-auto btn btn-primary next-step green-dark-background main-button-add-edit-recipe form-buttons") {
         var x = document.getElementsByClassName("steps")[0].children[0];
         var d = "btn btn-primary dlt-method";
@@ -62,7 +63,6 @@ function next_input() {
     };
     var number = x.parentElement.children.length;
     var w = "30px";
-    x.parentElement.children[number - 1].children[2].children[1].readOnly = true;
     if (x == document.getElementsByClassName("steps")[0].children[0]) {
         var template_literal = `Step ${number + 1}:`
         var w = "70px";
@@ -78,8 +78,6 @@ function next_input() {
         `<div></div>
     <span style="width: ${w};" class="inline-block text-left">${template_literal}</span>
     <span class="mx-auto inline-block input-box-${nme}" style="width: ${width};">
-        <div></div>
-        <div></div>
         <input type="text" class="form-control" name="${nme}" placeholder="Turkish""> 
     </span>
     <span class="top-level-secondary-ingredient-buttons">
@@ -104,12 +102,12 @@ function next_input() {
 
 //This allows the user to edit a given input by changes its readOnly value to false.
 function edit_input() {
-    this.parentElement.previousElementSibling.children[2].readOnly = false;
+    this.parentElement.previousElementSibling.children[0].readOnly = false;
 }
 
 //This prevents the user from further editing a given input by changing its readOnly value to true.
 function input_done() {
-    this.parentElement.previousElementSibling.children[2].readOnly = true;
+    this.parentElement.previousElementSibling.children[0].readOnly = true;
 }
 
 /*The function deletes a given input and, depending on whether the deleted row input pertained to the method section or the 

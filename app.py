@@ -136,7 +136,6 @@ def add_recipe():
             "user": session['user'],
             "liked_by": request.form.getlist("liked_by"),
         }
-        print(request.form.to_dict())
         mongo.db.recipes.insert_one(recipe)
         # Renders the recipes.html template with a feedback message for the user.
         return render_template("recipes.html", title="Added!")

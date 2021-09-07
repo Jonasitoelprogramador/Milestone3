@@ -50,7 +50,6 @@ for adding the next step in a recipe's method or the next ingredient. The first 
 the html template depending on whether the latter is being injected into edit_recipe.html or add_recipe.html.  The second 
 part of this code adds the necessary event listeners to the injected html template. */ 
 function next_input() {
-    console.log('nothing');
     if (this.className == "mx-auto btn btn-primary next-step green-dark-background main-button-add-edit-recipe form-buttons") {
         var x = document.getElementsByClassName("steps")[0].children[0];
         var d = "btn btn-primary dlt-method";
@@ -139,13 +138,10 @@ This is achieved by adding the CSS class 'current-page' to the corresponding lin
 function nav_link() {
     // this will get the full URL at the address bar
     var url = window.location.href;
-    console.log(url)
     // passes on every "a" tag
     links = document.getElementsByClassName("my-nav-links");
-    console.log(links);
     var counter = 0;
     for (var i = 0; i < links.length; i++) {
-        console.log(links[i].href);
         // checks if it's the same on the address bar
         if (url == links[i].href) {
             counter += 1;

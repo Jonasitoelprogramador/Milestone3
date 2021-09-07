@@ -312,7 +312,7 @@ The font used across this site is inherited from the bootstrap body class.  Ther
 
 ## Wireframes
 
-[Wireframes image link](./assets/images/wireframes/)
+[Wireframes image link](/wireframes/)
 
 ## Deployment
 

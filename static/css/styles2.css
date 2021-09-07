@@ -330,6 +330,11 @@
   height: 400px !important;
 }
 
+.subtitle {
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
 /*------------------Pseudo Classes---------------------*/
 
 a:hover {

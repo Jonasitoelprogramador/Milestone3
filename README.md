@@ -107,7 +107,7 @@ As alluded to above, the MongoDB database has two separate collections: recipes 
 This app has full CRUD functionality and search and 'like' functionality and connects to a MongoDB database via Flask.  The site also has an interactive javascript-built form that is populated from MongoDB.  This can create potential bugs if not thoroughly tested.  Thus, I have devised a detailed selection of manual tests in order to ensure that the app is bug-free.  
 
 1. Test: Click on all the links in navbar.
-Home link result: Takes the user to the Homepage and changes colour when clicked or when hovered over. \ / 
+Home link result: Takes the user to the Homepage and changes colour when clicked or when hovered over.\ 
 Logout link result: Takes the user to the Login and changes colour when clicked or when hovered over.
 Userpage link result: Takes the user to the Userpage and changes colour when clicked or when hovered over.
 Add Recipe link result: Takes the user to the Add Recipe and changes colour when clicked or when hovered over.

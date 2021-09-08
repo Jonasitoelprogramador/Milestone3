@@ -107,231 +107,226 @@ As alluded to above, the MongoDB database has two separate collections: recipes 
 This app has full CRUD functionality and search and 'like' functionality and connects to a MongoDB database via Flask.  The site also has an interactive javascript-built form that is populated from MongoDB.  This can create potential bugs if not thoroughly tested.  Thus, I have devised a detailed selection of manual tests in order to ensure that the app is bug-free.  
 
 1. Test: Click on all the links in navbar.
-Home link result: Takes the user to the Homepage and changes colour when clicked or when hovered over.   
-Logout link result: Takes the user to the Login and changes colour when clicked or when hovered over.  
-Userpage link result: Takes the user to the Userpage and changes colour when clicked or when hovered over.  
-Add Recipe link result: Takes the user to the Add Recipe and changes colour when clicked or when hovered over.  
-Register link result: Takes the user to the Register Page and changes colour when clicked or when hovered over.  
-Login link result: Takes the user to the Login Page and changes colour when clicked or when hovered over.  
+Home link result: Takes the user to the Homepage and changes colour when clicked or when hovered over.
+Logout link result: Takes the user to the Login and changes colour when clicked or when hovered over.
+Userpage link result: Takes the user to the Userpage and changes colour when clicked or when hovered over.
+Add Recipe link result: Takes the user to the Add Recipe and changes colour when clicked or when hovered over.
+Register link result: Takes the user to the Register Page and changes colour when clicked or when hovered over.
+Login link result: Takes the user to the Login Page and changes colour when clicked or when hovered over.
 
-2. Test: This search function searches for matching terms across across the name, method and ingredients attributes for a given recipe so each of these must be tested.  In this test, a value for each of these attributes is searched for, for the "Feijao" recipe.  
-Result of search for "Feijao": returns Feijao recipe - pass     
-Result of search for "Cook for an hour": returns Feijao recipe - pass  
-Result of search for "lardons": returns Feijao recipe - pass  
-[(screenshot evidence)](testing/images/manual-testing/manual-test-2/search-result.png)  
+2. Test: This search function searches for matching terms across across the name, method and ingredients attributes for a given recipe so each of these must be tested.  In this test, a value for each of these attributes is searched for, for the "Feijao" recipe.
+Result of search for "Feijao": returns Feijao recipe - pass. 
+Result of search for "Cook for an hour": returns Feijao recipe - pass
+Result of search for "lardons": returns Feijao recipe - pass
+[(screenshot evidence)](testing/images/manual-test-2/search-result.png)
 
-3. Test: Click and hover over all links in footer.  they take the user to the correct social media site/open an email address to jonasitoelprogramdor and change colour when hovered over.    
-Facebook link result: Open a new Facebook tab on click and change colour on hover.  
-Instagram link result: Open a new Instagram tab on click and change colour on hover.  
-Twitter link result: Open a new Twitter tab on click and change colour on hover.  
-Youtube link result: Open a new Youtube tab on click and change colour on hover.  
-Here link result: Open an email address to jonasitoelprogramdor on click and change colour on hover.  
+3. Test: Click and hover over all links in footer.  they take the user to the correct social media site/open an email address to jonasitoelprogramdor and change colour when hovered over.  
+Facebook link result: Open a new Facebook tab on click and change colour on hover.
+Instagram link result: Open a new Instagram tab on click and change colour on hover.
+Twitter link result: Open a new Twitter tab on click and change colour on hover.
+Youtube link result: Open a new Youtube tab on click and change colour on hover.
+Here link result: Open an email address to jonasitoelprogramdor on click and change colour on hover.
 
-4. Test: Click 'more details' button.  
-Homepage result: It takes the user to the More Details page.  
-Userpage result: It takes the user to the More Details page.  
-[(screenshot evidence)](testing/images/manual-testing/manual-test-4/more-details-page.png)  
+4. Test: Click 'more details' button.
+Homepage result: It takes the user to the More Details page.
+Userpage result: It takes the user to the More Details page.
+[(screenshot evidence)](testing/images/manual-test-4/more-details-page.png)
 
-5. Test: Click the 'edit', 'delete' and 'like' buttons on the More Details Page.  
-Edit button result: Takes the user to the Edit Recipe Page.   
-Delete button result: Delete the recipe entirely.   
-Like button result: Add the user to the list of users that have liked this page.  
-[(screenshot evidence)](testing/images/manual-testing/manual-test-5/edit-button.png)  
-[(screenshot evidence)](testing/images/manual-testing/manual-test-5/edit-page.png)  
-[(screenshot evidence)](testing/images/manual-testing/manual-test-5/like-button.png)  
-[(screenshot evidence)](testing/images/manual-testing/manual-test-5/liked-recipe.png)  
-[(screenshot evidence)](testing/images/manual-testing/manual-test-5/recipe-delete-button.png)  
-[(screenshot evidence)](testing/images/manual-testing/manual-test-5/recipe-delete-response.png)  
+5. Test: Click the 'edit', 'delete' and 'like' buttons on the More Details Page.
+Edit button result: Takes the user to the Edit Recipe Page. 
+Delete button result: Delete the recipe entirely. 
+Like button result: Add the user to the list of users that have liked this page.
+[(screenshot evidence)](testing/images/manual-test-5/edit-button.png)
+[(screenshot evidence)](testing/images/manual-test-5/edit-page.png)
+[(screenshot evidence)](testing/images/manual-test-5/like-button.png)
+[(screenshot evidence)](testing/images/manual-test-5/liked-recipe.png)
+[(screenshot evidence)](testing/images/manual-test-5/recipe-delete-button.png)
+[(screenshot evidence)](testing/images/manual-test-5/recipe-delete-response.png)
 
-6. Test: Fill in the form on the Add Recipes Page and then click submit.  
-Result: Input values are saved in the recipes collection in the Mongo database.  
-[(screenshot evidence)](testing/images/manual-testing/manual-test-6/search-result.png)  
-[(screenshot evidence)](testing/images/manual-testing/manual-test-6/add-recipe-example.png)  
+6. Test: Fill in the form on the Add Recipes Page and then click submit.
+Result: Input values are saved in the recipes collection in the Mongo database.
+[(screenshot evidence)](testing/images/manual-test-6/search-result.png)
+[(screenshot evidence)](testing/images/manual-test-6/add-recipe-example.png)
 
-7. Test: Click the 'Next Ingredient' and 'Next Step' on the form on the Add Recipes Page.  
-Result: A new input is created for the 'ingredients' and 'method' section of the form respectively.  
-[(screenshot evidence)](testing/images/manual-testing/manual-test-7/new-inputs.png)  
-[(screenshot evidence)](testing/images/manual-testing/manual-test-7/no-new-inputs.png)  
+7. Test: Click the 'Next Ingredient' and 'Next Step' on the form on the Add Recipes Page.
+Result: A new input is created for the 'ingredients' and 'method' section of the form respectively.
+[(screenshot evidence)](testing/images/manual-test-7/new-inputs.png)
+[(screenshot evidence)](testing/images/manual-test-7/no-new-inputs.png)
 
-8. Test: Click the 'Next Ingredient' and 'Next Step' on the form on the Edit Recipes Page.  
-Result: A new input is created for the 'ingredients' and 'method' section of the form respectively.  
-[(screenshot evidence)](testing/images/manual-testing/manual-test-8/new-inputs2.png)  
-[(screenshot evidence)](testing/images/manual-testing/manual-test-8/no-new-inputs2.png)  
+8. Test: Click the 'Next Ingredient' and 'Next Step' on the form on the Edit Recipes Page.
+Result: A new input is created for the 'ingredients' and 'method' section of the form respectively.
+[(screenshot evidence)](testing/images/manual-test-8/new-inputs2.png)
+[(screenshot evidence)](testing/images/manual-test-8/no-new-inputs2.png)
 
-9. Test: Click the 'done', 'edit' and 'delete' buttons for the inputs on both the Add Recipes Page and the Edit Recipes Page.    
+9. Test: Click the 'done', 'edit' and 'delete' buttons for the inputs on both the 
+Add Recipes Page and the Edit Recipes Page.
 Result:  The 'done' and 'edit' buttons  make the input 'readonly' and not 'readonly' respectively
-and the 'delete' button deletes the new input, this does not cause the numbering to be disrupted.    
-[(screenshot evidence)](testing/images/manual-testing/manual-test-9/delete-input.png)    
-[(screenshot evidence)](testing/images/manual-testing/manual-test-9/readonly-examples.png)    
+and the 'delete' button deletes the new input, this does not cause the numbering to be disrupted.
+[(screenshot evidence)](testing/images/manual-test-9/delete-input.png)
+[(screenshot evidence)](testing/images/manual-test-9/readonly-examples.png)
 
 10.  Test: Click the logout button followed by the home button on the navbar.  Then click the 'more details'
-button of a given recipe.  
+button of a given recipe.
 Result: The recipe's More Details Page does not give the user the option to edit, add or delete the recipe
-as the user is logged out.  
-[(screenshot evidence)](testing/images/manual-testing/manual-test-10/more-details-no-buttons.png)  
+as the user is logged out.
+[(screenshot evidence)](testing/images/manual-test-10/more-details-no-buttons.png)
 
-11. Test: Click the logout button.  
-Result: The navbar only shows the 'Home', 'Register' and 'Login' links.  
-[(screenshot evidence)](testing/images/manual-testing/manual-test-11/home-register-login.png)  
+11. Test: Click the logout button.
+Result: The navbar only shows the 'Home', 'Register' and 'Login' links.
+[(screenshot evidence)](testing/images/manual-test-11/home-register-login.png)
 
-12. Test: On the Login Page input a username and password that do not match a value in the database.  
+12. Test: On the Login Page input a username and password that do not match a value in the database.
 Result: The user is not granted entry and a message is displayed on the title of the login page telling the user
-either the username or password are incorrect.  
-[(screenshot evidence)](testing/images/manual-testing/manual-test-12/incorrect-username-password.png)  
+either the username or password are incorrect.
+[(screenshot evidence)](testing/images/manual-test-12/incorrect-username-password.png)
 
-13. Test:  On the Login Page the username and/or password fields are left blank.  
-Result: Both fields display a "Please fill out this field" message if nothing is inputted.   
-[(screenshot evidence)](testing/images/manual-testing/manual-test-13/blank-field-login.png)
+13. Test:  On the Login Page the username and/or password fields are left blank.
+Result: Both fields display a "Please fill out this field" message if nothing is inputted. 
+[(screenshot evidence)](testing/images/manual-test-13/blank-field-login.png)
 
-14. Test: On the Login Page input a username and password that match a value in the database.  
+14. Test: On the Login Page input a username and password that match a value in the database.
 Result: The user's Userpage is displayed and the navbar displays "Logout", "Home", "Username" and "Add Recipe"
-links.  
-[(screenshot evidence)](testing/images/manual-testing/manual-test-14/userpage.png)  
+links.
+[(screenshot evidence)](testing/images/manual-test-14/userpage.png)
 
-15.  Test: On the Login Page click on the 'sign up' button.  
-Result: The user is taken to the Register Page.  
-[(screenshot evidence)](testing/images/manual-testing/manual-test-15/registerpage.png)  
+15.  Test: On the Login Page click on the 'sign up' button.
+Result: The user is taken to the Register Page.
+[(screenshot evidence)](testing/images/manual-test-15/registerpage.png)
 
-16. Test: Click on the 'more details' button when logged in as a user.  
-Result: The buttons 'delete', 'edit' and 'like' are displayed to the user.  
-[(screenshot evidence)](testing/images/manual-testing/manual-test-16/more-details-buttons.png)  
+16. Test: Click on the 'more details' button when logged in as a user.
+Result: The buttons 'delete', 'edit' and 'like' are displayed to the user.
+[(screenshot evidence)](testing/images/manual-test-16/more-details-buttons.png)
 
-17. Test: On the Register Page input a username and password that do not match a value in the database.  
-Result: The user is taken to the Userpage and a new user is created in the database.  
-[(screenshot evidence)](testing/images/manual-testing/manual-test-17/new-user-mongo.png)  
-[(screenshot evidence)](testing/images/manual-testing/manual-test-17/new-user.png)  
+17. Test: On the Register Page input a username and password that do not match a value in the database.
+Result: The user is taken to the Userpage and a new user is created in the database.
+[(screenshot evidence)](testing/images/manual-test-17/new-user-mongo.png)
+[(screenshot evidence)](testing/images/manual-test-17/new-user.png)
 
-18. Test:  On the Register Page the username and/or password fields are left blank.  
-Result: Both fields display a "Please fill out this field" message if nothing is inputted.   
-[(screenshot evidence)](testing/images/manual-testing/manual-test-18/blank-field-register.png)  
+18. Test:  On the Register Page the username and/or password fields are left blank.
+Result: Both fields display a "Please fill out this field" message if nothing is inputted. 
+[(screenshot evidence)](testing/images/manual-test-18/blank-field-register.png)
 
-19. Test: On the Register Page input a username and password that match a value in the database.  
+19. Test: On the Register Page input a username and password that match a value in the database.
 Result: The user remains on the same page and the message "This user already exists!" is displayed as the
-page title.  
-[(screenshot evidence)](testing/images/manual-testing/manual-test-19/user-already-exists.png)  
+page title.
+[(screenshot evidence)](testing/images/manual-test-19/user-already-exists.png)
 
-20.  Test: On the Register Page click on the 'Already Registered?' button.  
-Result: The user is taken to the Login Page.  
-[(screenshot evidence)](testing/images/manual-testing/manual-test-20/login-page.png)  
+20.  Test: On the Register Page click on the 'Already Registered?' button.
+Result: The user is taken to the Login Page.
+[(screenshot evidence)](testing/images/manual-test-20/login-page.png)
 
 ### User Story Testing
 1. As a first time user, I want to have a positive emotional response when visiting the site (be impressed with the quality
- of the website) so that I am encourgaed to return.  
-    * The website uses a high-contrast colour schemata as well as various bootstrap components such as cards, forms, navbars and buttons in order to give the impression of quality.  One example of a boostrap card is the below link:  
-    [(screenshot evidence)](testing/images/user-story-testing/user-story-1)  
+ of the website) so that I am encourgaed to return.
+    * The website uses a high-contrast colour schemata as well as various bootstrap components such as cards, forms, navbars and buttons in order to give the impression of quality.  One example of a boostrap card is the below link:
+    [(screenshot evidence)](testing/images/user-story-testing/user-story-1)
 
-2. As a first time user, I want to be able to easily understand the aim and idea behind the site.  
-    * The homepage of the site allows users to directly browse through recipes and there is a clear 'more details' button that provides more information about each recipe.   
-    * There is a clear title and subtitle that introduces the aim of the website   
-    [(screenshot evidence)](testing/images/user-story-testing/user-story-2)  
+2. As a first time user, I want to be able to easily understand the aim and idea behind the site.
+    * The homepage of the site allows users to directly browse through recipes and there is a clear 'more details' button that provides more information about each recipe. 
+    * There is a clear title and subtitle that introduces the auim of the website 
+    [(screenshot evidence)](testing/images/user-story-testing/user-story-2)
 
-3. As a first time user, I want to be able to navigate through the site and use the 'more details' button to find out more information about a given recipe.   
-    * On the homepage and the Userpage, on each card which corresponds to one recipe, there is a clear 'more details' button which changes colour when hovered over to provide visual feedback to the user.  
-    [screenshot evidence](testing/images/user-story-testing/user-story-3)  
+3. As a first time user, I want to be able to navigate through the site and use the 'more details' button to find out more information about a given recipe. 
+    * On the homepage and the Userpage, on each card which corresponds to one recipe, there is a clear 'more details' button which changes colour when hovered over to provide visual feedback to the user.
+    [screenshot evidence](testing/images/user-story-testing/user-story-3)
 
-4. As a first time user, I would like to be able to use the register page to create myself an account.  
-    * There is a clear navbar link to 'register' when the user is not logged in.  
-    * If the user finds themselves on the Login Page but has not yet made a username and password, there is a 'Sign Up' to the register page.  
-    [screenshot evidence](testing/images/user-story-testing/user-story-4)  
+4. As a first time user, I would like to be able to use the register page to create myself an account.
+    * There is a clear navbar link to 'register' when the user is not logged in.
+    * If the user finds themselves on the Login Page but has not yet made a username and password, there is a 'Sign Up' to the register page.
+    [screenshot evidence](testing/images/user-story-testing/user-story-4)
 
-5. As a Returning visitor, I would like to be able to login using my username and password and then to be able to make use of the full CRUD functionality as well as the 'like recipe' function.  
-    * Clear link in the navbar to the Login page.  
-    * On the More Details Page (see user story 3) there is a clear 3-button set that allows a logged-in user to like, edit or delete the given recipe.  
-    * Clear link in the navbar for logged-in users to 'Add Recipe'.   
-    [screenshot evidence](testing/images/user-story-testing/user-story-5)  
+5. As a Returning visitor, I would like to be able to login using my username and password and then to be able to make use of the full CRUD functionality as well as the 'like recipe' function.
+    * Clear link in the navbar to the Login page.
+    * On the More Details Page (see user story 3) there is a clear 3-button set that allows a logged-in user to like, edit or delete the given recipe.
+    * Clear link in the navbar for logged-in users to 'Add Recipe'. 
+    [screenshot evidence](testing/images/user-story-testing/user-story-5)
 
 6. As a Returning Visitor, I want to be able to access the website on various different screen sizes and for it to evoke a 
-positive response.  
+positive response.
     * The site uses a combination of Bootstrap responsive design and media queries in order to ensure UX remains consistent
-    and of high quality on any screen-size.  The navbar uses a toggle button to show/hide the navbar links when the screensize is narrower.  The screenshot evidence does not show the Login, Edit Recipe and Profile pages as these are structually the same as the Register, Add Recipe and Home Pages respectively.      
-    [screenshot evidence](testing/images/user-story-testing/user-story-6)  
+    and of high quality on any screen-size.  The navbar uses a toggle button to show/hide the navbar links when the screensize is narrower.  The screenshot evidence does not show the Login, Edit Recipe and Profile pages as these are structually the same as the Register, Add Recipe and Home Pages respectively.    
+    [screenshot evidence](testing/images/user-story-testing/user-story-6)
 
 Please note that the image evidence for the user story testing was taken before a final change in the colour schemata of 
-the application.  All interactive/functional parts of the website remain the same, however.   
+the application.  All interactive/functional parts of the website remain the same, however. 
 
 ### Automated testing
-The HTML and the CSS code were put through the W3C schools HTML and CSS validators respectively to eliminated any potential syntax errors.  
-(HTML: https://validator.w3.org/)  
-(CSS: https://jigsaw.w3.org/css-validator/)  
+The HTML and the CSS code were put through the W3C schools HTML and CSS validators respectively to eliminated any potential syntax errors.
+(HTML: https://validator.w3.org/)
+(CSS: https://jigsaw.w3.org/css-validator/)
 
 The javascript code was put through a code beautifier also to eliminate syntax errors (link:https://beautifytools.com/javascript-validator.php).
 
 ### Bugs
 
-Bug: After changing the bootstrap file from being local to a CDN, the CSS behaved slightly differently.   
+Bug: After changing the bootstrap file from being local to a CDN, the CSS behaved slightly differently. 
 Fix: The problem occured as a result of specificity so I created several new classes in my CSS to target (with a lower
-specificity) the classes that were not functioning as they had done before.  
+specificity) the classes that were not functioning as they had done before.
 
-Bug: Everytime that a recipe was edited, the users in its "liked by" attribute would be deleted.  
-Fix: Add an extra hidden input to the Edit Recipes page that passes the users that have liked the recipe to the database on submission of the Edit Recipe form.  
+Bug: Everytime that a recipe was edited, the users in its "liked by" attribute would be deleted.
+Fix: Add an extra hidden input to the Edit Recipes page that passes the users that have liked the recipe to the database on submission of the Edit Recipe form.
 
-Bug: The "Home" navbar link would not be white when the page was loaded for the first time.  On subsequent loads it would show up white.  
-Fix: Add logic to the JS code that adds a class to the "Home" link element on the first load of the page as long as other conditions have not been met.  
+Bug: The "Home" navbar link would not be white when the page was loaded for the first time.  On subsequent loads it would show up white.
+Fix: Add logic to the JS code that adds a class to the "Home" link element on the first load of the page as long as other conditions have not been met.
 
-Bug: Clicking the "Next Step" button on the Edit Recipe page would add an extra input to the ingredients section but not to the method section.  
-Fix: The logic in the javascript, specifically the "next_input" function, needed to be modified in order for the code to target either the "method" section or the "ingredients" section depending on which button was pressed.  
+Bug: Clicking the "Next Step" button on the Edit Recipe page would add an extra input to the ingredients section but not to the method section.
+Fix: The logic in the javascript, specifically the "next_input" function, needed to be modified in order for the code to target either the "method" section or the "ingredients" section depending on which button was pressed.
 
 ## Technologies
 
 ### Languages
 
-HTML5 was used in order to provide the text content the structure of the site.     
-CSS3 was used to add styling.  
-Javascript (ECMAScript 2018) was used in order to add interactivity and to create the interactive forms for the Edit Recipe and the Add Recipe pages.  
+HTML5 was used in order to provide the text content the structure of the site.   
+CSS3 was used to add styling.
+Javascript (ECMAScript 2018) was used in order to add interactivity and to create the interactive forms for the Edit Recipe and the Add Recipe pages.
 Jinja template language was used in order to inject the content from the database into the HTML templates so that it could 
-be displayed to the user.  
-Python programming language was used in order to be able to run the Flask framework.     
+be displayed to the user.
+Python programming language was used in order to be able to run the Flask framework. 
 
 ### Frameworks, Libraries and Programs
 
-Bootstrap: was used to add responsivess and to aid with the structure of the site.   
-(link: https://getbootstrap.com/docs/4.4/getting-started/introduction/)  
+Bootstrap: was used to add responsivess and to aid with the structure of the site. 
+(link: https://getbootstrap.com/docs/4.4/getting-started/introduction/)
 
 Hover.CSS3: was used on the media links in the header and the social media links in the footer in order that they
-take on a different colour when hovered over. (link: https://ianlunn.github.io/Hover/)  
+take on a different colour when hovered over. (link: https://ianlunn.github.io/Hover/)
 
-Git: was used to save changes in the website's files. Gitpod terminal was used to save changes to Git and Push to send these changes to GitHub. (link: https://git-scm.com/)  
+Git: was used to save changes in the website's files. Gitpod terminal was used to save changes to Git and Push to send these changes to GitHub. (link: https://git-scm.com/)
 
-GitHub: where the files are stored after being "pushed". (link: https://github.com/)  
+GitHub: where the files are stored after being "pushed". (link: https://github.com/)
 
-Flask framework (written in Python programming language): is used to run the backend of the application.  That is, it deals with requests from the browser and send back the correct HTML template as an HTTP response.  
+Flask framework (written in Python programming language): is used to run the backend of the application.  That is, it deals with requests from the browser and send back the correct HTML template as an HTTP response.
 
-PyMongo: is a module containing tools that are used to connect with MongoDB when working in python.    
+PyMongo: is a module containing tools that are used to connect with MongoDB when working in python.  
 
-Color-Calculator was used to find a harmonious and high-contrast colour scheme: (link: https://www.sessions.edu/color-calculator/)  
+Color-Calculator was used to find a harmonious and high-contrast colour scheme: (link: https://www.sessions.edu/color-calculator/)
 
 ## Design
 
 ### Colour Scheme
 
-There are three main colours: off white, light brown and dark blue. These colours was chosen both for their colour harmony and to allow for high levels of contrast for UX purposes.  
+There are three main colours: off white, green and dark blue. These colours was chosen both for their colour harmony and to allow for high levels of contrast for UX purposes.
 
 ### Typography
 
-The font used across this site is inherited from the bootstrap body class.  There are various different font and backup fonts, however, on Safari and Google Chrome the font selected is Helveltica Neue and on Microsoft Edge the selected font is Helveltica.   
+
 
 ## Wireframes
 
-[Wireframes image link](/wireframes/)
+[Wireframes image link](./wireframes/)
 
 ## Deployment
 
-The project was deployed to Heroku via Github pages using the following steps...  
+The project was deployed to Heroku via Github pages using the following steps...
 
-1. Create a file called requirements.txt (pip3 freeze --local > requirements.txt).  See file [here](/requirements.txt).  This list contains the dependencies needed to run Flask.
-2. Use the bash code: 'echo web: python3 app.py > Procfile' in order to create a Procfile and to add 'web: python3 app.py > Procfile' to this file.  This tells Heroku which file is used to run the app.
-3. Log into Heroku and on the dashboard click 'new' > 'create new app'.
-4. Create a name for your new app and select the appropriate region.
-5. Set up automatic deployment from Github by clicking 'connect to Github' and then input your repo name and click connect once your repo has been found.
-6. Go to 'settings' and then config variables.  Copy all of the keys and values across from your env.py file.  Note. the 'MONGO_DBNAME is name of the database - in this case milestone3DB.
-7. In the terminal type: 'git add requirements.txt' followed by 'git commit -m "add requirements.txt file"' in order to
-push the new requirements.txt file to Github.
-8. Follow the same steps to add the Prrocfile.
-9. Back on Heroku enable automatic deployment on the 'Deployment' page.
-10. Then click 'Deploy Branch' and wait for the building process to finish.
-11.  Finally, click "View App" to launch your new app.
-
-Note. the above steps are inspired by Code Institute's video: https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+DCP101+2017_T3/courseware/9e2f12f5584e48acb3c29e9b0d7cc4fe/579bbf01edaf47938e6a860b8f08f275/
+1. Create a file called requirements.txt (pip3 freeze --local > requirements.txt).  See file [here](/requirements.txt) for
+contents of this file.  This is a list of the dependencies that are required to run Flask.
+2. Create a file called Procfile and write the following into the file: web: python app.py (echo web: python app.py).
+This tells Heroku which file is responsible for running the app.
+3. Create an account for Heroku and from the dashboard click 'new' -> 'create a new app'.
+4. Give your app a name and chose the corresponding region.
+5. Set up automatic deployment from our Github repository by clicking "connect to Github" and folloing the steps to search
+for and connect to the app.
 
 ## Accessibility
 
@@ -347,7 +342,8 @@ Please see the inline comments across the CSS, HTML, python and JS files for any
 
 ### ReadMe
 
-The "Deployment" section of the Readme file is obtained from the Code Institue SampleREADME document which can be found:(https://github.com/Code-Institute-Solutions/SampleREADME/blob/master/README.md).  
-Much of the CSS is taken from bootstrap templates.  In these cases this is clearly indicated and a link to the corresponding bootstrap page is provided.
+The "Deployment" section of the Readme file is obtained from the Code Institue SampleREADME document which can be found:(https://github.com/Code-Institute-Solutions/SampleREADME/blob/master/README.md).
+Much of the CSS is taken from bootstrap templates.  In these cases this is clearly indicated and a link to the corresponding
+bootstrap page is provided.
 
 Use the following code to run the project in server: `python3 -m http.server`

@@ -199,6 +199,10 @@
   display: inline-block;
 }
 
+.block {
+  display: block;
+}
+
 .margin-top {
   margin-top: 30px;
 }
@@ -254,6 +258,10 @@
 
 .indigo-dark-text {
   color: #163031   !important;
+}
+
+.text-align-centre {
+  text-align: center;
 }
 
 /*-------------Index---------------------*/

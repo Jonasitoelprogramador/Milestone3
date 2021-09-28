@@ -237,7 +237,7 @@
 }
 
 .dark-green-border {
-  border-color: #5B8A54;
+  border-color: #8b6846;
 }
 
 .dark-indigo-border {
@@ -262,6 +262,10 @@
 
 .text-align-centre {
   text-align: center;
+}
+
+.no-outline {
+  outline: none;
 }
 
 /*-------------Index---------------------*/
@@ -392,13 +396,18 @@ a:active {
 }
 
 .login-register:hover {
+  background-color: #163031 !important;
+  border-color: #163031 !important;
+}
+
+.login-register:active {
   background-color: #163031;
   border-color: #163031;
 }
 
 .sign-already:hover {
-  background-color: #92A660;
-  border-color: #92A660;
+  background-color: #8b6846 !important;
+  border-color: #8b6846 !important;
 }
 
 .my-media-links:hover {

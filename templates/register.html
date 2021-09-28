@@ -7,16 +7,16 @@
         <div class="card-body">
             <!--Form which takes username and password as inputs-->
             <form method="POST" action="{{ url_for('register') }}" class="register-form mx-auto"> 
-                <div class="row">
-                    <label for="username">Username</label>
+                <div>
+                    <label for="username" class="block">Username</label>
                     <input type="text" id="username" name="username" class="validate" minlength="5" maxlength="15" required>
                 </div>
-                <div class="row password">
-                    <label for="password">Password</label>
+                <div class="password">
+                    <label for="password" class="block">Password</label>
                     <input type="text" id="password" name="password" class="validate" minlength="5" maxlength="15" required>
                 </div>
                  <!--This div contains both a submission button for the form and a button with a link to the register page -->
-                <div class="row form-call-action">
+                <div class="form-call-action">
                     <input type="submit" class="btn btn-primary dark-green-border green-dark-background login-register" value="Register">
                     <a href="{{ url_for('login') }}" class="sign-already btn btn-primary dark-indigo-border indigo-dark-background margin-top-15">Already registered?</a>
                 </div>

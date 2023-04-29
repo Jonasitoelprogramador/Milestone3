@@ -21,7 +21,7 @@ mongo = PyMongo(app)
 
 # This has been inspired by code in CS's project "task manager".  If the URL inputted into the browser matches
 # the string "/get_recipes" the server will send through the HTML file associated with the website's homepage and this
-# template will be rendered.  Pointless comment.
+# template will be rendered.  
 @app.route("/")
 @app.route("/get_recipes")
 def get_recipes():
